@@ -376,12 +376,3 @@ footer {
 .bootstrap-dialog-header {
     display: none;
 }
-
-#turnon-redpitaya {
-    text-decoration: none;
-    color: black;
-}
-
-#jsonpContainer{
-    display: none;
-}
