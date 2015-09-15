@@ -1,0 +1,14 @@
+#index-intro, #more-info, #basic-expressions,
+#osciloscope, #light-bulb, #solar-cell, #circuit-el-remote,
+#circuit-el, #osciloscope-desc,
+#light-bulb-desc, #solar-cell-desc, #circuit-el-remote-desc,
+#circuit-el-desc,#osciloscope-app, #light-bulb-app,
+#solar-cell-app, #circuit-el-app, #about-us, #osciloscope-hard,
+#osciloscope-medium, #osciloscope-easy, #solar-cell-hard,
+#solar-cell-medium, #solar-cell-easy, #light-bulb-hard, #light-bulb-medium,
+#light-bulb-easy, #circuit-el-remote-hard, #circuit-el-remote-medium,
+#circuit-el-remote-easy, #circuit-el-hard, #circuit-el-medium,
+#circuit-el-easy, #team, #press, #cooperation, #questionnaire,
+#login-form, #quiz, #red-pitaya, #sensors,  {
+    display: none;
+}
