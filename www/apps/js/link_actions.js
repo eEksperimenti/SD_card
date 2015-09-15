@@ -16,10 +16,12 @@ function getParameterByName(page) {
 if(typeof MenuLinks == 'undefined'){ var MenuLinks = {}; }
 
 $(function() {
-    MenuLinks.mainDivs = ['index-intro', 'more-info', 'basic-expressions', 'osciloscope', 'light-bulb', 'solar-cell', 'sound-speed', 'instruments-sound', 'osciloscope-desc',
-                          'light-bulb-desc', 'solar-cell-desc', 'sound-speed-desc', 'sound-of-instruments-desc', 'osciloscope-app', 'light-bulb-app', 'solar-cell-app',
-                          'sound-speed-app', 'sound-of-instruments-app', 'about-us', 'osciloscope-hard', 'osciloscope-medium', 'osciloscope-easy', 'solar-cell-hard',
-                          'solar-cell-medium', 'solar-cell-easy', 'light-bulb-hard', 'light-bulb-medium', 'light-bulb-easy', 'team', 'press', 'cooperation', 'questionnaire', 'login-form', 'quiz', 'red-pitaya'];
+    MenuLinks.mainDivs = ['index-intro', 'more-info', 'basic-expressions', 'osciloscope', 'light-bulb', 'solar-cell', 'circuit-el-remote', 'circuit-el', 'osciloscope-desc',
+                          'light-bulb-desc', 'solar-cell-desc', 'circuit-el-remote-desc', 'circuit-el-desc', 'osciloscope-app', 'light-bulb-app', 'solar-cell-app',
+                          'circuit-el-app', 'about-us', 'osciloscope-hard', 'osciloscope-medium', 'osciloscope-easy', 'solar-cell-hard',
+                          'solar-cell-medium', 'solar-cell-easy', 'light-bulb-hard', 'light-bulb-medium', 'light-bulb-easy', 'circuit-el-remote-hard', 'circuit-el-remote-medium',
+                          'circuit-el-remote-easy', 'circuit-el-hard', 'circuit-el-medium', 'circuit-el-easy', 'team', 'press', 'cooperation', 'questionnaire',
+                          'login-form', 'quiz', 'red-pitaya', 'sensors', 'faq'];
     MenuLinks.ShowDivs = function(showDivs) {
         var mainDivs = MenuLinks.mainDivs;
         for (var c=0; c<mainDivs.length; c++) {
@@ -39,6 +41,7 @@ $(function() {
         }
     };
 });
+
 
 
 /* Show specific divs on a web pages */
@@ -71,7 +74,7 @@ MenuLinks.Experiments = function() {               /* EXPERIMENTS */
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti');
 
-    MenuLinks.ShowDivs(['osciloscope', 'light-bulb', 'solar-cell', 'sound-speed', 'instruments-sound']);
+    MenuLinks.ShowDivs(['osciloscope', 'light-bulb', 'solar-cell', 'circuit-el', 'circuit-el-remote']);
 };
 
 MenuLinks.Sensors = function() {               /* SENSORS */
@@ -79,7 +82,7 @@ MenuLinks.Sensors = function() {               /* SENSORS */
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Uporaba senzorjev');
 
-    MenuLinks.ShowDivs(['']);
+    MenuLinks.ShowDivs(['sensors']);
 };
 
 MenuLinks.OsciloscopeApp = function() {                      /* OSCILOSCOPE APP */
@@ -112,27 +115,30 @@ MenuLinks.SolarCellApp = function() {                      /* SOLAR CELL APP */
     MenuLinks.ShowDivs(['solar-cell-desc']);
 };
 
-MenuLinks.SoundSpeedApp = function() {                      /* SPEED SOUND APP */
+MenuLinks.CircuitElRemoteApp = function() {                      /* SPEED SOUND APP */
     page_navigator.clearAll();
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
-    page_navigator.addLi('Hitrost zvoka – opis', 'index.html?page=hitrost-zvoka-aplikacija');
-    page_navigator.addLi('Hitrost zvoka – aplikacija');
+    page_navigator.addLi('Oddaljen eksperiment: lastnosti elementov vezij – opis', 'index.html?page=lastnosti-elementov-vezij');
+    page_navigator.addLi('Oddaljen eksperiment: lastnosti elementov vezij – aplikacija');
 
-    MenuLinks.ShowDivs(['sound-speed-desc']);
+    MenuLinks.ShowDivs(['circuit-el-remote-desc']);
 };
 
-MenuLinks.SoundOfInstrumentsApp = function() {                      /* SOUND OF INSTRUMENTS APP */
+MenuLinks.CircuitElApp = function() {                      /* SOUND OF INSTRUMENTS APP */
     page_navigator.clearAll();
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
-    page_navigator.addLi('Zvok inštrumentov – opis', 'index.html?page=zvok-instrumentov-aplikacija');
-    page_navigator.addLi('Zvok inštrumentov – aplikacija');
+    page_navigator.addLi('Lastnosti elementov vezij – opis', 'index.html?page=lastnosti-elementov-vezij2');
+    page_navigator.addLi('Lastnosti elementov vezij – aplikacija');
 
-    MenuLinks.ShowDivs(['sound-of-instruments-desc']);
+    MenuLinks.ShowDivs(['circuit-el-desc']);
 };
 
-MenuLinks.Osciloscope = function() {               /* OSCILOSCOPE  DESC */
+
+/* DESCRIPTION */
+
+MenuLinks.Osciloscope = function() {
     page_navigator.clearAll();
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
@@ -141,7 +147,7 @@ MenuLinks.Osciloscope = function() {               /* OSCILOSCOPE  DESC */
     MenuLinks.ShowDivs(['osciloscope-desc']);
 };
 
-MenuLinks.LightBulb = function() {               /* LIGHT BULB DESC */
+MenuLinks.LightBulb = function() {
     page_navigator.clearAll();
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
@@ -150,7 +156,7 @@ MenuLinks.LightBulb = function() {               /* LIGHT BULB DESC */
     MenuLinks.ShowDivs(['light-bulb-desc']);
 };
 
-MenuLinks.SolarCell = function() {               /* SOLAR CELL DESC */
+MenuLinks.SolarCell = function() {
     page_navigator.clearAll();
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
@@ -159,23 +165,24 @@ MenuLinks.SolarCell = function() {               /* SOLAR CELL DESC */
     MenuLinks.ShowDivs(['solar-cell-desc']);
 };
 
-MenuLinks.SoundSpeed = function() {               /* SOUND SPEED DESC */
+MenuLinks.CircuitElRemote = function() {
     page_navigator.clearAll();
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
-    page_navigator.addLi('Hitrost zvoka – opis');
+    page_navigator.addLi('Oddaljen eksperiment: lastnosti elementov vezij – opis');
 
-    MenuLinks.ShowDivs(['sound-speed-desc']);
+    MenuLinks.ShowDivs(['circuit-el-remote-desc']);
 };
 
-MenuLinks.SoundOfInstruments = function() {               /* SOUND OF INSTRUMENTS DESC */
+MenuLinks.CircuitEl = function() {
     page_navigator.clearAll();
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
-    page_navigator.addLi('Zvok inštrumentov – opis');
+    page_navigator.addLi('Lastnosti elementov vezij – opis');
 
-    MenuLinks.ShowDivs(['sound-of-instruments-desc']);
+    MenuLinks.ShowDivs(['circuit-el-desc']);
 };
+
 
 MenuLinks.AboutUs = function() {               /* ABOUT US */
     page_navigator.clearAll();
@@ -185,12 +192,14 @@ MenuLinks.AboutUs = function() {               /* ABOUT US */
     MenuLinks.ShowDivs(['about-us']);
 };
 
+
+/* HARD, MEDIUM, EASY */
 MenuLinks.OsciloscopeHard = function() {
     page_navigator.clearAll();
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
     page_navigator.addLi('Osciloskop – opis', 'index.html?page=osciloskop-aplikacija');
-    page_navigator.addLi('Zahtevnejši način izvajanja');
+    page_navigator.addLi('Zahtevnejši način izvajanja – osciloskop');
 
     MenuLinks.ShowDivs(['osciloscope-hard']);
 };
@@ -200,7 +209,7 @@ MenuLinks.OsciloscopeMedium = function() {
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
     page_navigator.addLi('Osciloskop – opis', 'index.html?page=osciloskop-aplikacija');
-    page_navigator.addLi('Srednje zahteven način izvajanja');
+    page_navigator.addLi('Srednje zahteven način izvajanja – osciloskop');
 
     MenuLinks.ShowDivs(['osciloscope-medium']);
 };
@@ -210,7 +219,7 @@ MenuLinks.OsciloscopeEasy = function() {
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
     page_navigator.addLi('Osciloskop – opis', 'index.html?page=osciloskop-aplikacija');
-    page_navigator.addLi('Lažji način izvajanja');
+    page_navigator.addLi('Enostaven način izvajanja – osciloskop');
 
     MenuLinks.ShowDivs(['osciloscope-easy']);
 };
@@ -220,7 +229,7 @@ MenuLinks.SolarCellHard = function() {
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
     page_navigator.addLi('Sončna celica – opis', 'index.html?page=soncna-celica-aplikacija');
-    page_navigator.addLi('Zahtevnejši način izvajanja');
+    page_navigator.addLi('Zahtevnejši način izvajanja – sončna celica');
 
     MenuLinks.ShowDivs(['solar-cell-hard']);
 };
@@ -230,7 +239,7 @@ MenuLinks.SolarCellMedium = function() {
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
     page_navigator.addLi('Sončna celica – opis', 'index.html?page=soncna-celica-aplikacija');
-    page_navigator.addLi('Srednje zahteven način izvajanja');
+    page_navigator.addLi('Srednje zahteven način izvajanja - sončna celica');
 
     MenuLinks.ShowDivs(['solar-cell-medium']);
 };
@@ -241,7 +250,7 @@ MenuLinks.SolarCellEasy = function() {
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
     page_navigator.addLi('Sončna celica – opis', 'index.html?page=soncna-celica-aplikacija');
-    page_navigator.addLi('Lažji način izvajanja');
+    page_navigator.addLi('Enostaven način izvajanja – sončna celica');
 
     MenuLinks.ShowDivs(['solar-cell-easy']);
 };
@@ -251,7 +260,7 @@ MenuLinks.LightBulbHard = function() {
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
     page_navigator.addLi('Žarnica – opis', 'index.html?page=zarnica-aplikacija');
-    page_navigator.addLi('Težji način izvajanja');
+    page_navigator.addLi('Zahtevnejši način izvajanja – žarnica');
 
     MenuLinks.ShowDivs(['light-bulb-hard']);
 };
@@ -261,7 +270,7 @@ MenuLinks.LightBulbMedium = function() {
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
     page_navigator.addLi('Žarnica – opis', 'index.html?page=zarnica-aplikacija');
-    page_navigator.addLi('Srednje težek način izvajanja');
+    page_navigator.addLi('Srednje težek način izvajanja – žarnica');
 
     MenuLinks.ShowDivs(['light-bulb-medium']);
 };
@@ -271,9 +280,72 @@ MenuLinks.LightBulbEasy = function() {
     page_navigator.addLi('Domov', 'index.html');
     page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
     page_navigator.addLi('Žarnica – opis', 'index.html?page=zarnica-aplikacija');
-    page_navigator.addLi('Lažji način izvajanja');
+    page_navigator.addLi('Enostaven način izvajanja – žarnica');
 
     MenuLinks.ShowDivs(['light-bulb-easy']);
+};
+
+MenuLinks.CircuitElRemoteHard = function() {
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
+    page_navigator.addLi('Oddaljen eksperiment: lastnosti elementov vezij – opis', 'index.html?page=lastnosti-elementov-vezij-aplikacija');
+    page_navigator.addLi('Zahtevnejši način izvajanja – Lastnosti elementov vezij (oddaljen eksperiment)');
+
+    MenuLinks.ShowDivs(['circuit-el-remote-hard']);
+};
+
+
+MenuLinks.CircuitElRemoteMedium = function() {
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
+    page_navigator.addLi('Oddaljen eksperiment: lastnosti elementov vezij – opis', 'index.html?page=lastnosti-elementov-vezij-aplikacija');
+    page_navigator.addLi('Srednje zahteven način izvajanja – Lastnosti elementov vezij (oddaljen eksperiment)');
+
+    MenuLinks.ShowDivs(['circuit-el-remote-medium']);
+};
+
+
+MenuLinks.CircuitElRemoteEasy = function() {
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
+    page_navigator.addLi('Oddaljen eksperiment: lastnosti elementov vezij – opis', 'index.html?page=lastnosti-elementov-vezij-aplikacija');
+    page_navigator.addLi('Enostaven način izvajanja – Lastnosti elementov vezij (oddaljen eksperiment)');
+
+    MenuLinks.ShowDivs(['circuit-el-remote-easy']);
+};
+
+
+MenuLinks.CircuitElHard = function() {
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
+    page_navigator.addLi('Oddaljen eksperiment: lastnosti elementov vezij – opis', 'index.html?page=lastnosti-elementov-vezij-aplikacija2');
+    page_navigator.addLi('Zahtevnejši način izvajanja – Lastnosti elementov vezij');
+
+    MenuLinks.ShowDivs(['circuit-el-hard']);
+};
+
+MenuLinks.CircuitElMedium = function() {
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
+    page_navigator.addLi('Oddaljen eksperiment: lastnosti elementov vezij – opis', 'index.html?page=lastnosti-elementov-vezij-aplikacija2');
+    page_navigator.addLi('Srednje zahteven način izvajanja – Lastnosti elementov vezij');
+
+    MenuLinks.ShowDivs(['circuit-el-medium']);
+};
+
+MenuLinks.CircuitElEasy = function() {
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
+    page_navigator.addLi('Oddaljen eksperiment: lastnosti elementov vezij – opis', 'index.html?page=lastnosti-elementov-vezij-aplikacija2');
+    page_navigator.addLi('Enostaven način izvajanja – Lastnosti elementov vezij');
+
+    MenuLinks.ShowDivs(['circuit-el-easy']);
 };
 
 MenuLinks.Team = function() {
@@ -332,8 +404,17 @@ MenuLinks.RedPitaya = function() {               /* HOME PAGE */
     page_navigator.addLi('Red Pitaya');
 
     MenuLinks.ShowDivs(['red-pitaya']);
-
 };
+
+MenuLinks.Faq = function() {               /* HOME PAGE */
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Pogosta vprašanja');
+
+    MenuLinks.ShowDivs(['faq']);
+};
+
+
 
 $(function() {
     var page = getParameterByName('page');
@@ -368,11 +449,11 @@ $(function() {
             case 'soncna-celica-aplikacija':
                 MenuLinks.SolarCell();
                 break;
-            case 'hitrost-zvoka-aplikacija':
-                MenuLinks.SoundSpeed();
+            case 'lastnosti-elementov-vezij-aplikacija':
+                MenuLinks.CircuitElRemote();
                 break;
-            case 'zvok-instrumentov-aplikacija':
-                MenuLinks.SoundOfInstruments();
+            case 'lastnosti-elementov-vezij-aplikacija2':
+                MenuLinks.CircuitEl();
                 break;
             case 'osciloskop':
                 MenuLinks.OsciloscopeApp();
@@ -382,12 +463,6 @@ $(function() {
                 break;
             case 'soncna-celica':
                 MenuLinks.SolarCellApp();
-                break;
-            case 'hitrost-zvoka':
-                MenuLinks.SoundSpeedApp();
-                break;
-            case 'zvok-instrumentov':
-                MenuLinks.SoundOfInstrumentsApp();
                 break;
             case 'osciloskop-tezji':
                 MenuLinks.OsciloscopeHard();
@@ -416,6 +491,24 @@ $(function() {
             case 'zarnica-lazji':
                 MenuLinks.LightBulbEasy();
                 break;
+            case 'elementi-vezij-tezji':
+                MenuLinks.CircuitElRemoteHard();
+                break;
+            case 'elementi-vezij-srednji':
+                MenuLinks.CircuitElRemoteMedium();
+                break;
+            case 'elementi-vezij-lazji':
+                MenuLinks.CircuitElRemoteEasy();
+                break;
+            case 'elementi-vezij-tezji-neoddaljen':
+                MenuLinks.CircuitElHard();
+                break;
+            case 'elementi-vezij-srednji-neoddaljen':
+                MenuLinks.CircuitElMedium();
+                break;
+            case 'elementi-vezij-lazji-neoddaljen':
+                MenuLinks.CircuitElEasy();
+                break;
             case 'ekipa':
                 MenuLinks.Team();
                 break;
@@ -436,6 +529,9 @@ $(function() {
                 break;
             case 'red-pitaja':
                 MenuLinks.RedPitaya();
+                break;
+            case 'pogosta-vprasanja':
+                MenuLinks.Faq();
                 break;
         }
     }
