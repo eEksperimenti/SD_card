@@ -87,8 +87,8 @@
   var plot_options = {
     colors: ['#3276B1', '#D2322D', '#009900'],    // channel1, channel2, trigger line
     lines: { lineWidth: 1 },
-    selection: { mode: null },
-    zoom: { interactive: false, trigger: null },
+    //selection: { mode: 'xy' },
+    //zoom: { interactive: true, trigger: null },
     xaxis: { min: xmin, max: xmax },
     grid: { borderWidth: 0 },
     legend: { noColumns: 2, margin: [0, 0], backgroundColor: 'transparent' },
@@ -178,13 +178,13 @@
     });
     
     autorun = false;
- /*   $('#trig_mode').on('change', function() {
+    $('#trig_mode').on('change', function() {
       onDropdownChange($(this), 'trig_mode', true);
       
       // Autorun if trigger mode is Auto(0) or Normal(1), stop if it is Single(2).
       autorun = (params.local.trig_mode == 2 ? 0 : 1); 
       runStop();
-    });*/
+    });
     
     $('#trig_source').on('change', function() { onDropdownChange($(this), 'trig_source'); });
     $('#trig_edge').on('change', function() { onDropdownChange($(this), 'trig_edge'); });
