@@ -58,9 +58,9 @@ gen_awg_refresh:0.000000
 load_save_params:0.000000
 velicina-y1:Napetost oddajnika
 enota-y1:V
-faktor-y1:[1, 0, 0]
-ymin-y1:-1
-ymax-y1:1
+faktor-y1:[1, 1, 1]
+ymin-y1:-2
+ymax-y1:2
 velicina-y2:Napetost sprejemnika
 enota-y2:V
 faktor-y2:[0, 1, 0]
