@@ -1,0 +1,265 @@
+<div id="light-bulb-easy" class='content-section-a'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-lg-12 col-sm-6'>
+                <h3 style="margin-top: 30px;" class='section-heading'>Lažji način izvajanja</h3>
+
+                <h4 style="color: blue; margin-top: 30px;" class='section-heading'>Opis vezave elementov</h4>
+                <p class='lead'>
+                    Za eksperiment povežemo v tokokrog vir, žarnico in stikalo. Ti predstavljajo elemente vezja, povezave med
+                    elementi vezja pa so prevodne žičke, ki med sabo povezujejo te elemente. Nastalo bo preprosto vezje,
+                    ki je prikazano tudi na spodnji sliki levo: vir predstavlja slika baterije, žarnico slika žarnice in
+                    stikalo slika stikala. Posamezne žice med sponkami elementov pa predstavljajo črte.
+                </p>
+                <br /><br />
+                <p  class="col-lg-12" class="lead">
+                    <img class="col-lg-12" src='img/zarnica-srednji-nacin-01.png' alt="Zarnica" style="margin-top: 10px; width: 45%;">
+                </p>
+                <br /><br />
+
+                <p style="margin-top: 20px;" class='lead'>
+                    Da smo pri risanju načrtov vezij učinkovitejši, elektroinženirji posamezne slike elementov vezja
+                    nadomestimo s simboli. Tako nam baterija predstavlja simbol za vir, žarnico simbol žarnice in
+                    stikalo simbol stikala (slika desno). Posamezne povezave v vezju pa še vedno ostajajo črte,
+                    s katerimi povezujemo posamezne sponke elementov.  Pri nadaljnjih eksperimentih bomo uporabili
+                    take merilne električne sheme, zato se je potrebno seznaniti s pomeni posameznih simbolov.
+                </p>
+
+                <p style="margin-top: 20px;" class='lead'>
+                    Kot vir napetosti bomo namesto baterije uporabili kar priključek na Red Pitaji, ki ima na sponkah
+                    napetost 12 V. Prav tako bomo Red Pitajo uporabili za merjenje toka. Ker pa Red Pitaya meri le
+                    napetosti, bomo merjenje toka izvedli s pomočjo merjenja napetost na merilnem uporu, ki ga bomo
+                    vključili v vezje kot prikazuje spodnja slika. Tok, ki teče skozi merilni upor povzroči na njem
+                    padec napetosti, ki jo lahko neposredno merimo z RedPitayo.
+                </p>
+
+                <p class='lead'>
+                    Kot merilnik svetlobe, ki jo oddaja žarnica bomo oziroma osvetljenosti lahko uporabimo sončno celico ali pa
+                    fotodiodo. Svetloba, ki jo oddaja žarnica, v sončni celici (fotodiodi) povzroči premike elektronov in če
+                    jo priključimo na električni upor, bo v tokokrogu stekel tok, katerega velikost je odvisna od osvetljenosti.
+                    Simbol za sončno celico (pa tudi za fotodiodo, ki je element, narejen na podobni osnovi kot sončna celica)
+                    je <img class="col-lg-12" src='img/zarnica_element-01.png' alt="Zarnica" style="margin-top: 10px; width: 7%;">.<br /><br />
+
+                    Pričakovane vrednosti toka pri merjeni svetlobi so velikosti 1 mA. Če želimo dobiti padec napetosti
+                    na merilnem uporu R<sub>mer2</sub> (v LV načinu) 1 V, moramo uporabiti merilni upor z upornostjo
+                    R<sub>mer2</sub> = 1 kΩ. V eksperimentu smo izbrali vrednost R<sub>mer2</sub> = 680 Ω.
+                </p>
+
+                <h4 style="color: blue; margin-top: 30px;" class='section-heading'>Merilna shema</h4>
+
+                <p class='lead'>
+                    Na električni shemi eksperimenta imamo v tokokrog povezan vir napetosti, žarnico, stikalo, s
+                    katerim vklapljamo in izklapljamo žarnico in merilni upor R<sub>mer1</sub>. Z RedPitayo merimo napetost
+                    na uporu R<sub>mer1</sub>. Poleg tega imamo v električni shemi tudi tokokrog sestavljen iz fotodiode in
+                    merilnega upora R<sub>mer2</sub>. Tudi na uporu R<sub>mer2</sub> z Red Pitayo merimo napetost. Izmerjene napetosti
+                    aplikacija <a href="">eŽarnica</a> pretvori v tok in osvetljenost fotodiode.
+                </p>
+
+                <p class="lead col-lg-12">
+                    <img class="col-lg-12" src='img/zarnica_shema_merilna.png' alt="Redpitaya z žarnico" style="margin-top: 10px; width: 40%;">
+                </p>
+                <br /><br />
+                <p class="lead">
+                    Električna merilna shemo predstavlja načrt povezave elementov vezja. Dejansko vezje, ki ga uporabite pri
+                    eksperimentu je zve zano na prototipni ploščici, v katero so priključeni posamezni elementi vezja in med
+                    sabo povezani  in med sabo povezani s povezovalnimi žičkami. Končno merilno vezje nam prikazuje spodnja slika.
+                </p>
+                <p class="lead">
+                    V lažjem načinu imate elemente vezja glede na merilno shemo že ustrezno povezane. Če jih nimate, svetujemo, da pogledate v srednje
+                    zahteven način, v katerem je zelo jasno narisano, kako je potrebno povezati Red Pitayo in elemente na preizkusni ploščici.
+                </p>
+
+                <div class="col-md-1">
+                    <i class="fa fa-hand-o-right fa-3x" style="color: blue;"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        <strong>ČE SO ELEMENTI VEZJA IN RED PITAJA USTREZNO POVEZANI LAHKO NADALJUJETE S PRIKLJUČITVIJO
+                            RED PITAJE NA NAPAJANJE IN ZAGONOM APLIKACIJE. </strong>
+                    </p>
+                </div>
+
+                <p class='lead'>
+                    Če ste povezali vse elemente po merilni shemi, vzpostavite še računalniško-merilno kartico Red Pitajo, kot
+                    je opisano na spletni strani <a href="index.html?page=red-pitaja#turnon-redpitaya">Zagon Red Pitaye</a>.
+                    Poženite aplikacijo <a href="#">eŽarnica</a> in sledite navodilom za izvedbo meritev. Če imate težave z
+                    zagonom Red Pitaje, vam bodo pomagala <a href="index.html?page=pogosta-vprasanja">dodatna navodila oziroma
+                    odgovori na pogosta vprašanja</a>.
+                </p>
+
+                <div class="col-md-1">
+                    <i class="fa fa-hand-o-right fa-3x" style="color: blue;"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        <strong>ČE STE USPEŠNO PRIKLJUČILI RED PITAJO IN ZAGNALI APLIKACIJO eŽARNICA nadaljujte z izvajanjem
+                            eksperimenta v aplikaciji z upoštevanjem navodil, ki sledijo spodaj, so pa tudi vgrajeni v
+                            aplikacijo.</strong>
+                    </p>
+                </div>
+
+                <h4 style="color: blue; margin-top: 30px;" class='section-heading'>Opis izvajanja meritev</h4>
+
+                <div class="col-md-1">
+                    <i class="fa fa-plus fa-3x" style="color: #ff0000"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        <strong>Ob koncu poskusov si lahko preberete še Končno razlago z nekaj dodatnimi zanimivostmi in napotki.</strong>
+                    </p>
+                </div>
+
+
+                <p style="margin-top:30px" class="lead">
+                    <strong>1. Poskus: Opazovanje signala iz senzorja svetlobe</strong>
+                </p>
+
+                <div class="col-md-1">
+                    <i class="fa fa-arrow-right fa-3x" style="color: #0000FF"></i>
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        V nastavitvah osi vključite izris desne Y osi. Preklopite stikalo in s tem zaključite tokokrog.
+                        Tok bo stekel skozi žarnico in tudi merilni upor. V aplikaciji opazujte signal iz senzorja svetlobe
+                        ob vklopu žarnice z napajanja. Če je potrebno, popravite nastavitve osi, da se bo graf lepo izrisal na zaslonu.
+                    </p>
+                </div>
+
+                <div class="col-md-1">
+                    <i class="fa fa-plus fa-3x" style="color: #ff0000"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        Zopet preklopite stikalo. Žarnica bo ugasnila, ker ste s preklopom prekinili tokokrog.
+                        Opazujte pojav izklopa v aplikaciji.
+                    </p>
+                </div>
+
+                <p style="margin-top:30px" class="lead">
+                    <strong>2. Poskus: Opazovanje toka skozi žarnico</strong>
+                </p>
+
+                <div class="col-md-1">
+                    <i class="fa fa-arrow-right fa-3x" style="color: #0000FF"></i>
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        V aplikaciji vklopite merjenje toka (vklopite levo Y os in izklopite desno Y os) in ponovno s stikalom
+                        vklopite žarnico. Tokrat opazujte tok skozi žarnico in ugotavljajte, kako se spreminja s časom po
+                        vklopu stikala.
+                    </p>
+                </div>
+
+                <p style="margin-top:30px" class="lead">
+                    <strong>3. Poskus: Opazovanje toka skozi žarnico in signala iz senzorja svetlobe hkrati</strong>
+                </p>
+
+                <div class="col-md-1">
+                    <i class="fa fa-arrow-right fa-3x" style="color: #0000FF"></i>
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        Sedaj vklopite opazovanje tako toka skozi žarnico kot tudi osvetljenost s fotodiodo ali sončno celico.
+                        Ponovite vklop žarnice in opazujte časovni potek. Bodite  še posebej pozorni na  primerjavo hitrosti
+                        spreminjanja toka in osvetljenosti in opazujte potek, še posebno v smislu primerjave hitrosti
+                        spreminjanja toka in svetilnosti.
+                    </p>
+                </div>
+                <p class="lead">
+                    <strong>Po opravljenih meritvah</strong> poskušaj odgovoriti na zastavljena vprašanja v kvizu.
+                </p>
+            </div>
+
+            <!--Pojdi na kviz  Vklop žarnice - enostaven način -->
+
+        </div> <!-- row -->
+
+        <div class="panel panel-default">
+            <a data-toggle="collapse" href="#panel15">
+                <div class="panel-heading"><h4 onclick="$('#panel15').toggle();">Pojdi na kviz</h4></div>
+            </a>
+
+            <div id="panel15" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class='row' id="quiz15">
+                        <div class='col-lg-12'>
+                            <div class="emc-score"></div>
+                            <section data-quiz-item>
+                                <div class="question">1. Na sliki so od zgoraj navzdol prikazani simboli za:</div>
+                                <div class="choices" data-choices='["Žarnico, upor, fotodiodo.",
+                                                                    "Upor, fotodiodo, žarnico.",
+                                                                    "Fotodiodo, žarnico, upor."]'>
+                                </div>
+                            </section>
+
+                            <section data-quiz-item>
+                                <div class="question">2. Če je U napetost, I tok in R upornost, kako se pravilno zapiše Ohmov zakon?</div>
+                                <div class="choices" data-choices='["I = U * R",
+                                                                   "U = R * I",
+                                                                   "R = U * I"]'>
+                                </div>
+                            </section>
+
+                            <section data-quiz-item>
+                                <div class="question">3. Kaj pomeni oznaka GND?</div>
+                                <div class="choices" data-choices='["Gremo Na Delo.",
+                                                                    "GROUND – ozemljitev.",
+                                                                    "Ni priklopljeno."]'>
+                                </div>
+                            </section>
+
+                            <section data-quiz-item>
+                                <div class="question">4. Kako sveti žarnica v sklenjenem električnem krogu, ko nanjo priključimo vir električne napetosti?</div>
+                                <div class="choices" data-choices='["Žarnica zasveti v trenutku.",
+                                                                    "Žarnica nekaj časa ne oddaja vidne svetlobe, potem prične svetiti vedno bolj, dokler ne doseže maksimalne svetilnosti.",
+                                                                    "Ker je tok skozi žarnico ob vklopu največji, žarnica najprej močno zasveti. Medtem ko tok skozi žarnico zaradi višanja upornosti žičke pada, prične padati tudi svetilnost, ki se ustali pri končni svetilnosti."]'>
+                                </div>
+                            </section>
+
+                            <section data-quiz-item>
+                                <div class="question">5. Kakšne oblike je tok skozi žarnico ob  priklopu. </div>
+                                <div class="choices" data-choices='["Hipoma naraste do končne vrednosti.",
+                                                                   "Se povečuje do določene vrednosti.",
+                                                                   "Se zmanjšuje do določene vrednosti.",
+                                                                   "Se hipoma poveča do maksimalne vrednosti in potem pade do končne vrednosti."]'>
+                                </div>
+                            </section>
+
+                            <section data-quiz-item>
+                                <div class="question">6. Kaj se dogaja z žarnico, ko izključimo tok skozi žarnico?</div>
+                                <div class="choices" data-choices='["Ugasne v trenutku.",
+                                                                   "Počasi ugaša.",
+                                                                   "Najprej za hip zasveti močneje, nato počasi ugasne."]'>
+                                </div>
+                            </section>
+
+                            <section data-quiz-item>
+                                <div class="question">7. Kako žarnica sveti, ko jo priključimo na izmenični tok?</div>
+                                <div class="choices" data-choices='["Žarnica utripa tako, da med posameznimi utripi povsem ugasne.",
+                                                                   "Žarnica sveti konstantno.",
+                                                                   "Žarnica malo utripa – Nikoli povsem ne ugasne."]'>
+                                </div>
+                            </section>
+
+                            <section data-quiz-item>
+                                <div class="question">8. Zakaj je oblika toka taka, kot si jo izmeril? </div>
+                                <div class="choices" data-choices='["Ker je žarnica okrogle oblike.",
+                                                                   "Ker se žarilni nitki s segrevanjem povečuje električna upornost.",
+                                                                   "Ker se žarilni nitki s segrevanjem zmanjšuje električna upornost."]'>
+                                </div>
+                            </section>
+
+                            <div class="submit">
+                                <button class="btn emc-submit">Preveri odgovore</button>
+                            </div>
+                        </div> <!-- col-lg-12 -->
+                    </div> <!-- row -->
+                </div> <!-- panel-body -->
+            </div> <!-- panel15 -->
+        </div> <!-- panel-default -->
+    </div> <!-- container -->
+</div> <!-- light bulb easy-->

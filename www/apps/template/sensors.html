@@ -1,0 +1,843 @@
+<div id='sensors' class='content-section-a'>
+    <div class='container'>
+        <h2 class='section-heading'>Uporaba senzorjev</h2>
+        <div class='col-md-12'>
+            <p class="lead">
+                V platformi eEksperimenti smo poskrbeli za možnost uporabe nekaterih senzorjev (tipal). Trenutno je le nekaj osnovnih, brez težav pa lahko z določenih razmislekom dodate
+                še svoje. Potrebno je le poskrbeti za pravilno napajanje in zajem signalov. Izdelali smo namenske aplikacije za uporabo izbranih senzorjev. Aplikacije se lahko prilagodi
+                tudi za uporabo drugih senzorjev. Nekatere od senzorjev smo že uporabili v eEksperimentih, pri katerih je tudi popoln opis in način izvajanja eksperimenta. Drugi senzorji so le dodani,
+                eksperimente pa si zamislite sami. Veseli bomo vaših rezultatov, ki nam jih lahko posredujete po elektronski pošti:
+                <a href="mailto:eeksperimenti@eeksperimenti.si">eeksperimenti@eeksperimenti.si</a>. Zanimive eksperimente bomo objavili na spletni strani <a href="eeksperimenti.si">eEksperimenti.si</a>, zato uporabite
+                za opis namensko predlogo <a href="pdf/Predloga_eEksperimenti.docx">Predloga_eEksperimenti.docx</a>.
+            </p>
+            <h4 style="color: blue; margin-top: 30px; margin-bottom: 10px;" class='section-heading'>O senzorjih (tipalih)</h4>
+            <p  class="lead">
+                S pomočjo senzorjev lahko merimo različne fizikalne količine, od temperature, pritiska, pospeška, rotacije, toka, napetosti ipd. Vsi uporabljeni senzorji
+                pri eEksperimentih so taki, da osnovno merilno veličino, ki jo merijo, pretvorijo v tokovni ali napetostni signal. Na primer: pospeškometer je izdelan s
+                pomočjo polprevodniške tehnologije in vsebuje zelo majhne (mikronske) ploščice. Ko hipno premaknemo pospeškometer, se plošče med seboj zamaknejo in spremeni
+                se kapacitivnost (glej eEksperimenti– lasnosti elementov – kondenzator). To zaznamo kot spremembo toka, če je med ploščami priključena napetost. Običajno
+                vsebujejo taki senzorji še dodatno vezje, ki poskrbi za osnovno obdelavo signala, tako da imamo na izhodnih sponkah že signal, katerega vrednost je
+                sorazmerna merjeni veličini.
+            </p>
+            <p  class="lead">
+                Nekateri senzorji so analogni. To pomeni, da je izhodni signal izveden tako, da je stalno prisoten in se spreminja s časom glede na spremembe
+                merjene količine. Obstajajo seveda omejitve. Hallov senzor, ki meri magnetno polje, lahko deluje le v določenem merilnem območju ter
+                zaznava spremembe magnetnega polja le do določene frekvence. Zato moramo vedno najprej preveriti, ali naš senzor sploh ustreza zadani nalogi.
+            </p>
+            <p  class="lead">
+                Tudi digitalni senzorji zajemajo fizikalno količino v analogni obliki, vendar vsebujejo vezje, ki analogno vrednost pretvori v digitalno
+                in jo poda na izhodu. To pomeni, da moramo za njihovo »branje« uporabiti ustrezen način: v elektrotehniki mu pravimo protokol, kot sta na
+                primer SPI in I2C. V določenih primerih se lahko uporabi tudi "navadne" digitalne izhode.
+            </p>
+
+            <h4 style="margin-top:20px; margin-bottom: 10px; color: blue;" class='section-heading'>Senzorji</h4>
+            <p class="lead">
+                V platformi eEksperimenti smo pripravili sledeče senzorje in pripadajoče aplikacije:
+            <ul class="lead">
+                <li><a href="#acceleration">Senzor pospeška</a></li>
+                <li><a href="#magnetic_field">Senzor magnetnega polja</a></li>
+                <li><a href="#ultra_sound">Senzor ultrazvoka</a></li>
+                <li><a href="#temperature">Senzor temperature</a></li>
+                <li><a href="#light_sensor">Senzor svetlobe</a></li>
+                <li><a href="#pressure">Senzor tlaka</a></li>
+            </ul>
+            </p>
+
+            <h4 style="margin-top:20px; margin-bottom: 5px; color: blue;" class='section-heading'>Priključitev senzorjev na Red Pitajo</h4>
+            <p class="lead">
+                Senzorje običajno priključimo na »počasne« vhode Red Pitaje, do katerih lahko dostopamo na stranskih priključkih. To prikazuje slika 1. Priključitev senzorjev je odvisna od tega,
+                kaj potrebujejo za delovanje. Večinoma jih moramo priključiti na ustrezno napajanje (običajno na sponki GND in +5 V)  ter na  sponko za odjem signala, običajno enega od AO izhodov.
+            </p>
+
+            <p class='lead'>
+                <img class="col-lg-13" src='img/Senzorji_RedPitaya.png' alt="Priključki na Red Pitaji" style="margin-top: 10px; width:60%;">
+            </p>
+
+
+            <p class="lead">
+                Omejitve analognih vhodov in izhodov so sledeče:
+            <ul class="lead">
+                <li>Obseg napetosti na vhodih: od 0 V do 3,5 V.</li>
+                <li>Obseg napetosti na izhodih: od 0 V do 1,8 V.</li>
+                <li>Največja hitrost zajemanja podatkov: 100 kS/s (100 tisoč vzorcev na sekundo).</li>
+                <li>Natančnost zajema (vhodi in izhodi): 12 bitov (max vrednost/2<sup>12</sup>, na primer 3,5 V/2<sup>12</sup> = 0,854 mV ali približno 1 mV) </li>
+                <li>Senzor tlaka?</li>
+            </ul>
+            </p>
+
+            <h4 style="margin-top:20px; margin-bottom: 5px; color: blue;" class='section-heading'>Uporaba razširitvene kartice</h4>
+            <p class="lead">
+                Za zahtevnejšo rabo lahko uporabimo razširitveno kartico, ki smo jo namensko izdelali v okviru projekta eEksperimenti. Ta omogoča dostop
+                do glavnih izhodnih-vhodnih priključkov na Red Pitayi, vsebuje pa še dodatne elemente, ki omogočajo večjo prilagodljivost uporabe.
+            </p>
+
+            <p class="lead">
+                Glavne dodatne funkcionalnosti razširitvene kartice so sledeče:
+            <ul class="lead">
+                <li>Omogoča uporabo izhodne napetosti +- 12 V.</li>
+                <li>Vsebuje ojačevalnik z izhodno napetostjo +- 10 V.</li>
+                <li>Vsebuje (diferencialni) ojačevalnik majhnih signalov z nastavljivim ojačenjem.</li>
+                <li>Vsebuje posebne priključke za lažjo povezavo z različnimi senzorji (Grove).</li>
+            </ul>
+            </p>
+
+            <p class="lead">
+                Spodnja slika prikazuje postavitev elementov na razširitveni ploščici in ustrezne priključke.
+            </p>
+            <p class='lead'>
+                <img class="col-lg-13" src='img/senzorji_postavitev_elementov.png' alt="Razširitvena kartica in opis priključkovo" style="margin-top: 10px; width:70%;">
+            </p>
+
+            <div id ="acceleration" class="panel panel-default">
+                <a data-toggle="collapse" href="#panel25">
+                    <div class="panel-heading">
+                        <h4 onclick="$('#panel25').toggle();">Senzor pospeška</h4>
+                    </div>
+                </a>
+
+                <div id="panel25" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class='row'>
+                            <div class='col-lg-12'>
+                                <p class="lead">
+                                    Pospeškometer je senzor za merjenje pospeška, ki je posledica njegovega premikanja, obračanja ali gravitacije. Pospeškometri so prisotni v številnih
+                                    elektronskih napravah, kot so mobilni telefoni, dlančniki, fotoaparati, video kamere ter igralne konzole. Množično se uporabljajo v avtomobilski
+                                    industriji. Z njimi dobivamo informacije o tem, kako avtomobil pospešuje, kako zavira in kaj se z njim dogaja v ostrem ovinku. Lahko zaznamo trke
+                                    in nadziramo varnostne mehove. Pospeškometri se uporabljajo za merjenje vibracij v avtomobilih, strojih, zgradbah. Pomembno vlogo imajo pri
+                                    meritvah seizmične aktivnosti, pri proučevanju Zemlje in njenih pojavov. Nekateri prenosni računalniki so opremljeni celo s triosnimi pospeškometri.
+                                    Uporabljajo jih za zaznavanje padcev, s čimer lahko pravočasno ustavijo delo z magnetnim trdim diskom. Znanstveniki, ki proučujejo živalske vrste,
+                                    označijo žival s pospeškometrom, ki pošilja podatke z manjšim oddajnikom. Tako pridobijo podatke o tem, kako in s kakšno hitrostjo se žival giblje in
+                                    kako porablja energijo, ko je v svojem naravnem okolju. V industriji se pospeškometri uporabljajo kot indikatorji vibracij, s katerimi
+                                    lahko predvidimo, kateri strojni del se bo pokvaril. S pravočasno zamenjavo pred popolno odpovedjo lahko preprečimo večjo gmotno škodo.
+                                </p>
+
+                                <p class="lead">
+                                    Pospeškometri se delijo na enoosne, dvoosne in triosne, odvisno od tega, v koliko smereh lahko hkrati merijo pospešek. Tako lahko enoosni
+                                    pospeškometer meri samo pospeške v eni smeri, triosni pa v vseh treh prostorskih smereh X, Y in Z. Na tržišču najdemo različne tipe
+                                    pospeškometrov. Uporovne, piezouporovne, mikro-elektro-mehanske (MEMS), kapacitivne, optične, na osnovi vzbujanega kristala in piezoelektrične.
+                                </p>
+
+                                <p class="lead">
+                                    Pospeškometer, ki ga prilagamo v platformi eEksperimenti, je troosni pospeškometer tipa ADXL326, izdelan v MEMS tehnologiji z mikroobdelavo
+                                    plasti polisilicija na silicijevem substratu. MEMS pospeškometri se po principu delovanja ne razlikujejo od klasičnih pospeškometrov. Senzor
+                                    mora biti sposoben meriti sile oziroma premike med gibljivim in negibljivim delom mikrostrukture. Zaradi zelo majhne mase centralnega gibljivega
+                                    dela jih odlikuje visoka resonančna frekvenca, kar pomeni, da je z njimi moč meriti tudi zelo hitre spremembe pospeška. Tipična struktura MEMS
+                                    pospeškometra je prikazana na spodnji sliki.
+                                </p>
+                                <p class="lead">
+                                    Notranjnost čipa MEMS pri pospeškometru.
+                                </p>
+                                <p class='lead'>
+                                    <img class="col-lg-13" src='img/memp.png' alt="Notranjost čipa MEMS pospeškometra" style="margin-top: 10px; width:40%;">
+                                </p>
+
+                                <div style="margin-top: 35px;" class="row featurette">
+                                    <div class="col-md-2">
+                                        <img class="col-lg-12" src='img/prometni_znak_23-01.png' alt="Prometni znak - zahvevno" style="margin-top: 10px; width:100%;">
+
+                                    </div>
+                                    <div class="col-md-10" style="text-align: center;">
+                                        <p class='lead exercise-box'>
+                                            Pospeškometer ADXL326 izkorišča kapacitivni princip merilnega odjemanja. Iz vrednosti kondenzatorskega mostiča (gibljivi in negibljivi deli
+                                            predstavljajo plošče kondenzatorjev) ter s pomočjo tehnike frekvenčne modulacije se odčitajo pospeški v vseh smereh. Princip omogoča merjenje
+                                            sprememb pospeškov že od 0 Hz naprej. Lastna frekvenca pospeškometra ADXL32 je 5.5 kHz, medtem ko ga kapacitivni princip odjema omejuje na
+                                            1600 Hz v X in Y smeri ter 550 Hz v smeri Z. To pomeni, da je kapacitivna izvedba MEMS senzorjev uporabna predvsem v dlje trajajočih dogodkih.
+                                            Na primer v avtomobilih, dvigalih, pri meritvah sunkov in podobno.
+                                        </p>
+                                    </div>
+                                </div><br>
+
+                                <p class='lead'>
+                                    Pospeškometer ADXL326 potrebuje za svoje delovanje zunanje napajanje (rjava polna črta = 5 V, oranžna črtkana črta = masa).
+                                    Izhodi X<sub>out</sub>, Y<sub>out</sub> in Z<sub>out</sub> so analogni napetostni signali s tipičnim napetostnim nivojem 1,5 V
+                                    pri ničelnem pospešku senzorja ter z merilno občutljivostjo 0,006 V m<sup>-1</sup> s<sup>2</sup>. Pričakovani napetostni nivoji senzorskih izhodov v
+                                    odvisnosti od izmerjenega pospeška v treh oseh (a<sub>x</sub>, a<sub>y</sub>, a<sub>z</sub>) so sledeči:
+                                </p>
+
+                                <p class="lead" style="text-align: center">
+                                    X<sub>out</sub> = 1,5 V + 0,006 V m<sup>-1</sup> s<sup>2</sup> ∙ a<sub>x</sub><br />
+                                    Y<sub>out</sub> = 1,5 V + 0,006 V m<sup>-1</sup> s<sup>2</sup> ∙ a<sub>y</sub><br />
+                                    Z<sub>out</sub> = 1,5 V + 0,006 V m<sup>-1</sup> s<sup>2</sup> ∙ a<sub>z</sub>
+                                </p>
+
+                                <p class="lead">
+                                    <u>Priključitev pospeškometra na počasne analogne vhode Red Pitaye</u>
+                                </p>
+
+                                <p class="lead">
+                                    Pospeškometer ADXL326 priklopimo na počasne analogne vhode Red Pitaye, kot prikazuje spodnja slika.
+                                    Pri tem uporabimo dodatno elektronsko vezje oz. razširitveno kartico, lahko pa tudi uporabimo
+                                    direktne izhode iz kartice Red Pitaya. Zaženemo namensko pripravljeno aplikacijo <a href="#">ePospešek</a>.
+                                    V tej aplikaciji določimo časovni interval, v katerem želimo opraviti meritve ter število meritev,
+                                    ki jih želimo opraviti. Merimo pospešek v smereh X in Y.
+                                </p>
+
+                                <p class="lead">
+                                    Priključitev pospeškometra na razširitveno ploščico.
+                                </p>
+                                <p class='lead'>
+                                    <img class="col-lg-12" src='img/pospeskometer.png' alt="Priključitev pospeškometra na razširitveno ploščico." style="margin-top: 10px; width:40%; text-align: center;"> <br /><br />
+                                </p>
+                                <div style="margin-top: 30px" class="col-lg-12">
+                                    <p class="lead">
+                                        V aplikaciji opazujemo pospešek senzorja v oseh X in Y na XY grafikonu. Osi so določene glede na
+                                        ohišje senzorja:
+                                    </p>
+
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/pospeskometer_tri_osi.png' alt="Pospeškometer meri pospešek  v treh oseh" style="margin-top: 10px; width:40%; text-align: center;">
+                                    </p>
+                                </div>
+
+
+                                <div style="margin-top: 75px;" class="row featurette">
+                                    <div class="col-md-2">
+                                        <img class="col-lg-12" src='img/slippery.jpg' alt="Prometni znak - zahtevno" style="margin-top: 10px; width:100%;">
+
+                                    </div>
+                                    <div class="col-md-10" style="text-align: center;">
+                                        <p class='lead'>
+                                            Pospešek senzorja v smereh X in Y se odrazi v položaju rdeče pike v XY grafikonu. Večji, ko je pospešek v smeri X, bolj se pika premakne v
+                                            desno. Večji, ko je pospešek v smeri Y, bolj se pika pomakne navzgor. Seveda je lahko pospešek v obeh smereh tudi negativen, kar pomeni,
+                                            da se lahko pika pomakne tudi na drugi, tretji in četrti kvadrant grafikona. V aplikaciji sta obe osi umerjeni na osnovno mersko enoto
+                                            pospeška m s<sup>-2</sup>. Aplikacija odšteje enosmerno napetostno komponento izhodnih senzorskih signalov (tipično 1,5 V), tako da se ob ničelnem
+                                            pospešku senzorja rdeča pika približa koordinatnemu izhodišču.
+                                        </p>
+                                    </div>
+                                </div><br>
+
+                                <p class="lead">
+                                    Zagon aplikacije <a class="btn btn-default" href="#">ePospešek</a>
+                                </p>
+
+                                <p style="margin-top: 30px" class="lead">
+                                    <u>Priključitev pospeškometra na hitra analogna vhoda Red Pitaye</u>
+                                </p>
+
+                                <p class="lead">
+                                    Pokazali smo, kako se pospeškometer priključi na počasni analogni vhod Red Pitaye in uporabi aplikacijo
+                                    <a href="#"><strong>ePospešek</strong></a>. Za delo s pospeškometrom, priklopljenim na hitre vhode, pa uporabimo aplikacijo
+                                    <a href="#"><strong>ePospešk-RP</strong></a>, pri čemer senzorjeve izhode povežemo s hitrimi vhodi Red Pitaye. Opazujmo signal
+                                    na kanalu 1 ali kanalu 2, medtem ko premikamo pospeškometer. Ta aplikacija deluje kot osciloskop.
+                                    Izmerjene vrednosti se torej sproti prikazujejo, lahko pa tudi uporabimo način proženja, da zaznamo
+                                    posamezen dogodek.
+                                </p>
+                                <p class='lead'>
+                                    <img class="col-lg-12" src='img/Prikljucitev_pospeskometra.png' alt="Priključitev pospeškometra na hitre vhode Red Pitaye." style="margin-top: 10px; width:60%; text-align: center;">
+                                </p>
+                                <div style="margin-top: 30px" class="col-lg-12">
+                                    <p class="lead">
+                                        Zagon aplikacije <a class="btn btn-default" href="#">ePospešek-RP</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id ="magnetic_field" class="panel panel-default">
+                <a data-toggle="collapse" href="#panel26">
+                    <div class="panel-heading">
+                        <h4 onclick="$('#panel26').toggle();">Senzor magnetnega polja</h4>
+                    </div>
+                </a>
+
+                <div id="panel26" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class='row'>
+                            <div class='col-lg-12'>
+                                <p class="lead">
+                                    Senzor magnetnega polja je sestavni del mnogih aplikacij. Z njim lahko merimo magnetno polje, ki ga povzročajo
+                                    gospodinjski aparati. S pomočjo senzorja lahko štejemo obrate kolesa, na katerega obod je pritrjen stalni
+                                    magnet. Uporabljajo se za merjenje časa odprtosti zaslonke na fotoaparatu, za natančno sprožitev iskre za
+                                    vžig goriva pri bencinskem motorju, za odjemanje položaja pri igralnih palicah, za določanje končnih
+                                    položajev premičnih XY miz (CNC stroji, stružnice), za nastavljanje spremenljivih leč pri digitalnih
+                                    fotoaparatih, za natančno krmiljenje brezkrtačnih enosmernih elektromotorjev itd.
+                                </p>
+
+                                <p class="lead">
+                                    Senzor magnetnega polja, ki ga prilagamo v platformi eEksperimenti je analogni Hallov senzor tipa DRV5053.
+                                    S senzorjem merimo gostoto magnetnega pretoka (B). Izpeljana enota za gostoto magnetnega pretoka je tesla
+                                    ali T. S senzorjem lahko zaznamo spremembe magnetnega polja, ki so počasnejše od 1 / 20 000 sekunde.
+                                </p>
+
+                                <div style="margin-top: 35px;" class="row featurette">
+                                    <div class="col-md-2">
+                                        <img class="col-lg-12" src='img/prometni_znak_23-01.png' alt="Prometni znak - zahvevno" style="margin-top: 10px; width:100%;">
+
+                                    </div>
+                                    <div class="col-md-10" style="text-align: center;">
+                                        <p class='lead exercise-box'>
+                                            Senzor DRV5053 pri merjenju gostote magnetnega polja izkorišča Hallov pojav v polprevodniku. V vodnikih,
+                                            ki sekajo silnice magnetnih polj, električno polje ni vzporedno z osjo vodnika, ampak ima komponento,
+                                            ki je pravokotna na vodnik. Jakost prečne komponente je sorazmerna z gostoto magnetnega polja. Prečna
+                                            napetost (Hallova napetost), ki jo lahko preprosto izmerimo z milivoltmetrom, je sorazmerna z gostoto
+                                            magnetnega polja. V polprevodniku je velikost Hallove napetosti nekaj deset mV.
+                                        </p>
+                                    </div>
+                                </div><br>
+
+                                <p class="lead">
+                                    <u>Priključitev senzorja magnetnega polja na počasni analogni vhod Red Pitaye.</u>
+                                </p>
+
+                                <p class="lead">
+                                    Senzor magnetnega polja DRV5053 priklopimo na počasni analogni vhod Red Pitaye, kot prikazuje spodnja slika.
+                                </p>
+                                <p class="lead">
+                                    Priključitev senzorja magnetnega polja na razširitveno ploščico.
+                                </p>
+
+                                <p class='lead'>
+                                    <img class="col-lg-12" src='img/magnetno_polje.png' alt="Priključitev senzorja magnetnega polja na razširitveno ploščico." style="margin-top: 10px; width:60%; text-align: center;"> <br /><br />
+                                </p>
+
+                                <div style="margin-top: 30px" class="col-lg-12">
+                                    <p class="lead">
+                                        Zaženemo namensko pripravljeno aplikacijo <a href="#">eMagnetnopolje</a>. Tipična občutljivost senzorja je 45 mV/mT,
+                                        kar pomeni, da se sprememba gostote merjenega magnetnega pretoka 1 mT odrazi v spremembi napetosti
+                                        analognega izhoda 45 mV. V aplikaciji je Y os umerjena na izpeljano mersko enoto gostote magnetnega
+                                        pretoka tesla T.
+                                    </p>
+
+                                    <p class="lead">
+                                        Zagon aplikacije <a class="btn btn-default" href="#">eMagnetnoPolje</a>
+                                    </p>
+                                </div>
+
+
+                                <div style="margin-top: 30px" class="col-lg-12">
+                                    <p style="margin-top: 30px" class="lead">
+                                        <u>Priključitev senzorja magnetnega polja na hiter analogni vhod Red Pitaye.</u>
+                                    </p>
+
+                                    <p class="lead">
+                                        Pokazali smo, kako se senzor magnetnega polja priklopi na počasni analogni vhod Red Pitaye in odčita
+                                        izmerjene vrednosti s pomočjo aplikacije <a href="#"><u>eMagnetnopolje</u></a>. Za delo s senzorjem magnetnega polja pa
+                                        zadostuje že osnovna aplikacija <u>Osciloskop</u>, pri čemer senzorjev izhod povežemo s hitrim vhodom Red Pitaye,
+                                        kot prikazuje spodnja slika. Lahko pa tudi uporabimo namensko aplikacijo <a href="#"><strong>eMagnetnopolje-RP</strong></a>, ki ima že
+                                        pravilno vpisan faktor pretvorbe iz izmerjene napetosti v enote tesla.
+                                    </p>
+                                    <p class="lead">
+                                        Priključitev senzorja magnetnega polja na razširitveno ploščico.
+                                    </p>
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/magnetno_polje_pitaya.png' alt="Priključitev pospeškometra na hitre vhode Red Pitaye." style="margin-top: 10px; width:60%; text-align: center;">
+                                    </p>
+                                </div>
+                                <div style="margin-top: 30px" class="col-lg-12">
+                                    <p class="lead">
+                                        Opazujmo signal na kanalu 1, medtem ko preko senzorja magnetnega polja prenesemo stalni magnet ali
+                                        ga približamo indukcijski kuhalni plošči, televizorju, paličnemu mešalniku, sesalcu. Po priporočilih
+                                        Mednarodne komisije za varstvo pred neionizirnimi sevanji je dovoljena mejna vrednost 100 mikroteslov.
+                                    </p>
+                                    <p class="lead">
+                                        Zagon aplikacije <a class="btn btn-default" href="#">eMagnetnoPolje-RP</a>
+                                    </p>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id ="ultra_sound" class="panel panel-default">
+                <a data-toggle="collapse" href="#panel27">
+                    <div class="panel-heading">
+                        <h4 onclick="$('#panel27').toggle();">Senzor ultrazvoka</h4>
+                    </div>
+                </a>
+
+                <div id="panel27" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class='row'>
+                            <div class='col-lg-12'>
+                                <p class="lead">
+                                    Ultrazvok je zvok s frekvenco, višjo od zgornje meje človekovega slišnega območja, kar je približno 20 kHz.
+                                    To je mehansko valovanje, ki se spreminja hitreje kot 20 000 krat v sekundi. Pri nekaterih živalih, med njimi
+                                    so psi, delfini in netopirji, je zgornja meja slišnega območja višja kot pri človeškem ušesu, zato lahko
+                                    slišijo tudi ultrazvok.
+                                </p>
+
+                                <p class="lead">
+                                    Ultrazvok izrabljajo v industrijske in medicinske namene. Preiskava z ultrazvokom je medicinska tehnika,
+                                    s katero lahko dobimo vpogled v notranjost mehkih tkiv. Pogosto se uporablja za preglede ploda med nosečnostjo.
+                                    Diagnostični ultrazvočni aparati navadno delujejo s frekvencami 2–13 MHz. Močnejši ultrazvočni viri se
+                                    uporabljajo za lokalno gretje bioloških tkiv za fizikalno terapijo in eksperimentalno za zdravljenje raka.
+                                    Usmerjeno ultrazvočno valovanje lahko uporabimo za razbijanje ledvičnih kamnov ali za zdravljenje sive mrene.
+                                </p>
+
+                                <p class="lead">
+                                    Ultrazvok s frekvencami 20–40 kHz se uporablja za čiščenje nakita, leč in drugih optičnih delov, ur,
+                                    zobozdravniškega in kirurškega pribora ter raznih industrijskih sestavnih delov. Čistilniki delujejo na načelu
+                                    energije, ki se sprosti ob sesedanju milijonov majhnih plinskih mehurčkov, do katerih pride, ker je
+                                    kapljevina zaradi delovanja ultrazvoka izpostavljena hitrim spremembam tlaka. Pojavu v fiziki pravimo tudi
+                                    kavitacija.
+                                </p>
+
+                                <p class="lead">
+                                    Ultrazvočni senzor Multicomp MCUSD16A, ki ga prilagamo v platformi eEksperimenti, sestoji iz kovinske membrane
+                                    spojene s piezoelektričnim elementom.
+                                </p>
+
+                                <div style="margin-top: 35px;" class="row featurette">
+                                    <div class="col-md-2">
+                                        <img class="col-lg-12" src='img/prometni_znak_23-01.png' alt="Prometni znak - zahvevno" style="margin-top: 10px; width:100%;">
+
+                                    </div>
+                                    <div class="col-md-10" style="text-align: center;">
+                                        <p class='lead exercise-box'>
+                                            Zvok – mehansko valovanje povzroči deformacijo membrane in piezoelektričnega elementa
+                                            (piezoelektrični materiali z elektrodama, glej sliko). Mehanska obremenitev piezoelektričnega elementa
+                                            se zaradi piezoelektričnega pojava odrazi v spremembi naboja na elektrodah. Piezoelektričen material
+                                            v priloženem ultrazvočnem senzorju je piezoelektrična keramika ali svinčev cirkonijev titanat, s
+                                            kratico PZT. Pomembnejši piezoelektrični materiali so še kvarc in piezoelektrični polimeri.
+                                        </p>
+                                        <p class="lead">
+                                            <img class="col-lg-12" src='img/ultrazvok1.png' alt="Osnovna struktura piezoelektričnega elementa." style="margin-top: 10px; width:30%; text-align: center;"> <br /><br />
+                                        </p>
+                                    </div>
+                                </div><br>
+
+
+                                <p class="lead">
+                                    <u>Priključitev ultrazvočnega senzorja na hiter analogni vhod Red Pitaye.</u>
+                                </p>
+
+                                <p class="lead">
+                                    Za delo z ultrazvočnim senzorjem zadostuje osnovna aplikacija <u>Osciloskop</u>, pri čemer izhod senzorja povežemo s
+                                    hitrim vhodom Red Pitaye, kot prikazuje spodnja slika.
+                                </p>
+
+                                <p class="lead">
+                                    Priključitev senzorja ultrazvoka na Red Pitayo.
+                                </p>
+                                <p class='lead'>
+                                    <img class="col-lg-12" src='img/Prikljucitev_senzorja_ultrazvok.png' alt="Priključitev senzorja ultrazvoka na Red Pitayo." style="margin-top: 10px; width:60%; text-align: center;"> <br /><br />
+                                </p>
+
+
+                                <div style="margin-top: 30px" class="col-lg-12">
+                                    <p class="lead">
+                                        Priložen ultrazvočni senzor je najbolj občutljiv na ultrazvočna valovanja frekvenc blizu 40 000 Hz.
+                                        S pomočjo osciloskopa preverite, če je moč zaznati napetostni odziv senzorja na slišne frekvence, kot
+                                        na primer na govor. Ultrazvočni senzor se običajno uporablja v kombinaciji z ultrazvočnim oddajnikom,
+                                        ki se po zgradbi ne razlikuje bistveno od sprejemnika. S pomočjo oddajno-sprejemnega para lahko izmerimo
+                                        razdaljo do ovire, kot na primer pri sistemu za pomoč pri parkiranju avtomobila. Ultrazvočno merjenje
+                                        razdalje se izvaja s pošiljanjem ultrazvočnih impulzov. Te impulze sprejme ultrazvočni sprejemnik.
+                                        Iz časa od trenutka oddaje do sprejema ob znani hitrosti širjenja zvočnega valovanja se izračuna razdalja.
+                                    </p>
+
+                                    <p class="lead">
+                                        Merjenje razdalje z ultrazvočnim oddajnikom / sprejemnikom.
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-12">
+
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/ultrazvok3.png' alt="Merjenje razdalje z ultrazvočnim oddajnikom / sprejemnikom." style="margin-top: 10px; width:30%; text-align: center;">
+                                    </p>
+                                </div>
+
+                                <div style="margin-top: 30px" class="col-lg-12">
+                                    <p class="lead">
+                                        Zagon aplikacije <a class="btn btn-default" href="#">eUltraZvok</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id ="temperature" class="panel panel-default">
+                <a data-toggle="collapse" href="#panel28">
+                    <div class="panel-heading">
+                        <h4 onclick="$('#panel28').toggle();">Senzor temperature</h4>
+                    </div>
+                </a>
+
+                <div id="panel28" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class='row'>
+                            <div class='col-lg-12'>
+                                <p class="lead">
+                                    Za merjenje temperatur med -200 in 600°C se najpogosteje uporabljajo <strong>uporovni temperaturni senzorji</strong>.
+                                    Za merjenje višjih temperatur do  1700°C uporabljamo <strong>termoelemente</strong> – spoj dveh žic različnih materialov.
+                                    Na spoju se vzpostavi potencialna razlika oz. napetost, ki je odvisna od obeh materialov ter od temperature,
+                                    na kateri se nahaja spoj. Prednost uporovnih temperaturnih senzorjev je visoka natančnost merjenja temperature
+                                    ter zelo dolga življenjska doba. Prednost termočlenov je manjša občutljivost na mehanske obremenitve in
+                                    vibracije.
+                                </p>
+
+                                <p class="lead">
+                                    Uporovni senzor, ki ga prilagamo platformi eEksperimenti, je uporovni temperaturni senzor Pt 100. Vgrajen je
+                                    v ohišje, ki ga varuje pred vlago, udarci in umazanijo. Osnova senzorja je platina, kateri se upornost
+                                    spreminja s temperaturo. Proizvajalec poda zvezo med upornostjo elementa in njegovo temperaturo T(R),
+                                    največkrat tabelarično ali grafično, včasih tudi analitično. Z meritvijo ohmske upornosti senzorja določimo
+                                    temperaturo senzorja in s tem temperaturo njegovega okolja.
+                                </p>
+
+                                <p class="lead">
+                                    <u>Priključitev senzorja temperature na počasni analogni vhod Red Pitaye.</u>
+                                </p>
+
+                                <p class="lead">
+                                    Senzor temperature PT100 priklopite na počasni analogni vhod Red Pitaje, preko 1000 Ω upora, kot prikazuje
+                                    spodnja slika in zaženite namensko aplikacijo <a href="#">eTemperatura</a>. Aplikacija pretvori napetost
+                                    na merilnem vezju v izmerjeno temperaturo v °C.
+                                </p>
+
+                                <p class="lead">
+                                    Priključitev senzorja temperature polja na razširitveno ploščico.
+                                </p>
+
+                                <div class="col-lg-12">
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/temperatura1.png' alt="Priključitev senzorja temperature polja na razširitveno ploščico." style="margin-top: 10px; width:60%; text-align: center;"> <br /><br />
+                                    </p>
+                                </div>
+
+                                <div style="margin-top: 30px" class="col-lg-12">
+                                    <p class="lead">
+                                        Zagon aplikacije <a class="btn btn-default" href="#">eTemperatura</a>
+                                    </p>
+                                </div>
+
+                                <p class="lead">
+                                    <u>Priključitev senzorja temperature na hiter analogni vhod Red Pitaye.</u>
+                                </p>
+
+                                <p class="lead">
+                                    Za delo s temperaturnim senzorjem zadostuje že osnovna aplikacija <a href="#">Osciloskop</a>, pri čemer senzor preko 1000 Ω
+                                    upora povežemo s hitrim vhodom Red Pitaye, kot prikazuje spodnja slika.
+                                </p>
+
+                                <p class="lead">
+                                    Priključitev senzorja temperature na Red Pitayo.
+                                </p>
+
+                                <div class="col-lg-12">
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/temperatura2.png' alt="Priključitev senzorja temperature na Red Pitayo." style="margin-top: 10px; width:60%; text-align: center;"> <br /><br />
+                                    </p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <p class="lead">
+                                        S pomočjo Red Pitaye in merilnega upora R = 1000 Ω lahko določimo upornost temperaturnega senzorja
+                                        RPT100 iz izmerjene napetosti na kanalu 1 po spodnji enačbi:
+                                    </p>
+                                </div>
+
+
+                                <div class="col-lg-12">
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/enacba_temperatura-01-01.png' alt="Enacba za upornost temperaturnega senzorja" style="margin-top: 10px; width:20%; text-align: center;"> <br /><br />
+                                    </p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <p class="lead">
+                                        Upornost temperaturnega senzorja moramo nadalje prevesti v temperaturo. Približno pretvorbo (ker odziv
+                                        senzorja ni linearen v celotnem merilnem območju) opisuje enačba:
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/enacba_temperatura2-01-01.png' alt="Enacba za pretvorbo za odziv senzorja" style="margin-top: 10px; width:20%; text-align: center;"> <br /><br />
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <p class="lead">
+                                        Za hitro oceno temperature lahko uporabimo spodnjo tabelo:
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/tabela_temperatura-01.png' alt="Tabela za oceno temperature" style="margin-top: 10px; width:50%; text-align: center;"> <br /><br />
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <p class="lead">
+                                        Enačbo za izračun upornosti PT100 temperaturnega senzorja vstavimo v enačbo za pretvorbo upornosti v
+                                        temperaturo. Dobimo enačbo, ki pretvori napetostni izhod merilnega vezja v temperaturo:
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/enacba_temperatura3-01.png' alt="Enačba za izračun odpornosti" style="margin-top: 10px; width:20%; text-align: center;"> <br /><br />
+                                    </p>
+                                </div>
+
+                                <div style="margin-top: 35px;" class="row featurette">
+                                    <!--
+                                                        <div class="col-md-2">
+                                                            <img class="col-lg-12" src='img/prometni_znak_23-01.png' alt="Prometni znak - zahvevno" style="margin-top: 10px; width:100%;">
+                                                        </div>
+                                                        -->
+                                    <div class="col-md-12" style="text-align: center;">
+                                        <p class='lead exercise-box'>
+                                            <img align="left" src='img/prometni_znak_23-01.png' alt="Prometni znak - zahvevno" style="margin: 0px 10px 0px 0px; width:12%;">
+
+                                            Upornost temperaturnega senzorja lahko merimo le tako, da skozenj vsilimo merilni tok. Po
+                                            podatkih proizvajalca je priporočen merilni tok reda 1 mA.<br />
+                                            Večji tok povzroči segrevanje samega senzorja in večjo merilno napako. Pri izbranem merilnem uporu
+                                            1000 Ω je ta tok približno 2,5 mA. To zagotavlja dovolj točne meritve. Če bi izbrali merilni upor
+                                            z upornostjo 100 Ω, bi bil tok skozi merilni upor reda 25 mA. To v praksi pomeni, da se merilni
+                                            upor pri sobni temperaturi zaradi merilne metode segreje na skoraj 40 °C, kar predstavlja 100%
+                                            napako meritve. Za natančnejše in točnejše meritve z uporovnimi temperaturnimi senzorji v
+                                            elektrotehniki uporabljamo aktivna merilna vezja z operacijskimi ojačevalniki.
+                                        </p>
+                                    </div>
+                                </div><br>
+
+                                <div class="col-lg-12">
+                                    <p class="lead">
+                                        Z izdelanim merilnikom temperature lahko izmerite temperaturo ambienta, telesno
+                                        temperaturo ali temperaturo hladne pijače.
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <p class="lead">
+                                        Zagon aplikacije <a class="btn btn-default" href="#">eTemperatura-RP</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id ="light_sensor" class="panel panel-default">
+                <a data-toggle="collapse" href="#panel29">
+                    <div class="panel-heading">
+                        <h4 onclick="$('#panel29').toggle();">Senzor svetlobe</h4>
+                    </div>
+                </a>
+
+                <div id="panel29" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class='row'>
+                            <div class='col-lg-12'>
+                                <p class="lead">
+                                    S senzorjem svetlobe lahko izdelamo merilnik osvetljenosti ali luksmeter. V platformo eEksperimenti je vključen senzor svetlobe – fotodioda SFH206K. Iz kataloga za
+                                    fotodiodo razberemo občutljivost fotodiode 80 nA / luks za svetlobo, ki jo oddaja žarnica z žarilno nitko, ogreto na 2583 °C. Če torej izmerimo tok 80 nA (80*10-9 A),
+                                    to pomeni, da je izmerjena osvetljenost s takšno svetlobo 1 luks.
+
+                                </p>
+                                <p class="lead">
+                                    <u>Priključitev senzorja svetlobe na počasni analogni vhod Red Pitaye.</u>
+                                </p>
+
+                                <p class="lead">
+                                    Senzor svetlobe priklopimo vzporedno s 680 ohmskim uporom na počasni analogni vhod Red Pitaje, kot prikazuje spodnja slika. Zaženemo aplikacijo <a href="#">eLuksmeter</a>.
+                                    V aplikaciji je Y os umerjena na fotometrično mersko enoto osvetljenosti – luks.
+                                </p>
+
+                                <p class="lead">
+                                    Priključitev senzorja svetlobe na razširitveno ploščico.
+                                </p>
+
+                                <div class="col-lg-12">
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/senzor_svetlobe1.png' alt="Priključitev senzorja svetlobe na razširitveno ploščico." style="margin-top: 10px; width:60%; text-align: center;"> <br /><br />
+                                    </p>
+                                </div>
+
+
+                                <div class="row featurette">
+                                    <div class="col-md-12" style="text-align: center;">
+                                        <p style="margin-top: 35px;"  class='lead exercise-box'>
+                                            <img align="left" src='img/prometni_znak_23-01.png' alt="Prometni znak - zahvevno" style="margin: 0px 10px 0px 0px; width:12%;">
+                                            Upornost temperaturnega senzorja lahko merimo le tako, da skozenj vsilimo merilni tok. Po
+                                            podatkih proizvajalca je priporočen merilni tok reda 1 mA.<br />
+                                            Večji tok povzroči segrevanje samega senzorja in večjo merilno napako. Pri izbranem merilnem uporu
+                                            1000 Ω je ta tok približno 2,5 mA. To zagotavlja dovolj točne meritve. Če bi izbrali merilni upor
+                                            z upornostjo 100 Ω, bi bil tok skozi merilni upor reda 25 mA. To v praksi pomeni, da se merilni
+                                            upor pri sobni temperaturi zaradi merilne metode segreje na skoraj 40 °C, kar predstavlja 100%
+                                            napako meritve. Za natančnejše in točnejše meritve z uporovnimi temperaturnimi senzorji v
+                                            elektrotehniki uporabljamo aktivna merilna vezja z operacijskimi ojačevalniki.
+                                        </p>
+                                    </div>
+                                </div><br>
+
+
+                                <div style="margin-top: 20px" class="col-lg-12">
+                                    <p class="lead">
+                                        Zagon aplikacije <a class="btn btn-default" href="#">eLuksmeter</a>
+                                    </p>
+                                </div>
+
+                                <p style="margin-top: 30px" class="lead">
+                                    <u>Priključitev senzorja svetlobe na hiter analogni vhod Red Pitaye.</u>
+                                </p>
+
+
+                                <p class="lead">
+                                    Pokazali smo, kako se senzor svetlobe priklopi na počasni analogni vhod Red Pitaye in izdela merilnik osvetljenosti. Za delo s senzorjem pa zadostuje že osnovna aplikacija
+                                    <a href="#">Osciloskop</a>, pri čemer senzorjev izhod povežemo s hitrim vhodom Red Pitaye in uporom, kot prikazuje spodnja slika.
+                                </p>
+
+                                <p class="lead">
+                                    Priključitev senzorja svetlobe na Red Pitayo.
+                                </p>
+
+                                <div class="col-lg-12">
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/senzor_svetlobe2.png' alt="Priključitev senzorja svetlobe na Red Pitayo" style="margin-top: 10px; width:50%; text-align: center;"> <br /><br />
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <p class="lead">
+                                        Za izračun osvetljenosti moramo upoštevati še pretvorbo iz napetosti (ki jo izmeri Pitaya) v električni tok. Za primer merilnega upora upornost 680 Ω je pri toku 1 mA napetost
+                                        na merilnem uporu  1 mA * 680 Ω = 0,680 V. Torej izmerimo pri toku 80 nA napetost 80 nA/1mA *0,680 V = 54,4 µV. Pri izračunu moramo upoštevati še faktor pretvorbe
+                                        1 lx / (54,5 µV) = 18380 lx/V, s katerim izmerjeno napetost prevedemo na osvetljenost senzorja, izraženo v luksih.
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <p class="lead">
+                                        Zagon aplikacije <a class="btn btn-default" href="#">eTemperatura-RP</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id ="pressure" class="panel panel-default">
+                <a data-toggle="collapse" href="#panel30">
+                    <div class="panel-heading">
+                        <h4 onclick="$('#panel30').toggle();">Senzor tlaka</h4>
+                    </div>
+                </a>
+
+                <div id="panel30" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class='row'>
+                            <div class='col-lg-12'>
+                                <p class="lead">
+                                    Senzor tlaka meri tlak, navadno v kapljevinah in plinih. Uporablja se za merjenje višine v letalih, merjenje globine potapljača, merjenje nivoja kapljevine v tanku,
+                                    posredno merjenje pretokov preko tlačnega padca na Venturijevi cevi ali zaslonki, za preverjanje tesnjenja tlačnih sistemov, pri regulaciji procesnih parametrov v
+                                    industriji in širše.
+                                </p>
+
+                                <p class="lead">
+                                    V platformi eEksperimenti prilagamo tlačni senzor domačega proizvajalca HYB d.o.o. tipa HPSD 4000 007B-A-0-P-S. Senzor je namenjen absolutnemu merjenju tlaka v območju med -7
+                                    bar do +7 bar. Obstajajo še relativne različice tlačnih senzorjev, ki merijo izključno tlačno razliko. Senzor za delovanje potrebuje zunanje napajanje. Izmerjeno vrednost
+                                    odjemamo na analognem napetostnem izhodu ali na digitalnih izhodih po protokolu I<sup>2</sup>C.
+                                </p>
+
+                                <div class="row featurette">
+                                    <div class="col-md-12" style="text-align: center;">
+                                        <p style="margin-top: 35px;"  class='lead exercise-box'>
+                                            <img align="left" src='img/prometni_znak_23-01.png' alt="Prometni znak - zahvevno" style="margin: 0px 10px 0px 0px; width:12%;">
+                                            Najpomembnejša komponenta senzorja je silicijeva membrana z vgrajenimi piezorezistivnimi upori. Njegovo izdelavo omogočajo sodobne MEMS tehnologije. Tlak na vhodu
+                                            senzorja pritiska na silicijevo membrano. Na drugi strani silicijeve membrane je referenčna komora, v kateri je vakuum blizu 0 barov, ker popolnega vakuuma ni moč
+                                            doseči. Upogib membrane deformira vgrajene piezorezistivne upore vezane v merilni mostič, katerim se zaradi piezorezistivnega efekta posledično spremeni električna
+                                            upornost. S pretvornim električnim vezjem spremembo upornosti pretvorimo v analogni napetostni signal in digitalni I<sup>2</sup>C signal.
+                                        </p>
+                                    </div>
+                                </div><br>
+
+
+                                <p class="lead">
+                                    <u>Priključitev senzorja tlaka na počasni analogni vhod Red Pitaye</u>
+                                </p>
+
+                                <p class="lead">
+                                    Senzor tlaka priključimo na počasni analogni vhod Red Pitaje, kot prikazuje spodnja slika. Zaženemo aplikacijo <a href="#">eTlak</a>. V aplikaciji je Y os že umerjena na mersko
+                                    enoto tlaka – bar.
+                                </p>
+
+                                <p class="lead">
+                                    Priključitev senzorja tlaka na razširitveno ploščico.
+                                </p>
+
+                                <div class="col-lg-12">
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/senzor_pritisk1.png' alt="Priključitev senzorja tlaka na razširitveno ploščico." style="margin-top: 10px; width:60%; text-align: center;"> <br /><br />
+                                    </p>
+                                </div>
+
+                                <div style="margin-top: 20px" class="col-lg-12">
+                                    <p class="lead">
+                                        Zagon aplikacije <a class="btn btn-default" href="#">eTlak</a>
+                                    </p>
+                                </div>
+
+                                <p style="margin-top: 30px" class="lead">
+                                    <u>Priključitev senzorja tlaka na hiter analogni vhod Red Pitaye.</u>
+                                </p>
+
+                                <p class="lead">
+                                    Pokazali smo, kako se senzor tlaka priklopi na počasni analogni vhod Red Pitaye in uporabi namensko aplikacijo <a href="#">eTlak</a>. Za delo s senzorjem pa zadostuje že
+                                    osnovna aplikacija <a href="#">Osciloskop</a>, pri čemer senzorjev izhod povežemo s hitrim vhodom Red Pitaye, kot prikazuje spodnja slika.
+                                </p>
+
+                                <p class="lead">
+                                    Priključitev senzorja tlaka na Red Pitayo.
+                                </p>
+
+                                <div class="col-lg-12">
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/senzor_pritiska2.png' alt="Priključitev senzorja tlaka na Red Pitayo" style="margin-top: 10px; width:50%; text-align: center;"> <br /><br />
+                                    </p>
+                                </div>
+
+
+                                <div style="margin-top: 20px" class="col-lg-12">
+                                    <p class="lead">
+                                        Za pretvorbo iz napetosti v tlak uporabimo enačbo:
+                                    </p>
+                                </div>
+
+
+                                <div class="col-lg-12">
+                                    <p class='lead'>
+                                        <img class="col-lg-12" src='img/enacba_tlak-01.png' alt="Enacba za pretvorbo iz napetosti v tlak" style="margin-top: 10px; width:20%; text-align: center;"> <br /><br />
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <p class="lead">
+                                        Še bolj pregledna je tabela, ki podaja izmerjen tlak v odvisnosti od napetosti na izhodu senzorja. Z absolutnim tlačnim senzorjem lahko napovedujete vreme, merite nivo
+                                        gladine v posodi ali zaznate odpiranje vrat v prostoru.
+                                    </p>
+                                </div>
+
+
+                                <div class="col-lg-12">
+                                    <p class="lead">
+                                        Zagon aplikacije <a class="btn btn-default" href="#">eTlak-RP</a>
+                                    </p>
+                                </div>
+
+                                <div style="margin-top: 40px" class="col-lg-12">
+                                    <p class="lead">
+                                        Veseli bomo vaših rezultatov, ki nam jih lahko posredujete po elektronski pošti: <a href="mailto:eeksperimenti@eeksperimenti.si">eeksperimenti@eeksperimenti.si</a>.
+                                        Zanimive eksperimente bomo objavili na spletni strani <a href="eEksperimenti.si">eEksperimenti.si</a>, zato uporabite za opis
+                                        namensko predlogo <a href="pdf/Predloga_eEksperimenti.docx">Predloga_eEksperimenti.docx</a>.<br /><br /><br /><br />
+                                        <em>eEksperimentatorji</em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

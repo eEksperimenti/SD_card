@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='description' content=''>
+
+    <title>eEksperimenti</title>
+
+    <!-- CSS -->
+    <!--<link href='css/hidedivs.css' rel='stylesheet'>-->
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link href='css/index.css' rel='stylesheet'>
+    <link href='css/quiz.css' rel='stylesheet'> <!-- tko je blo zato pa ni delu css -->
+    <link href='js/bootstrap3-dialog/src/css/bootstrap-dialog.css' rel='stylesheet'>
+
+    <!-- Fonts -->
+    <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/html5shiv.js'></script>
+    <script type='text/javascript' src='js/respond.min.js'></script>
+    <script type='text/javascript' src='js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='js/index.js'></script>
+    <script type='text/javascript' src='js/breadcrumb.js'></script>
+    <script type='text/javascript' src='js/link_actions.js'></script>
+    <script type='text/javascript' src='js/quiz-js.js'></script>
+    <script type="text/javascript" src="js/bootstrap3-dialog/src/js/bootstrap-dialog.js"></script>
+</head>
+
+<body>
+<!-- NAVIGATION -->
+<nav class='navbar navbar-default navbar-fixed-top topnav' role='navigation'>
+    <div class='container topnav'>
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class='navbar-header'>
+            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1'>
+                <span class='sr-only'>Toggle navigation</span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+        </div>
+
+        <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+            <ul class='nav navbar-nav navbar-right' >
+                <li id='li_logo' class='meni_links' class='meni_links_pressed'><a id="logo" href='index.html' style="width:200px"><img src="img/eeksperimenti_logo.png" alt="eEksperimenti - logo" style="width:100%;"></a></li>
+                <li id='li_home' class='meni_links' class='meni_links_pressed'><a id='button-home' href='index.html'> Domov</a></li>
+                <li id='li_basics' class='meni_links' class='meni_links_pressed'><a id='button-basic-expressions' href='index.html?page=osnovni-pojmi'> Osnovne razlage električnih pojavov</a></li>
+                <li id='li_redpitaya' class='meni_links' class='meni_links_pressed'><a id='button-redpitaya' href='index.html?page=red-pitaja'> Red Pitaya: predstavitev in vklop</a></li>
+                <li id='li_experiments' class='meni_links' class='meni_links_pressed'><a id='button-experiments' href='index.html?page=eksperimenti'> Eksperimenti</a></li>
+
+                <li id='li_sensors' class='meni_links' class='meni_links_pressed'><a id='button-sensors' href='index.html?page=uporaba-senzorjev'> Uporaba senzorjev</a></li>
+                <li><a class='dropdown-toggle' data-toggle='dropdown'  href='index.html?page=aplikacije'>Aplikacije <i class='fa fa-angle-down'></i></a>
+                    <ul class='dropdown-menu'>
+                        <li><a  href='#'>Osciloskop</a></li>
+                        <li><a  href='#'>Žarnica</a></li>
+                        <li><a  href='#'>Sončna celica</a></li>
+                        <li><a  href='#'>Oddaljen eksperiment: lastnosti elementov vezij</a></li>
+                        <li><a  href='#'>Lastnosti elementov vezij (neoddaljen eksperiment)</a></li>
+                    </ul>
+                </li>
+
+                <li><a class='dropdown-toggle' data-toggle='dropdown' href='index.html?page=oprojektu'>O projektu <i class='fa fa-angle-down'></i></a>
+                    <ul class='dropdown-menu'>
+                        <li><a  href='index.html?page=ekipa'>Ekipa</a></li>
+                        <li><a  href='index.html?page=za-medije'>Za medije</a></li>
+                        <li><a  href='https://www.1ka.si/a/66670'>Kratka anketa</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div> <!-- /.navbar-collapse -->
+    </div> <!-- /.container -->
+</nav>
+
+<ul id='breadcrumb' class='breadcrumb'></ul>
+
+<div id="template"></div>
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<div id="osciloscope-hard" class='content-section-a'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-lg-12 col-sm-6'>
+                <h3 style="margin-top: 30px;" class='section-heading'>Zahtevnejši način izvajanja</h3>
+
+                <h4 style="color: blue; margin-top: 30px;" class='section-heading'>Merilna shema</h4>
+
+                <p class='lead col-lg-12'>
+                    Osnovni priključki Red Pitaye so prikazani na spodnji sliki. Uporabite priložen koaksialen kabel, s katerim povežete hitri izhod 1 s hitrim vhodom 1.
+                </p>
+
+                <p class='lead col-md-12'>
+                    <img class="img-responsive" src='img/merilna_shema_pitaya.png' alt="Merilna shema - Red Pitaya" style="margin-top: 10px; height:260px;">
+                </p>
+
+                <div class="row featurette">
+                    <div class="col-md-1">
+                        <i class="fa fa-hand-o-right fa-3x" style="color: blue;"></i>
+
+                    </div>
+                    <div class="col-md-11" style="text-align: center;">
+                        <p class='lead'>
+                            <strong>ČE STE POVEZALI HITRI IZHOD 1 S HITRIM VHODOM 1, LAHKO NADALJUJETE S PRIKLJUČITVIJO RED PITAJE NA NAPAJANJE IN ZAGONOM APLIKACIJE.</strong>
+                        </p>
+                    </div>
+                </div><br />
+
+                <p class='lead'>
+                    Vzpostavite računalniško-merilno kartico Red Pitaya, kot je opisano na spletni strani <a href="index.html?page=red-pitaja#turnon-redpitaya">Zagon Red Pitaye</a>. Poženite aplikacijo <a href="#"><strong>Osciloskop in signalni
+                    generator</strong></a> in sledite navodilom Lekcije 1 in Lekcije 2. Če imate težave z zagonom Red Pitaje, vam bodo pomagala <a href="index.html?page=pogosta-vprasanja">dodatna navodila oziroma odgovori na pogosta vprašanja.</a>
+                </p>
+
+                <h3 style="margin-top: 30px;" class='section-heading'>Lekcija 1: Ustvarjanje signalov</h3>
+
+                <p class='lead exercise-box'>
+                    Aplikacijo Signalni generator in Osciloskop zaženete s klikom na ikono okna eEksperimenti
+                </p>
+
+                <!-- 1 -->
+                <p class='lead'>
+                    1. V oknu eEksperimenti izberite aplikacijo <strong>Signalni generator in Osciloskop.</strong>
+                </p>
+
+                <p class='lead exercise-box'>
+                    Z izbiro zavihka <strong>Signalni generator</strong> v pojavnem oknu aplikacije se odpre spustno okno s kontrolami inštrumenta.
+                    Red Pitaya omogoča sočasno uporabo dveh signalnih generatorjev. Klik na potrditveno polje Kanal 1 vklopi ali
+                    izklopi signalni generator na hitrem izhodu 1. Klik na potrditveno polje Kanal 2 vklopi ali izklopi signalni
+                    generator na hitrem izhodu 2.
+                </p>
+
+
+                <!-- 2 -->
+                <p class='lead'>
+                    2. Omogočite signalni generator 1 na hitrem izhodu 1 s potrditvijo polja <strong>Kanal 1.</strong>
+                </p>
+
+                <p class='lead exercise-box'>
+                    Za nastavitev parametrov generatorjev sta na voljo dve izbirni polji <strong>Oblika izhodnega signala /
+                    Način proženja</strong> ter tri vnosna polja <strong>Vršna napetost / Frekvenca / Enosmerna komponenta.</strong><br /><br />
+
+                    Osnovne oblike signalov, ki so na voljo v izbirnem polju <strong>Oblika izhodnega signala</strong>, že poznate.
+                    Red Pitaya omogoča tudi ustvarjanje signalov poljubnih oblik. Funkcionalnost zaženete z gumbom Iz
+                    <strong>datoteke</strong>. Odpre se novo pojavno okno, kjer s pritiskom na gumb <strong>Izberi datoteko</strong> označite pot do
+                    datoteke z opisom signala. S potrditvijo gumba <strong>Naloži</strong> se opis signala prenese na merilno kartico.
+
+                </p>
+
+                <!-- 3 -->
+                <p class='lead'>
+                    3. V izbirnem polju <strong>Oblika izhodnega signala</strong> izberite sinusno obliko.
+                </p>
+
+                <p class='lead exercise-box'>
+                    V vnosno polje <strong>Vršna napetost</strong> vpisujemo želeno vršno napetost ustvarjenega signala. Vršna napetost je razlika med največjo in najmanjšo vrednostjo napetosti.
+                    <img src='img/vrsna_napetost.png' alt="Merilna shema - Red Pitaya" style="margin-top: 10px; width:250px">
+                </p>
+
+                <!-- 4 -->
+                <p class='lead'>
+                    4. V vnosno polje <strong>Vršna napetost</strong> vpišite vrednost »1«. Vpisano potrdite s klikom na potrditveni gumb. Vršna napetost 1 V pomeni, da bo najmanjša vrednost generiranega signala -0.5 V,
+                    največja pa +0.5 V. To velja le, če signal ne vsebuje enosmerne napetostne komponente. <br />
+                    Pomni: Najvišja vršna vrednost napetosti, ki jo red Pitaya omogoča na izhodu, je 2 V.
+                </p>
+
+
+                <p class='lead exercise-box'>
+                    V vnosno polje <strong>Frekvenca</strong> vpisujemo frekvenco signala. Frekvenca nam pove, kolikokrat na
+                    sekundo se ponovi osnovni vzorec signala. Osnovni vzorec sinusnega signala je prikazan na spodnji sliki:<br />
+                    <img src='img/frekvenca.png' alt="Frekvenca" style="margin-top: 10px; width:17%">
+                </p>
+
+                <!-- 5 -->
+                <p class='lead'>
+                    5. V vnosno polje <strong>Frekvenca</strong> vpišite vrednost »2000«. Vpisano potrdite s klikom na potrditveni gumb.
+                    Frekvenca 2000 Hz pomeni, da se bo osnovna oblika sinusnega signala ponovila dva tisočkrat na sekundo.
+                </p>
+
+                <p class='lead exercise-box'>
+                    V vnosno polje <strong>Enosmerna komponenta</strong> vpisujemo želeno vrednost enosmerne napetostne komponente. Ta se prišteje generiranemu signalu.
+                    <img src='img/enosmerna_komponenta-01.png' alt="Frekvenca" style="margin-top: 10px; width:35%">
+                </p>
+
+                <!-- 6 -->
+                <p class='lead'>
+                    6. V vnosno polje <strong>Enosmerna komponenta</strong> vpišite vrednost »0«. Vpisano potrdite s klikom na potrditveni gumb.
+                </p>
+
+                <p class='lead exercise-box'>
+                    V izbirnem polju <strong>Način proženja</strong> izbirate med možnostmi <strong>Enkratno, Ponavljajoče in Proženje z zunanjim signalom</strong>.<br/>
+                    Izbira vpliva na način generiranja signala. Izbira <strong>Enkratnega</strong> proženja povzroči, da se ob pritisku na gumb  <img src='img/prozi.png' alt='proži' style="width:5%;"> generira signal osnovne oblike,
+                    nakar se generator ustavi. Ponavljajoče proženje generira ponavljajoč, periodičen signal. Generiranje signala ene periode lahko prožimo tudi z zunanjim signalom, ki ga pripeljemo na Red Pitayo.
+                </p>
+
+                <!-- 7 -->
+                <p class='lead'>
+                    7. V izbirnem polju izberite možnost <strong>Ponavljajoče</strong>, s čimer sprožite generiranje periodičnega signala na hitrem vhodu 1.
+                </p>
+
+                <p class='lead'>
+                    Če vas begajo številne funkcionalnosti inštrumenta, lahko še vedno preidete na <a href="index.html?page=osciloskop-lazji">enostaven način</a>.
+                    Tam opišemo le osnovne funkcije inštrumentov in podamo skrajšano razlago.
+                </p>
+
+
+
+                <!-- Lekcija 2 -->
+
+
+                <h3 style="margin-top: 30px;" class='section-heading'>Lekcija 2: Uporaba osciloskopa</h3>
+                <p class='lead'>
+                    Na osciloskopu se boste naučili prikazati ustvarjen signal in odčitati njegove parametre.
+                </p>
+
+                <p class='lead exercise-box'>
+                    Za hiter prikaz signala je na voljo zavihek <strong>Samodejna nastavitev merilnih območij</strong>. Klik na zavihek ponudi dodatne možnosti v obliki spustnega seznama. S klikom na
+                    <strong>Napetostnega</strong> in <strong>časovnega</strong> bo aplikacija samodejno prilagodila napetostno in časovno merilno območje in umirila prikaz signala.
+                    Velja opozoriti, da samodejna prilagoditev ni vedno uspešna.<br />
+                    Če želite, da program prilagodi le napetostno merilno območje, časovnega pa ne, izberite opcijo <strong>Časovnega</strong>. <br />
+                    S klikom na <strong>Ponastavi</strong> se nastavita privzeti merilni območji (časovno merilno območje med 0 in 130 µs in napetostno merilno
+                    območje +/-1 V za LV nastavitev ali +/-20 V za HV nastavitev ojačenja).<br /><br />
+                    S pritiskom na preklopni gumb <strong>Kanal 1</strong> omogočimo ali onemogočimo prikaz signala na hitrem vhodu 1.  S pritiskom na preklopni gumb
+                    <strong>Kanal 2</strong> omogočimo ali onemogočimo prikaz signala na hitrem vhodu 2.
+                </p>
+
+                <!-- 1 -->
+                <p class='lead'>
+                    1. Onemogočite prikaz signala na hitrem vhodu 2.
+                </p>
+
+                <p class='lead exercise-box'>
+                    <img class="img-circle" src='img/naklon.png' alt="Enostavni način izvajanja" align="left" style="width: 80px; height: 80px; margin: 10px 10px 10px 0px;">
+                    Nastavitve proženja najdete pod zavihkom <strong>Proženje</strong>.<br /><br />
+                    Z nastavitvijo proženja dosežemo, da se osnovna oblika ponavljajočega signala riše ena čez drugo, kar ustvari videz mirujoče slike. To nam olajša opazovanje signala in odčitavanje njegovih parametrov.
+                    Začetek risanja osnovne oblike določimo z nivojem praga proženja.<br /><br />
+                    Prag proženja vpisujemo v vnosno polje <strong>Prag proženja</strong>, nastavljamo z zelenim drsnikom ali pa na prožilni vhod Red Pitaye pripeljemo zunanji prožilni signal v obliki enosmerne napetosti.<br /><br />
+                    V izbirnem polju izberemo <strong>izvor prožilnega signala</strong> izberemo enega od kanalov osciloskopa. Z izbiro opcije <strong>Zunanji izvor</strong> omogočimo proženje z zunanjim signalom.
+                </p>
+
+                <!-- 2 -->
+                <p class='lead'>
+                    2. V izbirnem polju <strong>Izvor prožilnega signala</strong> pod zavihkom <strong>Proženje</strong> izberite <strong>Kanal 1</strong>. Način proženja nastavite na <strong>Običajno</strong>.
+                    V vnosno polje <strong>Prag proženja</strong> vpišite »0,2«. S tem ste nastavili prag proženja
+                    na 0,2 V. Spreminjajte prag proženja z zelenim drsnikom, ki ga najdete na desni strani grafičnega okna in opazujte sliko signala.
+                </p>
+
+                <p class='lead exercise-box'>
+                    Merilni območji lahko prilagajamo z vrtljivim kolescem računalniške miške ali s kontrolnima gumboma <img src='img/plus.png' alt='proži' style="width:5%;"> in <img src='img/minus.png' alt='proži' style="width:5%;">.
+                </p>
+
+                <!-- 3 -->
+                <p class='lead'>
+                    3. Kazalec miške postavite na graf. Opazujte, kako se prilagajata merilni območji, ko sučete kolesce na miški. Raziščite funkcionalnost gumba <img src='img/move.png' alt='premakni' style="width:4%;">.
+                </p>
+
+                <p class='lead exercise-box'>
+                    Za ročno nastavitev merilnih območij je na voljo spustno kontrolno okno, ki ga odpremo s klikom na zavihek <strong>Ročna nastavitev merilnih območij</strong>. Tu nastavljamo širino in premik merilnih območij.
+                </p>
+
+                <!-- 4 -->
+                <p class='lead'>
+                    4. Širino časovnega merilnega območja nastavite na nastavite na 1000 µs, napetostno pa na 2V. Z gumbi za premik merilnih območij <img src='img/minusplus.png' alt='premik' style="width:5%;">
+                    uredite prikaz signala na zaslonu. Merilni območji lahko premikate tudi z miško.
+                    Kliknite na gumb  <img src='img/move.png' alt='premakni' style="width:4%;">. Z miškinim kazalcem se postavite na sliko signala, pritisnite levo tipko, jo zadržite in premaknite kazalec miške.
+                </p>
+
+                <p class='lead exercise-box'>
+                    S klikom na zavihek <strong>Prikaz signalnih parametrov</strong> se odpre spustno okno z izračunanimi parametri signalov na kanalih 1 in 2.  Pojme <strong>Najmanjša napetost, Največja napetost, Vršna napetost</strong>
+                    in <strong>Frekvenca</strong> že poznate. Nova pojma sta Perioda in Povprečna napetost. <strong>Perioda</strong> je čas, v katerem se časovni potek napetosti periodičnega signala ponovi. <strong>Povprečna napetost</strong> je določena
+                    s površino pod krivuljo signala v eni periodi deljena s periodo.
+                </p>
+
+                <p class='lead exercise-box'>
+                    <img class="img-circle" src='img/naklon.png' alt="Enostavni način izvajanja" align="left" style="width: 80px; height: 80px; margin: 10px 10px 10px 0px;">
+                    Pod zavihkom <strong>Merilni sondi</strong> so nastavitve za uparjanje merilnih sond.<br /><br />
+                    Pri merjenju enosmernih signalov in izmeničnih signalov nizkih frekvenc predstavljajo merilne sonde brez slabljenja visoko upornost. Pri merjenju signalov visokih frekvenc
+                    kapacitivnost koaksialnega kabla bremeni izvor signala. Da se izognemo kapacitivnemu bremenu, uporabljamo sondo s slabljenjem, kjer se vhodna impedanca zviša za enak faktor,
+                    kot znaša slabljenje signala (upornost se poveča, kapacitivnost se zmanjša).<br /><br />
+                    Faktor slabljenja nastavimo s preklopnim drsnim stikalom, ki ga najdemo na merilnih sondah. Enak faktor nastavimo v izbirnem polju <strong>Faktor slabljenja</strong> v spustnem oknu zavihka <strong>Merilni sondi</strong>.<br /><br />
+                    Za merjenje signalov vršne napetosti do 2 V preklopimo stikali vhodov Red Pitaye v lego LV (nizka napetost – Low Voltage). Stikali najdemo na vezju ob priključkih za hitri vhod 1 in
+                    hitri vhod 2. Za merjenje signalov vršne napetosti do 40 V preklopimo stikali vhodov Red Pitaye v lego HV (nizka visoka napetost – High Voltage). Enako vrednost nastavimo v izbirnem polju <strong>Nastavitve ojačenja</strong>.
+
+                </p>
+
+
+                <h3 style="margin-top: 30px;" class='section-heading'>Eksperiment</h3>
+
+                <p class='lead'>
+                    V zavihku <strong>Vzorčni signali</strong> so štirje gumbi. S klikom na gumb sprožite generiranje prednastavljenega signala. Potrdite polje <strong>Kanal 1</strong>, s čimer omogočite hitri izhod 1 Red Pitaje.
+                </p>
+                <p class='lead'>
+                    V zahtevnejšem načinu izvajanja funkciji <strong>Samodejnih nastavitev merilnih območij</strong> in <strong>Prikaz signalnih parametrov</strong>
+                    nista na voljo, zato boste parametre signalov odčitali iz grafičnega prikaza. Če vam ne uspe, lahko še vedno izberete <a href="index.html?page=osciloskop-lazji">enostavnejši način izvajanja</a>.
+                </p>
+
+                <p class='lead'>
+                    <strong>Kako določiti enosmerno komponento signala?</strong>
+                </p>
+                <p class='lead'>
+                <div class="row featurette">
+                    <div class="col-md-11">
+                        <img src='img/prometni_znak_23-01.png' alt="Enostavni način izvajanja" style="width: 80px; height: 80px; margin-top: 10px;"><br />
+                    </div>
+                    <div class="col-md-11" style="text-align: center;">
+                        <p class='lead'>
+                            Enosmerna komponenta signala je vrednost enosmerne napetosti,
+                            ki se prišteje osnovni obliki izmeničnega signala. V grafičnem prikazu je to odmik osnovne oblike signala navzgor ali navzdol.
+                        </p>
+                    </div>
+                </div>
+                </p>
+
+                <p class='lead'>
+                    <img src='img/vrednost_signala.png' alt="Povprecna vrednost signala" style="margin-top: 10px; width:350px">
+                </p>
+
+                <p class='lead'>
+                    <strong>Kako določiti frekvenco signala?</strong>
+                </p>
+
+                <p class='lead'>
+                <div class="row featurette">
+                    <div class="col-md-11">
+                        <img src='img/prometni_znak_23-01.png' alt="Enostavni način izvajanja" style="width: 80px; height: 80px; margin-top: 10px;">
+                    </div>
+                    <div class="col-md-11" style="text-align: center;">
+                        <p class='lead'>
+                            Frekvenco signala boste izračunali. Iz slike signala boste razbrali čas, v katerem se osnovna oblika signala ponovi.
+                            Temu času rečemo tudi perioda in ter ga označimo s T. Frekvenco signala izračunate po enačbi:
+                            <img src='img/enacba-01.png' alt='Enacba' style="width:4%;">
+                        </p>
+                    </div>
+                </div>
+                </p>
+
+                <p class='lead'>
+                    <strong>Kaj predstavljata simbola m in kaj µ?</strong>
+                </p>
+
+                <p class='lead'>
+                <div class="row featurette">
+                    <div class="col-md-11" style="text-align: center;">
+                        <p class='lead'>
+                            Simbola m in µ sta predponi merskih enot. Velja:<br />
+                            1 ms = 0.001 s<br />
+                            1 µs = 0.000001 s<br />
+                            Odčitek periode 100 µs tako pomeni 100 * 0.000001 s, kar znaša 0.0001 s.
+
+                        </p>
+                    </div>
+                </div>
+                </p>
+
+                <p class='lead'>
+                    <strong>Kako določiti amplitudo signala?</strong>
+                </p>
+
+                <p class='lead'>
+                <div class="row featurette">
+                    <div class="col-md-11">
+                        <img src='img/prometni_znak_23-01.png' alt="Enostavni način izvajanja" style="width: 80px; height: 80px; margin-top: 10px;">
+                    </div>
+                    <div class="col-md-11" style="text-align: center;">
+                        <p class='lead'>
+                            Amplitudo signala boste izračunali. Iz slike signala boste razbrali največjo in najmanjšo vrednost signala.
+                            Razlika med največjo in najmanjšo vrednostjo signala je <strong>vršna napetost</strong>. Amplituda signala je polovica <strong>vršne napetosti</strong>.<br /><br />
+                            Primer:
+                        </p>
+                    </div>
+                </div>
+                </p>
+
+                <p class='lead'>
+                    <img src='img/osciloscop_aplituda.png' alt="Osciloskop amplituda" style="margin-top: 10px; width:380px">
+                </p>
+                <p class='lead'>
+                    <img src='img/enacba_amplituda-01.png' alt="Osciloskop amplituda" style="margin-top: 10px; width:250px">
+                </p>
+
+                <a href='#' style="margin-bottom: 30px; margin-top: 30px;" class='btn btn-default btn-lg exp-btn'><span>Zaženi aplikacijo</span></a>
+
+                <p class='lead'>Uporabite osciloskop in poskusite odgovoriti na spodnja vprašanja.</p>
+
+                <!--Pojdi na kviz Osciloskop zahteven   -->
+                <div class="container">
+                    <div class="panel panel-default">
+                        <a data-toggle="collapse" href="#panel10">
+                            <div class="panel-heading"><h4>Pojdi na kviz</h4></div>
+                        </a>
+                        <div id="panel10" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class='row' id="quiz10">
+                                    <div class='col-lg-12'>
+                                        <div class="emc-score"></div>
+                                        <section data-quiz-item>
+                                            <div class="question">1. Kakšna je oblika Signala 1?</div>
+                                            <div class="choices" data-choices='["Sinusna.",
+                                                                                "Kvadratna.",
+                                                                                "Žagasta.",
+                                                                                "Nobena od naštetih."]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">2. Kolikšna je amplituda Signala 1</div>
+                                            <div class="choices" data-choices='["5 V",
+                                                                               "1 V",
+                                                                               "0,1 V",
+                                                                               "0,01 V"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">3. Kolikšna je frekvenca Signala 1</div>
+                                            <div class="choices" data-choices='["1 Hz",
+                                                                                "70 Hz",
+                                                                                "1 kHz",
+                                                                                "10 kHz"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">4. Kolikšna je enosmerna komponenta Signala 1?</div>
+                                            <div class="choices" data-choices='["-1 V",
+                                                                               "0,5 V",
+                                                                               "0,1 V",
+                                                                               "0 V"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">5. Kakšna je oblika Signala 2?</div>
+                                            <div class="choices" data-choices='["Sinusna.",
+                                                                                "Kvadratna.",
+                                                                                "Žagasta.",
+                                                                                "Nobena od naštetih."]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">6. Kolikšna je amplituda Signala 2?</div>
+                                            <div class="choices" data-choices='["1,6 V",
+                                                                               "0,5",
+                                                                               "0,1 V",
+                                                                               "1,6 Hz"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">7. Kolikšna je frekvenca Signala 2?</div>
+                                            <div class="choices" data-choices='["1 Hz",
+                                                                                "70 kHz",
+                                                                                "1,3 MHz",
+                                                                                "10 kHz"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">8. Kolikšna je enosmerna komponenta Signala 2?</div>
+                                            <div class="choices" data-choices='["-0,5 V",
+                                                                               "0,5 V",
+                                                                               "0,7 V",
+                                                                               "0 V"]'>
+                                            </div>
+                                        </section>
+
+
+                                        <section data-quiz-item>
+                                            <div class="question">9. Kakšna je oblika Signala 3?</div>
+                                            <div class="choices" data-choices='["Sinusna.",
+                                                                                "Pravokotna.",
+                                                                                "Žagasta.",
+                                                                                "Nobena od naštetih."]'>
+                                            </div>
+                                        </section>
+
+
+                                        <section data-quiz-item>
+                                            <div class="question">10. Kolikšna je amplituda Signala 3</div>
+                                            <div class="choices" data-choices='["0,1 V",
+                                                                               "0,2 V",
+                                                                               "0,7  V",
+                                                                               "1 V"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">11. Kolikšna je frekvenca Signala 3</div>
+                                            <div class="choices" data-choices='["160 kHz",
+                                                                                "16 kHz",
+                                                                                "340 kHz",
+                                                                                "34 kHz"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">12. Kolikšna je enosmerna komponenta Signala 3?</div>
+                                            <div class="choices" data-choices='["0 V",
+                                                                               "0,1 V",
+                                                                               "0,3 V",
+                                                                               "1 V"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">13. Kakšna je oblika Signala 4?</div>
+                                            <div class="choices" data-choices='["Sinusna.",
+                                                                                "Kvadratna.",
+                                                                                "Žagasta.",
+                                                                                "Trikotna."]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">14. Kolikšna je amplituda Signala 4?</div>
+                                            <div class="choices" data-choices='["0,1 V",
+                                                                               "0,2 V",
+                                                                               "0,7 V",
+                                                                               "1 V"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">15. Kolikšna je frekvenca Signala 4?</div>
+                                            <div class="choices" data-choices='["30 Hz",
+                                                                                "600 Hz",
+                                                                                "340 kHz",
+                                                                                "1 MHz"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">16. Kolikšna je enosmerna komponenta Signala 4?</div>
+                                            <div class="choices" data-choices='["-0,4 V",
+                                                                               "0 V",
+                                                                               "0,4 V",
+                                                                               "1 V"]'>
+                                            </div>
+                                        </section>
+
+                                        <div class="submit">
+                                            <button class="btn emc-submit">Preveri odgovore</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- container -->
+</div> <!-- Osciloskop hard -->

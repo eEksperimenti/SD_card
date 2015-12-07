@@ -1,0 +1,277 @@
+<div id="osciloscope-easy" class='content-section-a'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-lg-12 col-sm-6'>
+                <h3 style="margin-top: 30px;" class='section-heading'>Enostaven način izvajanja</h3>
+
+                <h4 style="color: blue; margin-top: 30px;" class='section-heading'>Merilna shema</h4>
+                <p class='lead'>
+                    Osnovni priključki Red Pitaye so prikazani na spodnji sliki. Uporabite priložen koaksialen vodnik, s katerim povežete hitri izhod 1 s hitrim vhodom 1.
+                    <img class="col-lg-12" src='img/merilna_shema_pitaya.png' alt="Merilna shema - Red Pitaya" style="margin-top: 10px; width:100%">
+                </p>
+
+                <div class="row featurette">
+                    <div class="col-md-1">
+                        <i class="fa fa-hand-o-right fa-3x" style="color: blue;"></i>
+
+                    </div>
+                    <div class="col-md-11" style="text-align: center;">
+                        <p class='lead'>
+                            <strong>ČE STE POVEZALI HITRI IZHOD 1 S HITRIM VHODOM 1, LAHKO NADALJUJETE S PRIKLJUČITVIJO RED PITAJE NA NAPAJANJE IN ZAGONOM APLIKACIJE.</strong>
+                        </p>
+                    </div>
+                </div><br>
+
+                <p class='lead'>
+                    Vzpostavite računalniško-merilno kartico Red Pitaya, kot je opisano na spletni strani <a href="index.html?page=red-pitaja#turnon-redpitaya">Zagon Red Pitaye</a>.
+                    Poženite aplikacijo <a href="#"><strong>Osciloskop in signalni
+                    generator</strong></a> in sledite navodilom Lekcije 1 in Lekcije 2. Če imate težave z zagonom Red Pitaje, vam bodo pomagala
+                    <a href="index.html?page=pogosta-vprasanja">dodatna navodila oziroma odgovori na pogosta vprašanja.</a>
+                </p>
+
+
+                <h3 style="margin-top: 30px;" class='section-heading'>Lekcija 1: Ustvarjanje signalov</h3>
+
+                <p class='lead exercise-box'>
+                    Aplikacijo <strong>Signalni generator</strong> in <strong>Osciloskop</strong> zaženete s klikom na ikono v oknu
+                </p>
+
+                <!-- 1 -->
+                <p class='lead'>
+                    1. V oknu eEksperimenti izberite aplikacijo <strong>Signalni generator in Osciloskop.</strong>
+                </p>
+
+                <p class='lead exercise-box'>
+                    Z izbiro zavihka <strong>Signalni generator</strong> v pojavnem oknu aplikacije se odpre spustno okno s kontrolami
+                    inštrumenta. Red Pitaya omogoča sočasno uporabo dveh signalnih generatorjev. Klik na potrditveno
+                    polje <strong>Kanal 1</strong> vklopi ali izklopi signalni generator na hitrem izhodu 1. Klik na potrditveno polje
+                    <strong>Kanal 2</strong> vklopi ali izklopi signalni generator na hitrem izhodu 2.
+                </p>
+
+                <!-- 2 -->
+                <p class='lead'>
+                    2. Omogočite signalni generator 1 na hitrem izhodu 1 s potrditvijo polja <strong>Kanal 1</strong>.
+                </p>
+
+                <!-- 3 -->
+                <p class='lead'>
+                    3. V izbirnem polju <strong>Oblika izhodnega signala</strong> izberite sinusno obliko.
+                </p>
+
+                <p class='lead exercise-box'>
+                    V vnosno polje <strong>Vršna napetost</strong> vpisujemo želeno vršno napetost generiranega signala. Vršna napetost je razlika med največjo in najmanjšo vrednostjo napetosti.
+                    <img src='img/vrsna_napetost.png' alt="Merilna shema - Red Pitaya" style="margin-top: 10px; width:100%">
+                </p>
+
+
+                <!-- 4 -->
+                <p class='lead'>
+                    4. V vnosno polje <strong>Vršna napetost</strong> vpišite vrednost »1«. Vpisano potrdite s klikom na potrditveni gumb.
+                </p>
+
+                <p class='lead exercise-box'>
+                    V vnosno polje <strong>Frekvenca</strong> vpisujemo frekvenco signala. Frekvenca nam pove, kolikokrat na sekundo se ponovi osnovni vzorec signala. Osnovni vzorec sinusnega signala
+                    je prikazan na spodnji sliki:<br />
+                    <img src='img/frekvenca.png' alt="Frekvenca" style="margin-top: 10px; width:17%">
+                </p>
+
+                <!-- 5 -->
+                <p class='lead'>
+                    5. V vnosno polje Frekvenca vpišite vrednost »2000«. Vpisano potrdite s klikom na potrditveni gumb.  Frekvenca 2000 Hz pomeni, da se bo osnovna oblika sinusnega signala ponovila dva tisočkrat na sekundo.
+                </p>
+
+
+                <!-- Lekcija 2-->
+
+                <h3 style="margin-top: 30px;" class='section-heading'>Lekcija 2: Uporaba osciloskopa</h3>
+                <p class='lead'>
+                    Ustvarjen signal se boste naučili prikazati na osciloskopu in odčitati njegove parametre.
+                </p>
+
+                <p class='lead exercise-box'>
+                    Za hiter prikaz signala na zaslonu je na voljo funkcija <strong>Samodejna prilagoditev merilnih območij</strong>. Kliknete na zavihek <strong>Samodejna prilagoditev merilnih območij</strong>,
+                    nakar izberete možnost <strong>napetostnega</strong> in <strong>časovnega</strong>. S pritiskom na gumb bo aplikacija samodejno prilagodila časovno in napetostno merilno območje. Velja opozoriti,
+                    da samodejna prilagoditev ni vedno uspešna.
+                </p>
+
+                <!-- 1 -->
+                <p class='lead'>
+                    1. Izberite opcijo <strong>Samodejna prilagoditev merilnih območij</strong> za prikaz signala.
+                </p>
+
+                <p class='lead exercise-box'>
+                    Merilni območji lahko prilagajamo z vrtljivim kolescem računalniške miške ali s kontrolnima gumboma <img src='img/plus.png' alt='proži' style="width:5%;"> in <img src='img/minus.png' alt='proži' style="width:4%;">.
+                </p>
+
+                <!-- 2 -->
+                <p class='lead'>
+                    2. Kazalec miške postavite na graf. Opazujte, kako se prilagajata merilni območji, ko sučete kolesce na miški. Raziščite funkcionalnost gumba <img src='img/move.png' alt='premakni' style="width:4%;">.
+                </p>
+
+                <p class='lead exercise-box'>
+                    S klikom na zavihek <strong>Prikaz signalnih parametrov</strong> se odpre spustno okno z izračunanimi parametri signalov na kanalih 1 in 2.
+                    Pojme <strong>Najmanjša napetost, Največja napetost, Vršna napetost</strong> in <strong></strong>Frekvenca</strong> že poznate.
+                </p>
+
+                <p class='lead' style="font-size:1.7em;"><strong>Eksperiment</strong></p>
+
+                <p class='lead'>
+                    V zavihku <strong>Vzorčni signali</strong> so štirje gumbi. S klikom na gumb sprožite generiranje prednastavljenega signala. Potrdite polje <strong>Kanal 1</strong>.
+                    Uporabite funkcijo <strong>Samodejna prilagoditev merilnih območij</strong> za prikaz signala. V lažjem načinu vam bo v pomoč funkcija <strong>Prikaz signalnih parametrov</strong>.
+                </p>
+
+
+                <p class='lead'>
+                    <strong>Kako določiti amplitudo signala?</strong>
+                </p>
+
+                <p class='lead'>
+                <div class="row featurette">
+                    <div class="col-md-11" style="text-align: center;">
+                        <p class='lead'>
+                            Amplitudo signala izračunate. V zavihku <strong>Prikaz signalnih parametrov</strong> se poleg ostalih
+                            parametrov signala izračunava tudi vršna napetost. <strong>Amplituda signala</strong> je polovica <strong>vršne napetosti</strong>.<br /><br />
+                            amplituda signala = vršna napetost / 2
+                        </p>
+                    </div>
+                </div>
+                </p>
+                <a href='#' style="margin-bottom: 30px;" class='btn btn-default btn-lg exp-btn'><span>Zaženi aplikacijo</span></a>
+
+                <p class='lead'>
+                    Uporabite osciloskop in poskusite odgovoriti na naslednja vprašanja.
+                </p>
+
+                <!--Pojdi na kviz Osciloskop enostaven   -->
+                <div class="container">
+                    <div class="panel panel-default">
+                        <a data-toggle="collapse" href="#panel12">
+                            <div class="panel-heading"><h4>Pojdi na kviz</h4></div>
+                        </a>
+                        <div id="panel12" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class='row' id="quiz12">
+                                    <div class='col-lg-12'>
+                                        <div class="emc-score"></div>
+                                        <section data-quiz-item>
+                                            <div class="question">1. Kakšna je oblika Signala 1?</div>
+                                            <div class="choices" data-choices='["Sinusna.",
+                                                                                "Pravokotna.",
+                                                                                "Žagasta.",
+                                                                                "Nobena od naštetih."]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">2. Kolikšna je amplituda Signala 1</div>
+                                            <div class="choices" data-choices='["5 V",
+                                                                               "1 V",
+                                                                               "0,1 V",
+                                                                               "0,01 V"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">3. Kolikšna je frekvenca Signala 1</div>
+                                            <div class="choices" data-choices='["1 Hz",
+                                                                                "70 Hz",
+                                                                                "1 kHz",
+                                                                                "10 kHz"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">4. Kakšna je oblika Signala 2?</div>
+                                            <div class="choices" data-choices='["Sinusna.",
+                                                                                "Pravokotna.",
+                                                                                "Žagasta.",
+                                                                                "Nobena od naštetih."]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">5. Kolikšna je amplituda Signala 2?</div>
+                                            <div class="choices" data-choices='["1,6 V",
+                                                                               "0,5 V",
+                                                                               "0,1 V",
+                                                                               "1,6 V"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">6. Kolikšna je frekvenca Signala 2?</div>
+                                            <div class="choices" data-choices='["1 Hz",
+                                                                                "70 kHz",
+                                                                                "1,3 MHz",
+                                                                                "10 kHz"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">7. Kakšna je oblika Signala 3?</div>
+                                            <div class="choices" data-choices='["Sinusna.",
+                                                                                "Pravokotna.",
+                                                                                "Žagasta.",
+                                                                                "Nobena od naštetih."]'>
+                                            </div>
+                                        </section>
+
+
+                                        <section data-quiz-item>
+                                            <div class="question">8. Kolikšna je amplituda Signala 3</div>
+                                            <div class="choices" data-choices='["0,1 V",
+                                                                               "0,2 V",
+                                                                               "0,7 V",
+                                                                               "1 V"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">9. Kolikšna je frekvenca Signala 3</div>
+                                            <div class="choices" data-choices='["160 Hz",
+                                                                                "16 kHz",
+                                                                                "340 kHz",
+                                                                                "34 kHz"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">10. Kakšna je oblika Signala 4?</div>
+                                            <div class="choices" data-choices='["Sinusna.",
+                                                                                "Kvadratna.",
+                                                                                "Žagasta.",
+                                                                                "Trikotna."]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">11. Kolikšna je amplituda Signala 4?</div>
+                                            <div class="choices" data-choices='["0,1 V",
+                                                                               "0,2 V",
+                                                                               "0,7 V",
+                                                                               "1 V"]'>
+                                            </div>
+                                        </section>
+
+                                        <section data-quiz-item>
+                                            <div class="question">12. Kolikšna je frekvenca Signala 4</div>
+                                            <div class="choices" data-choices='["300 Hz",
+                                                                                "600 Hz",
+                                                                                "340 kHz",
+                                                                                "1 MHz"]'>
+                                            </div>
+                                        </section>
+
+                                        <div class="submit">
+                                            <button class="btn emc-submit">Preveri odgovore</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- container -->
+</div> <!-- Osciloskop easy -->

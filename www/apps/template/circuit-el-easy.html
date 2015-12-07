@@ -1,0 +1,572 @@
+<div id="circuit-el-easy" class='content-section-a'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-lg-12 col-sm-6'>
+                <h3 style="margin-top: 30px;" class='section-heading'>Enostaven način izvajanja</h3>
+                <p class="lead">
+                    Za boljše razumevanje si preberite poglavje Merilna shema. Lahko pa to poglavje tudi preskočite in preprosto povežete elemente kot prikazuje slika v poglavju
+                    Navodila za priključitev, zaženete aplikacijo Tok + Napetost in sledite Navodilom za izvajanje meritev.
+                </p>
+                <h4 style="color: blue;" class='section-heading'>Merilna shema</h4>
+
+                <div class="col-md-12">
+                    <p class='lead'>
+                        <img class='img-responsive' src='img/UI_na_elementih_1.png' alt='' align="right" style="height:160px;">
+                        Eksperiment izvajamo tako, da priključimo breme (upor, kondenzator, tuljavo, diodo) na izmenični napetostni vir z različnimi oblikami signalov in opazujemo
+                        napetost U na elementu in tok I skozi element. Na sliki desno je prikazana priključitev upora (R) na izmenični vir napetosti, ki pa ga lahko zamenjamo z
+                        drugimi elementi na desni.
+                    </p>
+                </div>
+                <br /><br /><br /><br />
+
+                <div class="col-md-12">
+                    <p class='lead'>
+                        <img class='img-responsive' src='img/UI_na_elementih_2.png' alt='Vezava elementov'  align="right" style="height:220px;">
+                        Če bi uporabili običajne merilne inštrumente, bi priključili ampermeter (merilnik toka) in voltmeter (merilnik napetosti) kot prikazuje slika na desni.
+                        Namesto voltmetra bi običajno uporabili osciloskop, ki tudi prikazuje napetost vendar v grafični obliki (časovno obliko signala).
+                    </p>
+                </div>
+
+                <br /><br /><br /><br />
+
+                <div class="col-md-12">
+                    <p class="lead">
+                        <img class='img-responsive' src='img/UI_na_elementih_3.png' alt='Vezava elementov'  align="right" style="height:280px;">
+                        Da bi lahko spremljali tudi časovno obliko toka, moramo pretvoriti tokovni signal v napetostnega. Najenostavneje to naredimo tako, da v vezje vključimo merilni upor
+                        (R<sub>mer</sub>) in merimo oz. prikazujemo napetost na njem (V<sub>mer</sub>). Tok je sorazmeren prikazani napetosti, saj velja i=u/R.
+                    </p>
+                </div>
+
+                <div class="col-md-12">
+                    <p class="lead">
+                        <img class='img-responsive' src='img/red_pitaya_lastnosti_elementov_vezij_Srednji.png' alt='Vezava elementov'  align="right" style="height:280px;">
+                        Red Pitayo uporabimo za merjenje toka in napetosti na elementih tako, da povežemo elemente kot kaže slika na desni. V ta namen uporabite priložene žičke
+                        (vezice) in prototipno ploščico.<br />
+                        POZOR: Črna žička na priključni sponki, ki gre iz vhoda ali izhoda Red Pitaje je vedno priključena na maso. To pomeni, da morate poskrbeti, da vedno uporabite skupno maso.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row featurette">
+                <div class="col-md-1">
+                    <i class="fa fa-hand-o-right fa-3x" style="color: blue;"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        <strong>SESTAVITE VEZJE KOT KAŽE MERILNA SHEMA. PRI TEM UPOŠTEVAJTE SPODNJA NAVODILA ZA PRIKLJUČITEV.</strong>
+                    </p>
+                </div>
+            </div><br>
+
+
+            <h4 style="color: blue;" class='section-heading'>Navodilo za priključitev</h4>
+            <p class="lead">
+                Za (skupno) maso uporabite spojišče med uporom Rmer in U<sub>g</sub>. Vhod 1 (V1) na Red Pitaji uporabite za merjenje napetosti na merilnem uporu (V1 = V<sub>mer</sub>),
+                vhod 2 (V2) pa priključite tako, da merite priključeno napetost. Možen način priključitve elementov je prikazan na sliki desno.
+            </p>
+            <p class="col-md-12" class='lead'>
+                <img class='img-responsive' src='img/UI_na_elementih0.png' alt='Vezava elementov'  align="right" style="height:200px;"><br /><br /><br /><br />
+            </p>
+
+
+            <p class="col-md-12 lead">
+                Napetost na bremenu dobimo kot razliko izmerjenih napetosti, torej je V<sub>R</sub> = U<sub>g</sub> - V<sub>mer</sub> oziroma kot VR = V2 – V1.<br /><br />
+                Tok skozi breme dobimo iz izmerjene napetosti V1:<br /><br />
+                <em>I = V<sub>mer</sub> / R<sub>mer</sub> oziroma kot i = V1 / R<sub>mer</sub></em>.
+            </p>
+            <p class="lead">
+                Ta izračun je že upoštevan v aplikaciji Tok + Napetost, tako da morate po ustrezni priključitvi elementov le zagnati aplikacijo in ugotavljati lastnosti elementov.
+            </p>
+            <div class="row featurette">
+                <div class="col-md-1">
+                    <i class="fa fa-hand-o-right fa-3x" style="color: blue;"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        <strong>ČE STE USPEŠNO PRIKLJUČILI RED PITAJO (NAVODILA ZA PRIKLOP) ZAŽENITE APLIKACIJO Tok + Napetost.  ČE SE JE APLIKACIJA ZAGNALA ZAČNITE IZVAJATI EKSPERIMENT Z UPOŠTEVANJEM SPODNJIH NAVODIL. </strong>
+                    </p>
+                </div>
+            </div><br>
+
+            <h4 style="color: blue;" class='section-heading'>Navodila za izvajanje meritev</h4>
+            <p class="lead">
+                Pred začetkom izvajanja meritev si lahko natisnete predlogo <a href="pdf/Rezultati_meritev_na_elementih.pdf">Rezultati meritev na elementih vezij</a>,
+                v katero lahko zapisujete rezultate meritev.
+            </p>
+
+            <!-- 1. naloga -->
+            <div class="col-md-12">
+                <p class="lead"><strong>1.	Naloga – lastnosti upora</strong></p>
+
+                <div class="col-md-1">
+                    <i class="fa fa-plus fa-3x" style="color: #ff0000"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        V pomoč pri razlagi lastnosti UPORA v vezjih si preberite poglavje <a href="pdf/Opis_elementov_enostaven.pdf#page=1">Opis elementov (UPOR)</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-1">
+                    <i class="fa fa-arrow-right fa-3x" style="color: #0000FF"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        Poiščite med elementi upor z vrednostjo 100 ohmov  in ga vežite kot breme v skladu z merilno shemo. Zaženite aplikacijo <strong>Tok + Napetost</strong> ter
+                        nastavite <strong>sinusni</strong> vzbujalni signal s frekvenco 1000 Hz in amplitudo 0,5 V. Opazujte potek napetosti in toka na ter ju skicirajte v predlogo, ki ste jo natisnili.
+                        Ustrezno označite osi (vpišite veličino in enoto, npr. Čas / sek ) in oba signala ter odgovorite na spodnja vprašanja v kvizu.
+                    </p>
+                </div>
+            </div>
+
+            <!--Pojdi na kviz  Enostavni način - 1. naloga -->
+            <div class="panel panel-default">
+                <a data-toggle="collapse" href="#panel27">
+                    <div class="panel-heading"><h4 onclick="$('#panel27').toggle();">Pojdi na kviz</h4></div>
+                </a>
+
+                <div id="panel27" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class='row' id="quiz27">
+                            <div class='col-lg-12'>
+                                <div class="emc-score"></div>
+                                <section data-quiz-item>
+                                    <div class="question">1. Ali je napetostni signal enake oblike kot tokovni?</div>
+                                    <div class="choices" data-choices='["Da.",
+                                                                        "Ne."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">2. Če amplitudo napetostnega signala povečamo za 2x ( na 1 V) se amplituda toka:</div>
+                                    <div class="choices" data-choices='["Poveča približno za 2x",
+                                                                       "Ne spremeni",
+                                                                       "Se zmanjša za 2x",
+                                                                       "Se poveča za 3x",
+                                                                       "Se zmanjša za 3x"]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">3. Če povečam frekvenco vzbujalnega (napetostnega) signala za 10x (na 10 kHz), se:</div>
+                                    <div class="choices" data-choices='["Ostane frekvenca toka enaka kot prej (1 kHz).",
+                                                                        "Se enako poveča tudi frekvenca tokovnega signala."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">4. Če spremenite vzbujalni napetostni signal na trikotnega:</div>
+                                    <div class="choices" data-choices='["Se enako spremeni tudi oblika toka.",
+                                                                       "Ostane oblika toka sinusne oblike.",
+                                                                       "Je oblika toka bolj pravokotne oblike"]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">5. Če bi zamenjali upor 100 ohmov za drugega, npr. 2 x večjega, bi se ob isti priključeni napetosti:</div>
+                                    <div class="choices" data-choices='["Tok povečal za 2 x.",
+                                                                       "Tok zmanjšal za 2 x.",
+                                                                       "Tok bi ostal enak, kot je bil pred zamenjavo."]'>
+                                    </div>
+                                </section>
+
+                                <div class="submit">
+                                    <button class="btn emc-submit">Preveri odgovore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. naloga -->
+            <div class="col-md-12">
+                <p class="lead"><strong>2. Naloga – lastnosti kondenzatorja</strong></p>
+
+                <div class="col-md-1">
+                    <i class="fa fa-plus fa-3x" style="color: #ff0000"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        V pomoč pri razlagi lastnosti KONDENZATORJA v vezjih si preberite poglavje <a href="pdf/Opis_elementov_enostaven.pdf#page=3">Opis elementov (KONDENZATOR)</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-1">
+                    <i class="fa fa-arrow-right fa-3x" style="color: #0000FF"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        Poiščite med elementi kondenzator in ga namestite na prototipno ploščico namesto upora ter zaženite aplikacijo <strong>Tok + Napetost</strong>.  Nastavite <strong>sinusni</strong> vzbujalni signal s frekvenco 5000 Hz
+                        in amplitudo 0,5 V. Opazujte tako potek napetosti in toka ter ju skicirajte v graf v predlogi. Ustrezno označite osi (vpišite veličino in enoto, npr. Čas / sek ) in oba signala ter
+                        odgovorite na spodnja vprašanja:
+
+                    </p>
+                </div>
+            </div>
+
+            <!--Pojdi na kviz  Enostavnejši način - 2. naloga -->
+            <div class="panel panel-default">
+                <a data-toggle="collapse" href="#panel28">
+                    <div class="panel-heading"><h4 onclick="$('#panel28').toggle();">Pojdi na kviz</h4></div>
+                </a>
+
+                <div id="panel28" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class='row' id="quiz28">
+                            <div class='col-lg-12'>
+                                <div class="emc-score"></div>
+                                <section data-quiz-item>
+                                    <div class="question">1. Ali je napetostni signal enake oblike kot tokovni?</div>
+                                    <div class="choices" data-choices='["Da.",
+                                                                        "Ne."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">2. Napetostni in tokovni signal sta:</div>
+                                    <div class="choices" data-choices='["Enake oblike vendar zamaknjena v času.",
+                                                                       "Ne spremeni.",
+                                                                       "Različne oblike vendar ne zamaknjena.",
+                                                                       "Enaka."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">3. Tokovni in napetostni signal sta zamaknjena za približno</div>
+                                    <div class="choices" data-choices='["Pol periode signala.",
+                                                                        "Celo periodo signala.",
+                                                                        "Eno četrtino periode signala.",
+                                                                        "Nista zamaknjena."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">4. Če amplitudo napetostnega signala povečamo za 2x (na 1 V) se amplituda toka:</div>
+                                    <div class="choices" data-choices='["Poveča približno za 2x.",
+                                                                       "Ne spremeni.",
+                                                                       "Zmanjša za 2x.",
+                                                                       "Poveča za 3x.",
+                                                                       "Zmanjša za 3x."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">5. Če povečam frekvenco vzbujalnega (napetostnega) signala za 10x (na 50 kHz), se:</div>
+                                    <div class="choices" data-choices='["Ostane frekvenca toka enaka kot prej (5 kHz).",
+                                                                       "Se enako poveča tudi frekvenca tokovnega signala."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">6. Pri povišani frekvenci signala je amplituda toka:</div>
+                                    <div class="choices" data-choices='["Večja kot pri prejšnji (nižji) frekvenci.",
+                                                                       "Enaka kot pri prejšnji frekvenci.",
+                                                                       "Manjša kot pri prejšnji frekvenci."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">7. Če spremenite vzbujalni napetostni signal na trikotnega:</div>
+                                    <div class="choices" data-choices='["Se enako spremeni tudi oblika toka.",
+                                                                       "Postane oblika toka bolj pravokotne oblike.",
+                                                                       "Ostane oblika toka sinusne oblike."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">8. Če spremenite vzbujalni napetostni signal na pravokotnega:</div>
+                                    <div class="choices" data-choices='["Je tok velik le ob spremembah napetostnega signala.",
+                                                                       "Se enako spremeni tudi oblika toka.",
+                                                                       "Ostane oblika toka sinusne oblike."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">9. Pri zelo visoki frekvenci vzbujalnega signala bi kondenzator predstavljal:</div>
+                                    <div class="choices" data-choices='["Odprte sponke (ne bi bilo  toka skozi kondenzator).",
+                                                                       "Kratek stik (tok skozi kondenzator bi bil zelo velik oz. omejen z drugimi elementi v vezju)."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">10. Pri zelo nizki frekvenci vzbujalnega signala bi kondenzator predstavljal:</div>
+                                    <div class="choices" data-choices='["Odprte sponke (ne bi bilo  toka skozi kondenzator ali pa bi bil zelo majhen).",
+                                                                       "Kratek stik (tok skozi kondenzator bi bil zelo velik oz. omejen z drugimi elementi v vezju)."]'>
+                                    </div>
+                                </section>
+
+                                <div class="submit">
+                                    <button class="btn emc-submit">Preveri odgovore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. naloga -->
+            <div class="col-md-12">
+                <p class="lead"><strong>3. Naloga – lastnosti tuljave</strong></p>
+
+                <div class="col-md-1">
+                    <i class="fa fa-plus fa-3x" style="color: #ff0000"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        V pomoč pri razlagi lastnosti TULJAVE v vezjih si preberite poglavje <a href="pdf/Opis_elementov_enostaven.pdf#page=5">Opis elementov (TULJAVA)</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-1">
+                    <i class="fa fa-arrow-right fa-3x" style="color: #0000FF"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        Poiščite med elementi tuljavo in jo namestite na prototipno ploščico namesto kondenzatorja ter zaženite aplikacijo <strong>Tok + Napetost</strong>.
+                        Nastavite <strong>sinusni</strong> vzbujalni signal s frekvenco 5000 Hz in amplitudo 0,5 V. Opazujte tako potek napetosti in toka ter ju skicirajte v predlogi.
+                        Ustrezno označite osi (vpišite veličino in enoto, npr. Čas / sek ) in oba signala ter odgovorite na spodnja vprašanja:
+
+                    </p>
+                </div>
+            </div>
+
+            <!--Pojdi na kviz  Enostavnejši način - 3. naloga -->
+            <div class="panel panel-default">
+                <a data-toggle="collapse" href="#panel29">
+                    <div class="panel-heading"><h4 onclick="$('#panel29').toggle();">Pojdi na kviz</h4></div>
+                </a>
+
+                <div id="panel29" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class='row' id="quiz29">
+                            <div class='col-lg-12'>
+                                <div class="emc-score"></div>
+
+                                <section data-quiz-item>
+                                    <div class="question">1. Ali je napetostni signal enake oblike kot tokovni?</div>
+                                    <div class="choices" data-choices='["Da.",
+                                                                        "Ne."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">2. Napetostni in tokovni signal sta:</div>
+                                    <div class="choices" data-choices='["Enake oblike vendar zamaknjena v času.",
+                                                                       "Ne spremeni.",
+                                                                       "Različne oblike vendar ne zamaknjena.",
+                                                                       "Enaka."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">3. Tokovni in napetostni signal sta zamaknjena za približno:</div>
+                                    <div class="choices" data-choices='["Pol periode signala.",
+                                                                        "Celo periodo signala.",
+                                                                        "Eno četrtino periode signala.",
+                                                                        "Nista zamaknjena."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">4. Če amplitudo napetostnega signala povečamo za 2x (na 1 V), se amplituda toka:</div>
+                                    <div class="choices" data-choices='["Poveča približno za 2x.",
+                                                                       "Ne spremeni.",
+                                                                       "Zmanjša za 2x.",
+                                                                       "Poveča za 3x.",
+                                                                       "Zmanjša za 3x."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">5. Če povečam frekvenco vzbujalnega (napetostnega) signala za 10x (na 50 kHz):</div>
+                                    <div class="choices" data-choices='["Ostane frekvenca toka enaka kot prej (5 kHz).",
+                                                                       "Se enako poveča tudi frekvenca tokovnega signala."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">6. Pri povišani frekvenci signala je amplituda toka:</div>
+                                    <div class="choices" data-choices='["Večja kot pri prejšnji (nižji) frekvenci.",
+                                                                       "Enaka kot pri prejšnji frekvenci",
+                                                                       "Manjša kot pri prejšnji frekvenci"]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">7. Če spremenite vzbujalni napetostni signal na trikotnega:</div>
+                                    <div class="choices" data-choices='["Se enako spremeni tudi oblika toka.",
+                                                                       "Postane oblika toka bolj pravokotne oblike.",
+                                                                       "Ostane oblika toka sinusne oblike."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">8. Če spremenite vzbujalni napetostni signal na pravokotnega:</div>
+                                    <div class="choices" data-choices='["Je tok velik le ob spremembah napetostnega signala.",
+                                                                       "Se enako spremeni tudi oblika toka.",
+                                                                       "Postane tok trikotne oblike.",
+                                                                       "Ostane oblika toka sinusne oblike."]'>
+                                    </div>
+                                </section>
+
+
+                                <section data-quiz-item>
+                                    <div class="question">9. Pri zelo visoki frekvenci vzbujalnega signala bi tuljava  predstavljala:</div>
+                                    <div class="choices" data-choices='["Odprte sponke (ne bi bilo  toka skozi kondenzator).",
+                                                                       "Kratek stik (tok skozi kondenzator bi bil zelo velik oz. omejen z drugimi elementi v vezju)."]'>
+                                    </div>
+                                </section>
+
+
+                                <section data-quiz-item>
+                                    <div class="question">10. Pri zelo nizki frekvenci vzbujalnega signala bi kondenzator predstavljal:</div>
+                                    <div class="choices" data-choices='["Odprte sponke (ne bi bilo  toka skozi kondenzator ali pa bi bil zelo majhen).",
+                                                                       "Kratek stik (tok skozi kondenzator bi bil zelo velik oz. omejen z drugimi elementi v vezju)."]'>
+                                    </div>
+                                </section>
+
+                                <div class="submit">
+                                    <button class="btn emc-submit">Preveri odgovore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. naloga -->
+            <div class="col-md-12">
+                <p class="lead"><strong>4. Naloga – lastnosti diode</strong></p>
+
+                <div class="col-md-1">
+                    <i class="fa fa-plus fa-3x" style="color: #ff0000"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        V pomoč pri razlagi lastnosti DIODE v vezjih si preberite poglavje <a href="pdf/Opis_elementov_enostaven.pdf#page=7">Opis elementov (DIODA)</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-1">
+                    <i class="fa fa-arrow-right fa-3x" style="color: #0000FF"></i>
+
+                </div>
+                <div class="col-md-11" style="text-align: center;">
+                    <p class='lead'>
+                        Poiščite med elementi diodo in jo namestite na prototipno ploščico namesto tuljave ter zaženite aplikacijo <strong>Tok + Napetost</strong>.
+                        Nastavite <strong>sinusni</strong> vzbujalni signal s frekvenco 5000 Hz in amplitudo 0,5 V. Opazujte tako potek napetosti in toka ter ju skicirajte v graf v
+                        predlogi. Ustrezno označite osi (vpišite veličino in enoto, npr. Čas / sek ) in oba signala ter odgovorite na spodnja vprašanja:
+
+                    </p>
+                </div>
+            </div>
+
+            <!--Pojdi na kviz  Enostavnejši način - 4. naloga -->
+            <div class="panel panel-default">
+                <a data-toggle="collapse" href="#panel30">
+                    <div class="panel-heading"><h4 onclick="$('#panel30').toggle();">Pojdi na kviz</h4></div>
+                </a>
+
+                <div id="panel30" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class='row' id="quiz30">
+                            <div class='col-lg-12'>
+                                <div class="emc-score"></div>
+                                <section data-quiz-item>
+                                    <div class="question">1. Ali je napetostni signal enake oblike kot tokovni?</div>
+                                    <div class="choices" data-choices='["Da.", "Ne."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">2. Napetostni in tokovni signal sta:</div>
+                                    <div class="choices" data-choices='["Enake oblike vendar zamaknjena v času.",
+                                                                       "Ne spremeni.",
+                                                                       "Različne oblike vendar ne zamaknjena.",
+                                                                       "Enaka."]'>
+                                    </div>
+                                </section>
+
+
+                                <section data-quiz-item>
+                                    <div class="question">3. Tok prevaja skozi diodo:</div>
+                                    <div class="choices" data-choices='["Enako v obe smeri.",
+                                                                        "Le v eni smeri, v drugi pa ne."]'>
+                                    </div>
+                                </section>
+
+
+                                <section data-quiz-item>
+                                    <div class="question">4. Tokovni in napetostni signal sta zamaknjena za približno:</div>
+                                    <div class="choices" data-choices='["Pol periode signala.",
+                                                                       "Celo periodo signala.",
+                                                                       "Zmanjša za 2x.",
+                                                                       "Eno četrtino periode signala.",
+                                                                       "Nista zamaknjena."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">5. Če amplitudo napetostnega signala povečamo za 2x (na 1 V) se amplituda toka ob prevajanju:</div>
+                                    <div class="choices" data-choices='["Poveča približno za 2x.",
+                                                                       "Ne spremeni",
+                                                                       "Zmanjša za 2x.",
+                                                                       "Poveča za 3x.",
+                                                                       "Zmanjša za 3x."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">6. Če povečam frekvenco vzbujalnega (napetostnega) signala za 10x (na 50 kHz):</div>
+                                    <div class="choices" data-choices='["Ostane frekvenca toka enaka kot prej (5 kHz).",
+                                                                       "Se enako poveča tudi frekvenca tokovnega signala."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">7. Pri povišani frekvenci signala je amplituda toka:</div>
+                                    <div class="choices" data-choices='["Večja kot pri prejšnji (nižji) frekvenci.",
+                                                                       "Enaka kot pri prejšnji frekvenci.",
+                                                                       "Manjša kot pri prejšnji frekvenci."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">8. Če spremenite vzbujalni napetostni signal na trikotnega:</div>
+                                    <div class="choices" data-choices='["Se enako spremeni tudi oblika toka.",
+                                                                       "Postane oblika toka bolj pravokotne oblike.",
+                                                                       "Ostane oblika toka sinusne oblike."]'>
+                                    </div>
+                                </section>
+
+
+                                <section data-quiz-item>
+                                    <div class="question">9. Če spremenite vzbujalni napetostni signal na pravokotnega:</div>
+                                    <div class="choices" data-choices='["Je tok velik le ob spremembah napetostnega signala.",
+                                                                       "Se enako spremeni tudi oblika toka in prevaja le v eno smer.",
+                                                                       "Postane tok trikotne oblike.",
+                                                                       "Se enako spremeni tudi oblika toka in prevaja v obe smeri."]'>
+                                    </div>
+                                </section>
+
+                                <div class="submit">
+                                    <button class="btn emc-submit">Preveri odgovore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- row -->
+    </div>
+</div>

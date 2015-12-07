@@ -1,0 +1,310 @@
+<div id="solar-cell-hard" class='content-section-a'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-lg-12 col-sm-6'>
+                <h3 style="margin-top: 30px;" class='section-heading'>Zahtevnejši način izvajanja</h3>
+
+                <h4 class='section-heading' style="color: blue;">Opis vezave elementov</h4>
+
+                <div class='lead col-lg-12'>
+                    <p class="lead col-lg-9">
+                        Sončna celica, ki jo bomo uporabili, je sestavljena iz štirih zaporedno vezanih osnovnih elementov, kot kaže slika.
+                        Na levi strani slike je prikazana postavitev osnovnih celic v izdelanem elementu, na desni pa nadomestna električna shema.
+                        Kontakta 1 in 2 sta med seboj povezana in predstavljata negativno sponko, kontakta 4 in 5 (prav tako povezana med seboj) pa pozitivno.
+                        Med sponkama 3 in 4 je povezana le celica številka 4, kar omogoča merjenje ene same celice.<br /><br />
+                    </p>
+                    <p class="lead col-lg-3"><img class='img-responsive' src='img/soncna_celica1.png' alt='Sončna celica' align="center" style="height:160px;"></p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="lead col-lg-9">
+                        Slika na desni predstavlja električno shemo za priklop sončne celice (kot celote) na porabnik, v našem primeru na električni upor.
+                        Za priklop sončne celice uporabimo sponki 1 in 5. S priklopom smo ustvarili električni tokokrog. Ko je sončna celica osvetljena,
+                        se na njej pojavi napetosti, ki požene tok skoznjo in skozi priključeno breme.<br /><br />
+                    </p>
+                    <p class="lead col-lg-3"><img class='img-responsive' src='img/vezava1.png' alt='Vezava elementov pri sončni celici'  align="center" style="height:120px; margin-bottom:40px"></p>
+                </div>
+
+
+                <div class='lead col-lg-12'>
+                    <p class="lead col-lg-9">
+                        Zanima nas, kako je moč, ki jo daje sončna celica, odvisna od upornosti porabnika, ki je priključen nanjo. Zato bomo spreminjali
+                        upornost porabnika in hkrati merili napetost na sponkah sončne celice ter tok, ki ga sončna celica žene skozi porabnik.
+                        Izberemo porabnik v obliki potenciometra: njegovo upornost spreminjamo z vrtenjem gumba. Potenciometer ima tri priključne sponke,
+                        v vezavi uporabimo le dve.<br /><br />
+                    </p>
+                    <p class="lead col-lg-3"><img class='img-responsive' src='img/vezava2.png' alt='Vezava elementov pri sončni celici' align="center" style="height:120px; margin-bottom:40px"></p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="lead col-lg-9">
+                        Tok v tokokrogu merimo z ampermetrom, ki ga v tokokrog vežemo zaporedno s sončno celico. Napetost na sponkah celice merimo z voltmetrom, ki ga priključimo
+                        na priključni sponki sončne celice, kot kaže slika na desni.<br /><br />
+                    </p>
+                    <p class="lead col-lg-3"><img class='img-responsive' src='img/vezava3.png' alt='Vezava elementov - tokokrog' align="center" style="height:120px; margin-bottom:40px"></p>
+                </div>
+
+                <h4 class='section-heading' style="color: blue;">Merilna shema</h4>
+
+                <div class='lead col-lg-12'>
+                    <p class="lead col-lg-9">
+                        Namesto voltmetra in ampermetra uporabimo Red Pitayo (RP).  Hitri vhod 1 uporabimo kot voltmeter, hitri vhod 2
+                        pa kot ampermeter. Ker na vhodih RP lahko merimo le napetosti, bomo tok na vhodu 2 merili posredno preko merjenja
+                        napetosti na dodatnem (merilnem) uporu z upornostjo R<sub>mer</sub>. Ker za upore velja Ohmov zakon U = I * R<sub>mer</sub>,
+                        bomo tok dobili kot I = U / R<sub>mer</sub>.  Merilni upor umestimo v tokokrog na enak način, kot bi umestili ampermeter.
+                        S pomočjo vezic in prototipne ploščice povežite elemente vezja (sončno celico, merilni upor R<sub>mer</sub> ter porabnik
+                        (potenciometer) R) ter vezje priključite na vhoda 1 in 2 računalniško-merilne kartice Red Pitaya, kot kaže slika.
+                        Za lažje povezovanje elementov uporabite preprosto prototipno ploščico, ki je na kratko opisana spodaj.
+                    </p>
+                    <p class="lead col-lg-3"><img class='img-responsive' src='img/merilna_shema.png' alt='Merilna shema elementov sončne celice.' align="center" style="height:230px; margin-bottom:40px"></p>
+                </div>
+
+                <h4 style="margin-top: 20px; color: blue;" class='section-heading'>Opis prototipne plošče</h4>
+
+                <p class='lead col-md-12'>
+                    Naša prototipna ploščica (angleško protoboard ali breadboard) ima zelo enostavno strukturo. Sestavljena je iz dveh polovic,
+                    vsaka ima stolpce, ki so na skupnem kontaktu. To omogoča poljubno povezovanje elementov glede na merilno shemo.
+                </p>
+
+                <p class="lead col-md-12">
+                    <img class='img-responsive' src='img/prototipna_ploscica.png' alt='Prototipna ploščica' align="center" style="height:190px;">
+                </p>
+
+                <p class="lead col-md-12">
+                    Če vam kljub razlagi merilne sheme ne uspe povezati elementov, lahko še vedno preidete na
+                    <a href="index.html?page=soncna-celica-lazji">enostaven način</a>. Tam podamo podrobna navodila za povezavo z vezicami.
+                </p>
+
+                <p class="lead col-md-12">
+                    <u>Opozorilo:</u> izhod iz Red Pitaje mora biti pravilno priključen na porabnik. Tako Red Pitaya kot
+                    tudi vsi osciloskopi imajo po dve priključni sponki na en vhod. Ena je vedno priključena na maso.
+                    Priključni vodnik za hitri vhod ima na drugem koncu dve žički. Črna žička je masa, rdeča pa signal.
+                </p>
+
+                <div class='lead' style="margin-bottom: 40px">
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11"><strong>SESTAVITE VEZJE, KOT KAŽE MERILNA SHEMA. PREDLAGAMO, DA NAJPREJ POVEŽETE ELEMENTE V TOKOKROG IN NATO TOKOKROG POVEŽETE Z RED PITAJO.</strong></p>
+                </div>
+
+
+                <h4 style="margin-top: 100px;" class='section-heading'>Opis priključkov na Red Pitaji</h4>
+
+                <p class="lead col-md-12"><img class="img-responsive" src='img/pitaya_celica.png' alt="Priključki na Red Pitaji" style="margin-top: 10px; width:550px;"></p>
+
+
+                <div class='lead col-lg-12' style="margin-bottom: 40px">
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11"><strong>ČE STE ZVEZALI ELEMENTE VEZJA Z RED PITAJO, LAHKO NADALJUJETE Z ZAGONOM APLIKACIJE.</strong></p>
+                </div>
+
+                <p class="lead col-md-12" style="margin-top: 20px">
+                    Če ste povezali vse elemente po merilni shemi in (že predhodno) vzpostavili računalniško-merilno
+                    kartico Red Pitaya, kot je opisano na spletni strani <a href="index.html?page=red-pitaja#turnon-redpitaya">Zagon_Red_Pitaye</a>,
+                    poženite aplikacijo <a href="#">eSončna_celica</a> in sledite navodilom za izvedbo meritev.
+                    Če imate težave z zagonom Red Pitaye, vam bodo morda pomagala <a href="index.html?page=pogosta-vprasanja">dodatna navodila oz. pogosta vprašanja</a>.
+                </p>
+
+                <h4 style="clear:both; margin-left:16px; padding-top: 20px; color: blue; margin-top: 80px;" class="section-heading">Navodila za izvajanje meritev</h4>
+
+                <p class='lead col-lg-12'>
+                    Za osvetlitev sončne celice uporabite poljuben izvor svetlobe. Predlagamo, da uporabite namizno svetilko, pri čemer
+                    sončno celico postavite približno 20 cm stran od žarnice. To zagotavlja velik svetlobni tok in s tem natančnejše meritve.
+                </p>
+
+
+                <div class='lead col-lg-12' style="margin-bottom: 40px">
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">
+                        Na grafu se mora prikazovati merilna točka v obliki kroga. (Elektrotehniki ji rečemo tudi delovna točka, saj je to točka (stanje),
+                        v katerem se vezje trenutno nahaja.) Ta točka skače iz mesta na mesto, predvsem zato, ker območja merjenja na vertikalni in horizontalni
+                        skali niso ustrezno določena. Kliknite na <strong>Nastavitve</strong> in za X os vpišite skrajni vrednosti 0 in 1500 (mV) za Y os pa skrajni
+                        vrednosti 0 in 3 (mA). Kasneje lahko te vrednosti spremenite tako, da bo krivulja (izmerjena karakteristika) na grafu ustrezno izrisana.
+                    </p>
+                </div>
+
+
+                <div class='lead col-lg-12' style="margin-bottom: 40px">
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">
+                        Obrnite potenciometer tako, da je delovna točka v položaju čim bolj levo na grafu. Tedaj je upornost
+                        potenciometra (porabnika) najmanjša in je tok v vezju največji. Če je upornost porabnika zelo majhna, lahko privzamemo,
+                        da v tem primeru tok skozi tokokrog ni dosti različen od toka, ki bi ga izmerili pri direktni povezavi
+                        + in – sponke sončne celice. Temu stanju rečemo kratek stik; toku, ki ga pri tem izmerimo, pa tok kratkega stika.
+                        (Pomni: ker je v vezju za merjenje toka nameščen merilni upor, ne moremo zares doseči stanja kratkega stika;
+                        če pa je merilni upor zelo majhen, se lahko temu stanju precej dobro približamo.)
+                    </p>
+                </div>
+
+
+                <div class='lead col-lg-12' style="margin-bottom: 40px">
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">
+                        Ko bo merilna točka čisto na levi strani grafa, pritisni gumb <strong>shrani meritev.</strong>
+                    </p>
+                </div>
+
+                <div class='lead col-lg-12' style="margin-bottom: 40px">
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">
+                        Povečamo upornost bremena tako, da se bo merilna točka postavila nekoliko bolj v desno. Vsakič,
+                        ko smo zadovoljni z mestom nove točke na grafu, pritisnemo shrani meritev. Ob tem se nam izrisuje krivulja
+                        izmerjenih vrednosti.
+                    </p>
+                </div>
+
+
+                <div class='lead col-lg-12' style="margin-bottom: 40px">
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">
+                        Povečujemo upornost porabnika in shranjujemo meritve, dokler se merilna točka ne prestavi povsem na desno
+                        in na dno grafa. Ko je gumb potenciometra zavrten do konca in je upornost potenciometra zelo velika, je
+                        celotno vezje v stanju, v katerem je tok skozi vezje zelo majhen. Napetost na sončni celici je v tem primeru
+                        zelo blizu napetosti, ki bi jo izmerili na sončni celici, ko nanjo ne bi bil priključen noben porabnik. Temu
+                        stanju rečemo stanje odprtih sponk, napetosti, ki jo izmerimo, pa napetost odprtih sponk. To točko lahko izmerimo
+                        tudi tako, da iz vezja potenciometer kar odstranimo. Toka v vezju tedaj ni, napetost na sončni celici pa je enaka
+                        napetosti odprtih sponk.
+                    </p>
+                </div>
+
+                <div class='lead col-lg-12' style="margin-bottom: 40px">
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">
+                        V tabeli, kjer se beležijo izmerjene vrednosti napetosti na sončni celici in toka skozi tokokrog,
+                        ki ga sončna celica žene, se sočasno izračunava tudi moč, ki jo sončna celica daje porabniku. Ta je
+                        produkt izmerjene napetosti in toka.  Opazujemo, kako se moč spreminja z upornostjo porabnika.
+                        S klikom na gumb <img src='img/moc.png' alt="moč" style="margin-top: 10px; width:12%"> se izriše tudi graf moči.
+                    </p>
+                </div>
+
+
+                <div class='lead col-lg-12' style="margin-bottom: 40px">
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">
+                        Narišite še kakšno I(U) karakteristiko sončne celice. Lahko spremenite osvetlitev sončne celice ali
+                        sončno celico delno zakrijete. Kliknite na gumb nova in ponovite meritev. Če z določeno meritvijo niste
+                        zadovoljni, lahko kliknete križec in meritev se izbriše iz tabele in tudi z zaslona. Celotno karakteristiko
+                        (graf) lahko zbrišete tako, da jo izberete v izvlečenem seznamu in kliknete odstrani. Izmerjene vrednosti
+                        lahko shranite v datoteko s klikom na gumb izvoz za kasnejšo obdelavo ali obdelavo podatkov z drugimi programi.
+                        Zelo enostavno lahko podatke preberete s programom Excel in narišete graf izmerjenih vrednosti po svojem okusu.
+                    </p>
+                </div>
+
+                <p class='lead col-md-12'>
+                    <strong>Po opravljenih meritvah</strong> poskusite odgovoriti na spodnja vprašanja.
+                </p>
+            </div>
+        </div>
+        <!--Pojdi na kviz, zahteven način  -->
+        <div class="container">
+            <div class="panel panel-default">
+                <a data-toggle="collapse" href="#panel16">
+                    <div class="panel-heading"><h4>Pojdi na kviz</h4></div>
+                </a>
+                <div id="panel16" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class='row' id="quiz16">
+                            <div class='col-lg-12'>
+                                <div class="emc-score"></div>
+                                <section data-quiz-item>
+                                    <div class="question">1. Katera razvrstitev simbolov za elemente vezij na sliki od
+                                        leve proti desni je pravilna?
+                                    </div>
+                                    <div class="choices" data-choices='["Upor, potenciometer, voltmeter, sončna celica, ampermeter.",
+                                                                        "Upor, sončna celica, potenciometer, voltmeter, ampermeter.",
+                                                                        "Upor, sončna celica potenciometer, voltmeter, ampermeter.",
+                                                                        "Upor, sončna celica potenciometer, ampermeter, voltmeter."]'>
+
+                                    </div>
+                                    <img class='img-responsive' src='img/soncna_celica_kviz.png'
+                                         alt='Razvrstitev simbolov elementov vezij pri sončni celici.'
+                                         style="height:100px;">
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">2. Katero enoto ima napetost?</div>
+                                    <div class="choices" data-choices='["Amper (A)",
+                                                                       "Volt (V)",
+                                                                       "Vat (W)"]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">3. Katero enoto ima tok?</div>
+                                    <div class="choices" data-choices='["Amper (A)",
+                                                                        "Volt (V)",
+                                                                        "Vat (W)"]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">4. Kdaj je tok skozi sončno celico največji??</div>
+                                    <div class="choices" data-choices='["Ko je nanjo priključen porabnik z največjo upornostjo.",
+                                                                       "Ko je nanjo priključen porabnik z najmanjšo upornostjo.",
+                                                                       "Ko ni priključenega porabnika."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">5. Kako ugotovimo moč na porabniku / sončni celici?</div>
+                                    <div class="choices" data-choices='["Moč je vsota toka in napetosti na elementu.",
+                                                                        "Moč je kvocient toka in napetosti na elementu.",
+                                                                        "Moč je produkt toka in napetosti na elementu."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">6. Katero enoto ima moč?</div>
+                                    <div class="choices" data-choices='["Amper (A)",
+                                                                       "Volt (V)",
+                                                                       "Vat (W)"]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">7. Kolikšna je napetost odprtih sponk celotne sončne celice,
+                                        ki ste jo uporabili pri poskusih?
+                                    </div>
+                                    <div class="choices" data-choices='["Manj kot 1 V.",
+                                                                        "Več kot 1 V in manj kot 2 V.",
+                                                                        "Več kot 2 V in manj kot 3 V.",
+                                                                        "Več kot 3 V."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">8. Kolikšen je tok kratkega stika celotne sončne celice, ki
+                                        ste jo uporabili pri poskusih?
+                                    </div>
+                                    <div class="choices" data-choices='["Približno 1 A.",
+                                                                       "Približno 100 mA.",
+                                                                       "Približno 10 mA.",
+                                                                       "Približno 1 mA."]'>
+                                    </div>
+                                </section>
+
+                                <div class="submit">
+                                    <button class="btn emc-submit">Preveri odgovore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class='lead col-md-12' style="margin-top: 30px; margin-bottom: 30px;">
+            <strong>Povzetek osnovnih ugotovitev<br/>
+                Tok skozi sončno celico je največji, ko je upornost porabnika najmanjša. Ni pa tedaj na porabniku tudi
+                največja moč. Moč je produkt toka in napetosti. Ker so posamezni elementi sončne celice vezani zaporedno,
+                je tok skozi vse elemente enak. Napetost na posameznem elementu je ob enakem izkoristku vseh štirih posameznih
+                celic le ¼ izmerjene napetosti celotne sončne celice.
+                Največja moč sončne celice, ki smo jo izmerili, je okoli 1 mW. Če predpostavimo, da je izkoristek uporabljene
+                sončne celice okoli 15 %, to pomeni, da je bil energijski tok, ki ga na sončno celico prinaša svetloba, 0.15 mW.
+            </strong>
+        </p>
+
+        <p class="lead col-md-12">
+            <a href='#' class='btn btn-default btn-lg exp-btn'><span>Zaženi aplikacijo</span></a>
+        </p>
+    </div>
+</div>
