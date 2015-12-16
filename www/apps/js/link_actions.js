@@ -95,7 +95,7 @@ MenuLinks.Template.Success = function(){
     $(document).emc({ container : "quiz19", key: ["1","3","2","1","2"]}); <!-- Zahtevnejši način -- 1. naloga -->
     $(document).emc({ container : "quiz20", key: ["1","1","3","1","2", "1", "2", "1", "2", "1"]}); <!-- zahtevnejši način -- 2. naloga -->
     $(document).emc({ container : "quiz21", key: ["1","1","3","3","2", "3", "2", "3", "1", "2"]}); <!-- zahtevnejši način -- 3. naloga -->
-    $(document).emc({ container : "quiz22", key: ["2","1","2","3","2", "2", "2", "1", "3"]}); <!-- zahtevnejši način -- 4. naloga -->
+    $(document).emc({ container : "quiz22", key: ["2","2","2","4","2", "2", "2", "1", "2"]}); <!-- zahtevnejši način -- 4. naloga -->
 
     $(document).emc({ container : "quiz23", key: ["1","3","2","1","2"]}); <!-- srednje zahteven način -- 1. naloga -->
     $(document).emc({ container : "quiz24", key: ["1","1","3","1","2", "1", "2", "1", "2", "1"]}); <!-- srednje zahteven način -- 2. naloga -->
