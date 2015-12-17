@@ -1,0 +1,113 @@
+ <html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/../style.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/bootstrap-3.0.0/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/style.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <!--[if IE]>
+      <link rel="stylesheet" href="./ie9.css" type="text/css" />
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <script src="../assets/bootstrap-3.0.0/js/jquery.js"></script>
+    <title> eEksperimenti </title>
+  </head>
+
+  <body>
+    <div class="headerwrapper">
+      <img src="/../assets/images/eEksperimenti_logo.png" class="logo"/>
+    </div>
+    <div class="bazaar-link">
+    </div>
+    <div class="pagewrapper">
+      <div class="appdescredpitaya container" id="linki">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h3> Izberite način izvajanja: </h3>
+          </div>
+        </div>
+        <div class="row" style="padding: 2em 0;">
+          <div class='col-md-4 text-center'> 
+            <a href="app.html#sl/#lahko"  style='color: white;' id="lahko"> 
+              <button style= 'height: 4em; background: #A5D3D8; border-radius:5%; border:none;'> ENOSTAVEN NAČIN </button> 
+            </a>
+          </div> 
+          <div class='col-md-4 text-center'>
+            <a href="app.html#sl/#pametno"  style='color: white;' id="tezko"> 
+              <button style= 'height: 4em; background: #A5D3D8; border-radius:5%; border:none;'> ZAHTEVNEJŠI NAČIN </button> 
+            </a>
+          </div>
+          <div class='col-md-4 text-center'>
+            <a href="app.html#sl/#ugani"  style='color: white;' id="ugani"> 
+              <button style= 'height: 4em; background: #A5D3D8; border-radius:5%; border:none;'> UGANI ELEMENT </button> 
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+
+    var url = window.location.href.toString();
+
+    if(url.indexOf("?") != -1){
+
+      var index1 = url.indexOf("index");
+      var index2 = url.indexOf("?");
+    
+
+      var l = $("#linki").find(".col-md-4").find("a");
+
+      for(var i = 0; i < l.length; i++){
+
+        l[i].href = url.substring(0, index1) + l[i].getAttribute("href") + url.substring(index2, url.length);
+      }
+    }
+
+    function shuffle(array){
+      var currentIndex = array.length, temporaryValue, randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+
+      return array;
+    }
+
+    localStorage.clear();
+    localStorage.setItem("i_vprasanje", 0);
+
+    $("#ugani").on("click", function(){
+
+      var elementi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+      shuffle(elementi);
+
+      for(var i = 1; i <= elementi.length; i++){
+        localStorage.setItem(i, elementi[i - 1]);
+      }
+    });
+
+    $("#tezko").on("click", function(){
+
+      var elementi = [1, 2, 3, 4];
+
+      shuffle(elementi);
+
+      for(var i = 1; i <= elementi.length; i++){
+        localStorage.setItem(i, elementi[i - 1]);
+      }
+    });
+
+  </script>
+</html>

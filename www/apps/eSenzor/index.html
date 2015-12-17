@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/../style.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/bootstrap-3.0.0/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/style.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <!--[if IE]>
+      <link rel="stylesheet" href="./ie9.css" type="text/css" />
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <script src="../assets/bootstrap-3.0.0/js/jquery.js"></script>
+    <title> eEksperimenti </title>
+  </head>
+
+  <body>
+    <div class="headerwrapper">
+      <img src="/../assets/images/eEksperimenti_logo.png" class="logo"/>
+    </div>
+    <div class="bazaar-link">
+    </div>
+    <div class="pagewrapper">
+      <div class="appdescredpitaya container" id="linki">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h3> Izberite senzor: </h3>
+          </div>
+        </div>
+        <div class="row" style="padding: 2em 0;">
+          <div class='col-md-4 text-center'> 
+            <a href="app.html#sl"  style='color: white;' id="pospesek"> 
+              <button style= 'height: 4em; width: 80%; background: #A5D3D8; border-radius:5%; border:none;'> SENZOR POSPEŠKA </button> 
+            </a>
+          </div> 
+          <div class='col-md-4 text-center'>
+            <a href="app.html#sl"  style='color: white;' id="magnet"> 
+              <button style= 'height: 4em; width: 80%; background: #A5D3D8; border-radius:5%; border:none;'> SENZOR MAGNETNEGA POLJA </button> 
+            </a>
+          </div>
+          <div class='col-md-4 text-center'>
+            <a href="app.html#sl"  style='color: white;' id="temperatura"> 
+              <button style= 'height: 4em; width: 80%; background: #A5D3D8; border-radius:5%; border:none;'> SENZOR TEMPERATURE </button> 
+            </a>
+          </div>
+        </div>
+        <div class="row" style="padding: 0 0 2em 0;">
+          <div class='col-md-4 text-center'>
+            <a href="app.html#sl"  style='color: white;' id="ultrazvok"> 
+              <button style= 'height: 4em; width: 80%; background: #A5D3D8; border-radius:5%; border:none;'> SENZOR ULTRAZVOKA </button> 
+            </a>
+          </div>
+          <div class='col-md-4 text-center'>
+            <a href="app.html#sl"  style='color: white;' id="svetloba"> 
+              <button style= 'height: 4em; width: 80%; background: #A5D3D8; border-radius:5%; border:none;'> SENZOR SVETLOBE </button> 
+            </a>
+          </div>
+          <div class='col-md-4 text-center'>
+            <a href="app.html#sl"  style='color: white;' id="tlak"> 
+              <button style= 'height: 4em; width: 80%; background: #A5D3D8; border-radius:5%; border:none;'> SENZOR TLAKA </button> 
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+
+    sessionStorage.clear();
+
+    function dodajKolicinoVjson(prvic, lastnost, vrednost){
+
+      var kolicine = sessionStorage.kolicine;
+      var steviloKolicin;
+
+      if(kolicine == null){
+
+        kolicine = [];
+        kolicine[0] = {};
+        kolicine[0][lastnost] = vrednost;
+
+        sessionStorage.setItem("kolicine", JSON.stringify(kolicine));
+        sessionStorage.setItem("steviloKolicin", 1);
+      }
+      else{
+
+        kolicine = JSON.parse(kolicine);
+        steviloKolicin = parseInt(sessionStorage.steviloKolicin);
+
+        if(prvic){
+
+          kolicine[steviloKolicin - 1] = {};
+          kolicine[steviloKolicin - 1][lastnost] = vrednost;
+        }
+        else{
+          kolicine[steviloKolicin - 1][lastnost] = vrednost;
+
+          if(lastnost === "formula"){
+            sessionStorage.setItem("steviloKolicin", parseInt(sessionStorage.getItem("steviloKolicin")) + 1);
+          }
+        }
+        sessionStorage.setItem("kolicine", JSON.stringify(kolicine));
+      }
+    }
+
+    $("#pospesek").on("click", function(){
+
+      dodajKolicinoVjson(true, "ime", "Pospešek");
+      dodajKolicinoVjson(false, "oznaka", "a");
+      dodajKolicinoVjson(false, "enota", "m/s<sup>2</sup>");
+      dodajKolicinoVjson(false, "formula", "166,7 &#183 V1 - 250");
+    });
+
+    $("#magnet").on("click", function(){
+
+      dodajKolicinoVjson(true, "ime", "Magnetno polje");
+      dodajKolicinoVjson(false, "oznaka", "B");
+      dodajKolicinoVjson(false, "enota", "mT");
+      dodajKolicinoVjson(false, "formula", "22,22 &#183 V1 - 22,22");
+    });
+
+    $("#temperatura").on("click", function(){
+
+      dodajKolicinoVjson(true, "ime", "Temperatura");
+      dodajKolicinoVjson(false, "oznaka", "T");
+      dodajKolicinoVjson(false, "enota", "&#8451");
+      dodajKolicinoVjson(false, "formula", "13150/V1 - 2893");
+    });
+
+    $("#ultrazvok").on("click", function(){
+
+      dodajKolicinoVjson(true, "ime", "Ultrazvok");
+      dodajKolicinoVjson(false, "oznaka", "Napetost");
+      dodajKolicinoVjson(false, "enota", "mV");
+      dodajKolicinoVjson(false, "formula", "V1");
+    });
+
+    $("#svetloba").on("click", function(){
+
+      dodajKolicinoVjson(true, "ime", "Osvetljenost");
+      dodajKolicinoVjson(false, "oznaka", "E");
+      dodajKolicinoVjson(false, "enota", "lux");
+      dodajKolicinoVjson(false, "formula", "18380 &#183 V1");
+    });
+
+    $("#tlak").on("click", function(){
+
+      dodajKolicinoVjson(true, "ime", "Tlak");
+      dodajKolicinoVjson(false, "oznaka", "p");
+      dodajKolicinoVjson(false, "enota", "mbar");
+      dodajKolicinoVjson(false, "formula", "1750 &#183 V1 - 875");
+    });
+
+    $("#senzor").on("click", function(){
+
+      sessionStorage.setItem("poljubno", "1");
+    });
+
+  </script>
+</html>
