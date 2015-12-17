@@ -28,6 +28,19 @@
     <script type='text/javascript' src='js/link_actions.js'></script>
     <script type='text/javascript' src='js/quiz-js.js'></script>
     <script type="text/javascript" src="js/bootstrap3-dialog/src/js/bootstrap-dialog.js"></script>
+    <script type="text/javascript">
+
+        $(function() {
+
+            var protocol  = window.location.protocol;
+            var base_addr = window.location.hostname;
+
+            $("#apps_link").on("click", function(){
+              var win = window.open(protocol +"//" + base_addr + '/apps/', '_blank');
+              win.focus();
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -54,15 +67,7 @@
                 <li id='li_experiments' class='meni_links' class='meni_links_pressed'><a id='button-experiments' href='index.html?page=eksperimenti'> Eksperimenti</a></li>
 
                 <li id='li_sensors' class='meni_links' class='meni_links_pressed'><a id='button-sensors' href='index.html?page=uporaba-senzorjev'> Uporaba senzorjev</a></li>
-                <li><a class='dropdown-toggle' data-toggle='dropdown'  href='index.html?page=aplikacije'>Aplikacije <i class='fa fa-angle-down'></i></a>
-                    <ul class='dropdown-menu'>
-                        <li><a  href='#'>Osciloskop</a></li>
-                        <li><a  href='#'>Žarnica</a></li>
-                        <li><a  href='#'>Sončna celica</a></li>
-                        <li><a  href='#'>Oddaljen eksperiment: lastnosti elementov vezij</a></li>
-                        <li><a  href='#'>Lastnosti elementov vezij (neoddaljen eksperiment)</a></li>
-                    </ul>
-                </li>
+                <li><a id="apps_link"class='dropdown'> Aplikacije </a></li>
 
                 <li><a class='dropdown-toggle' data-toggle='dropdown' href='index.html?page=oprojektu'>O projektu <i class='fa fa-angle-down'></i></a>
                     <ul class='dropdown-menu'>
