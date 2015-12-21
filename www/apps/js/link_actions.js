@@ -60,6 +60,10 @@ MenuLinks.Template = function(fileName){
 31 ... Lastnosti elementov (oddaljen) -- zahteven način
 32 ... Lastnosti elementov (oddaljen)-- srednje zahteven način
 33... Lastnosti elementov (oddaljen) -- enostaven način
+34 ... Hitrost zvoka -- zahteven način
+35 ... Hitrost zvoka -- srednje zahteven način
+36 ... Hitrost zvoka -- enostaven način
+
  */
 
 MenuLinks.Template.Success = function(){
@@ -82,9 +86,9 @@ MenuLinks.Template.Success = function(){
     $(document).emc({ container : "quiz12", key: ["4","3","4","1","1","3", "2", "3", "3", "4", "4", "2"]});  <!-- Osciloskop - enostaven način -->
 
     /* Vklop žarnice */
-    $(document).emc({ container : "quiz13", key: ["1","2","2","2","4", "2", "3", "2"]}); <!-- Vklop žarnice - zahteven način -->
-    $(document).emc({ container : "quiz14", key: ["1","2","2","2","4", "2", "3", "2"]}); <!-- Vklop žarnice - srednje zahteven način -->
-    $(document).emc({ container : "quiz15", key: ["1","2","2","2","4", "2", "3", "2"]}); <!-- Vklop žarnice - enostaven način -->
+    $(document).emc({ container : "quiz13", key: ["3","2","2","2","4", "2", "2"]}); <!-- Vklop žarnice - zahteven način -->
+    $(document).emc({ container : "quiz14", key: ["3","2","2","2","4", "2", "2"]}); <!-- Vklop žarnice - srednje zahteven način -->
+    $(document).emc({ container : "quiz15", key: ["3","2","2","2","4", "2", "2"]}); <!-- Vklop žarnice - enostaven način -->
 
     /* Sončna celica */
     $(document).emc({ container : "quiz16", key: ["3", "2", "1", "2", "3", "3", "2", "4"]}); <!-- Sončna celica - zahteven način -->
@@ -106,6 +110,16 @@ MenuLinks.Template.Success = function(){
     $(document).emc({ container : "quiz28", key: ["1","1","3","1","2", "1", "2", "1", "2", "1"]}); <!-- enostaven način -- 2. naloga -->
     $(document).emc({ container : "quiz29", key: ["1","1","3","3","2", "3", "2", "3", "1", "2"]}); <!-- enostaven način -- 3. naloga -->
     $(document).emc({ container : "quiz30", key: ["2","1","2","3","2", "2", "2", "1", "3"]}); <!-- enostaven način -- 4. naloga -->
+
+
+
+
+    /* Hitrost zvoka */
+    $(document).emc({ container : "quiz34", key: ["3","2","1","1","2", "1", "1", "2"]}); <!-- zahteven način  -->
+    $(document).emc({ container : "quiz35", key: ["3","2","1","1","2", "1", "1", "2"]}); <!-- srednje zahteven način  -->
+    $(document).emc({ container : "quiz36", key: ["3","2","1","1","2", "1", "1", "2"]}); <!-- enostaven način  -->
+
+
 
     /* Lastnosti elementov (oddaljen eksperiment) ??? */
 
@@ -260,6 +274,14 @@ MenuLinks.CircuitEl = function() {
     MenuLinks.Template("circuit-el-desc.html");
 };
 
+MenuLinks.SoundSpeed = function() {
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
+    page_navigator.addLi('Hitrost zvoka');
+
+    MenuLinks.Template("sound-speed-desc.html");
+};
 
 MenuLinks.AboutUs = function() {               /* ABOUT US */
     page_navigator.clearAll();
@@ -321,7 +343,6 @@ MenuLinks.SolarCellMedium = function() {
     MenuLinks.Template("solar-cell-medium.html");
 };
 
-
 MenuLinks.SolarCellEasy = function() {
     page_navigator.clearAll();
     page_navigator.addLi('Domov', 'index.html');
@@ -361,6 +382,20 @@ MenuLinks.LightBulbEasy = function() {
 
     MenuLinks.Template("light-bulb-easy.html");
 };
+
+
+MenuLinks.LightBulbExplanation = function() {
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
+    page_navigator.addLi('Žarnica – opis', 'index.html?page=zarnica-aplikacija');
+    page_navigator.addLi('Raylaga eksperimenta žarnica');
+
+    MenuLinks.Template("light-bulb-explanation.html");
+};
+
+
+
 
 MenuLinks.CircuitElRemoteHard = function() {
     page_navigator.clearAll();
@@ -423,6 +458,36 @@ MenuLinks.CircuitElEasy = function() {
     page_navigator.addLi('Enostaven način izvajanja');
 
     MenuLinks.Template("circuit-el-easy.html");
+};
+
+MenuLinks.SoundSpeedHard = function() {
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
+    page_navigator.addLi('Hitrost zvoka – opis', 'index.html?page=hitrost-zvoka');
+    page_navigator.addLi('Zahteven način izvajanja');
+
+    MenuLinks.Template("sound-speed-hard.html");
+};
+
+MenuLinks.SoundSpeedMedium = function() {
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
+    page_navigator.addLi('Hitrost zvoka – opis', 'index.html?page=hitrost-zvoka');
+    page_navigator.addLi('Srednje zahteven način izvajanja');
+
+    MenuLinks.Template("sound-speed-medium.html");
+};
+
+MenuLinks.SoundSpeedEasy = function() {
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
+    page_navigator.addLi('Hitrost zvoka – opis', 'index.html?page=hitrost-zvoka');
+    page_navigator.addLi('Enostaven način izvajanja');
+
+    MenuLinks.Template("sound-speed-easy.html");
 };
 
 MenuLinks.Team = function() {
@@ -521,6 +586,9 @@ $(function() {
             case 'lastnosti-elementov-vezij-aplikacija-neoddaljen':
                 MenuLinks.CircuitEl();
                 break;
+            case 'hitrost-zvoka-aplikacija':
+                MenuLinks.SoundSpeed();
+                break;
             case 'osciloskop':
                 MenuLinks.OsciloscopeApp();
                 break;
@@ -557,6 +625,9 @@ $(function() {
             case 'zarnica-lazji':
                 MenuLinks.LightBulbEasy();
                 break;
+            case 'zarnica-razlaga':
+                MenuLinks.LightBulbExplanation();
+                break;
             case 'elementi-vezij-tezji':
                 MenuLinks.CircuitElRemoteHard();
                 break;
@@ -574,6 +645,15 @@ $(function() {
                 break;
             case 'elementi-vezij-lazji-neoddaljen':
                 MenuLinks.CircuitElEasy();
+                break;
+            case 'hitrost-zvoka-tezji':
+                MenuLinks.SoundSpeedHard();
+                break;
+            case 'hitrost-zvoka-srednji':
+                MenuLinks.SoundSpeedMedium();
+                break;
+            case 'hitrost-zvoka-lazji':
+                MenuLinks.SoundSpeedEasy();
                 break;
             case 'ekipa':
                 MenuLinks.Team();
@@ -599,6 +679,8 @@ $(function() {
             case 'pogosta-vprasanja':
                 MenuLinks.Faq();
                 break;
+
+
         }
     }
 

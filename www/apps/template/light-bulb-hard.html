@@ -7,9 +7,9 @@
                 <h4 style="color: blue; margin-top: 30px;" class='section-heading'>Opis vezave elementov</h4>
 
                 <p style="padding-left: 0px" class='lead col-lg-12'>
-                    Za eksperiment povežemo v tokokrog vir, žarnico in stikalo kot kaže spodnja slika. Če so vam ti
+                    Za eksperiment povežemo v tokokrog vir, žarnico in stikalo, kot kaže spodnja slika. Če so vam ti
                     elementi in način prikaza tuji, vam svetujemo, da si izberete <a
-                        href="index.html?page=zarnica-lazji">lažji način reševanja</a>, kjer bodo elementi električne
+                        href="index.html?page=zarnica-lazji">lažji način reševanja</a>, kjer so elementi električne
                     sheme nekoliko bolj podrobno razloženi.
                 </p>
 
@@ -21,11 +21,9 @@
                 <p style="margin-top: 30px" class='lead'>
                     Kot <strong>vir napetosti</strong> bomo namesto baterije uporabili kar ustrezen priključek na
                     razširitveni ploščici na Red Pitaji. V ta uporabili bomo sponki +12V
-                    in GND oz. 0V. Red Pitajo bomo uporabili tudi za merjenje poteka toka skozi žarnico in poteka
-                    osvetljenosti senzorja osvetljenosti. Merjene
-                    veličine bomo merili na hitrem vhodu 1 in 2. Ker Red Pitaya meri le napetosti, bomo merjenje teh
-                    veličin izvedli posredno z merjenjem napetosti
-                    na ustreznih merilnih uporih.<br>
+                    in GND oz. 0 V. Red Pitajo bomo uporabili tudi za merjenje poteka toka skozi žarnico in poteka
+                    osvetljenosti. Merjene veličine bomo merili na hitrem vhodu 1 in 2. Ker Red Pitaya meri le napetosti,
+                    bomo merjenje teh veličin izvedli posredno z merjenjem napetosti na ustreznih merilnih uporih.<br /><br />
                     (Namesto vira napetosti na Red Pitayi lahko uporabite tudi kakšen drug za vir napetosti, ki naj ima
                     največjo izhodno napetost do 20 V.)
                 </p>
@@ -43,14 +41,11 @@
 
                 <p style="padding-left: 0px" class='lead col-lg-12'>
                     V merilni shemi na sliki uporabimo (hitri) Vhod 1 za merjenje toka skozi žarnico. Tok, ki teče skozi
-                    merilni
-                    upor povzroči na njem padec napetosti, ki jo lahko neposredno merimo z Red Pitayo. Priključki na Red
-                    Pitayi,
-                    ki jih bomo uporabili, so prikazani na spodnji sliki. Tok skozi žarnico merimo z merjenjem napetosti
-                    na uporu
-                    R<sub>mer1</sub>, ki ga priključimo na hitri Vhod 1 Red Pitaye, osvetljenost merimo z merjenjem toka
-                    skozi
-                    merilni upor R<sub>mer2</sub>, ki ga priključimo na hitri Vhod 2.
+                    merilni upor povzroči na njem padec napetosti, ki jo lahko neposredno merimo z Red Pitayo. Priključki na Red
+                    Pitayi, ki jih bomo uporabili, so prikazani na spodnji sliki. Tok skozi žarnico merimo z merjenjem napetosti
+                    na uporu R<sub>mer1</sub>, ki ga priključimo na hitri Vhod 1 Red Pitaye. Osvetljenost pa določimo posredno, iz toka
+                    merimo z merjenjem toka, ki ga generira fotodioda ob osvetlitvi. TEga pa določimo z merjenjem napetosti
+                    na merilnem uporu R<sub>mer2</sub>, ki ga priključimo na hitri Vhod 2.
                 </p>
 
                 <p class="lead col-lg-12">
@@ -59,23 +54,19 @@
                 </p>
 
                 <p style="margin-top:10px; padding-left: 0px" class='lead col-lg-12'>
-                    Izbrati moramo ustrezno vrednost merilnega upora, da bo ustrezal merilnemu območju Red Pitaye, ki je
-                    od -1 V do 1 V. V eksperimentu uporabimo malo avtomobilsko žarnico moči 2 W, ki predvideva
-                    priključitev
-                    na vir napetosti 12 V. Pri priključitvi take žarnice na napetost 12 V bo tok (odvisen od segretosti
-                    žarnice) velikostnega razreda 100 mA. Za merjene toka uporabimo merilni upor R<sub>mer1</sub> = 10
-                    Ω,
-                    da dobimo pri toku 100 mA napetost 1 V. <br/><br/>
+                    Izbrati moramo ustrezno vrednost merilnega upora, da bo ustrezal merilnemu območju Red Pitaye, ki
+                    je od -1 V do 1 V. V eksperimentu uporabimo malo avtomobilsko žarnico moči 2 W, ki predvideva
+                    priključitev na vir napetosti 12 V. Pri priključitvi take žarnice na napetost 12 V bo tok (odvisen
+                    od segretosti žarnice) velikostnega razreda 100 mA. Za merjene toka uporabimo merilni upor
+                    R<sub>mer1</sub> = 10 Ω, da dobimo pri toku 100 mA napetost 1 V.<br/><br/>
+
                     Za merjenje svetlobe, ki jo oddaja žarnica lahko uporabimo kar sončno celico iz drugega eksperimenta
-                    in to
-                    med kontaktoma 3 in 4, lahko pa uporabimo tudi priloženo fotodiodo. Svetloba, ki jo oddaja žarnica v
-                    sončni celici ali fotodiodi povzroči premike elektronov in če jo priključimo na električni upor
-                    R<sub>mer2</sub>, bo v tokokrogu stekel električni tok, katerega velikost je odvisna od
-                    osvetljenosti.
+                    in to med kontaktoma 3 in 4, lahko pa uporabimo tudi priloženo fotodiodo. Svetloba, ki jo oddaja
+                    žarnica v sončni celici ali fotodiodi povzroči premike elektronov in če jo priključimo na električni
+                    upor R<sub>mer2</sub>, bo v tokokrogu stekel električni tok, katerega velikost je odvisna od osvetljenosti.
                     Pričakovane vrednosti toka pri merjeni svetlobi so velikosti 1 mA. Če želimo dobiti padec napetosti
-                    na
-                    merilnem uporu Rmer2 (v LV načinu) 1 V, moramo uporabiti merilni upor z upornostjo R<sub>mer2</sub>=1
-                    kΩ. V eksperimentu smo izbrali vrednost R<sub>mer2</sub> = 680 Ω.
+                    na merilnem uporu R<sub>mer2</sub>  (v LV načinu) 1 V, moramo uporabiti merilni upor z upornostjo R<sub>mer2</sub> = 1 kΩ.
+                    V eksperimentu smo izbrali vrednost Rmer2 = 680 Ω.
                 </p>
 
                 <div style="margin-top: 15px;" class="col-md-1">
@@ -85,22 +76,23 @@
 
                 <div class="col-md-11" style="text-align: center;">
                     <p class='lead'>
-                        Uporabite priložene vezice in preskusno ploščico in z njihovo pomočjo realizirajte merilno
-                        shemo. Namesto baterije priklopite + sponko vira
-                        na priključek + 12 V na razširitveni plošči, ki je nad Red Pitajo (poiščite pravilno sponko na
-                        sliki spodaj), negativno sponko pa na 0 V oziroma
-                        poljubno GND sponko. <strong>GND sponka na hitrem vhodu je zunanja sponka koaksialnega
-                        konektorja</strong> - na priloženem priključku je to žica črne barve. Hitri
-                        vhodi so narisani na spodnji sliki.
+                        Uporabite priložene vezice in preskusno ploščico in z njihovo pomočjo realizirajte merilno shemo.
+                        V eksperimentu boste uporabili dva upora. Da jih boste ločili med seboj poglejte njihove barvne
+                        oznake in določite njihovo vrednost glede na <a href="#">Tabelo vrednosti upornosti.</a> <br /><br />
+                        Namesto baterije priklopite + sponko vira na priključek + 12 V na razširitveni plošči, ki je nad
+                        Red Pitayo (poiščite pravilno sponko na sliki spodaj), negativno sponko pa na 0 V oziroma poljubno
+                        GND sponko. <strong>GND sponka na hitrem vhodu je zunanja sponka koaksialnega konektorja</strong> - na priloženem
+                        priključku je to žica črne barve. Hitri vhodi so narisani na spodnji sliki.
                     </p>
                 </div>
 
-                <p class="lead">
-                    Na sliki je prikazana razširitvena plošča. Na njej poiščite priključek za +12 V.
+                <img class="col-lg-12" src='img/zarnica-pitaya.png' alt=" Zarnica - Pitaya" style="margin-top: 25px; width: 100%">
+
+                <p class="lead col-lg-12">
+                    Na spodnji sliki je prikazana razširitvena plošča. Na njej poiščite priključek za +12 V.
                 </p>
 
-                <img class="col-lg-12" src='img/zarnica-pitaya.png' alt=" Zarnica - Pitaya" style="margin-top: 25px;">
-                <img class="col-lg-12" src='img/zarnica-vezje.png' alt=" Zarnica - vezje" style="margin-top: 25px;">
+                <img class="col-lg-12" src='img/zarnica-vezje.png' alt=" Zarnica - vezje" style="margin-top: 25px; width: 100%">
 
                 <div style="margin-top: 15px;" class="col-md-1">
                     <i class="fa fa-hand-o-right fa-3x" style="color: blue;"></i>
@@ -109,88 +101,52 @@
 
                 <div style="margin-top: 25px;" class="col-md-11" style="text-align: center;">
                     <p class='lead'>
-                        <strong>ČE STE ZVEZALI ELEMENTE VEZJA TER RED PITAYO, LAHKO NADALJUJETE S PRIKLJUČITVIJO RED
-                            PITAYE NA NAPAJANJE IN Z ZAGONOM APLIKACIJE.</strong>
+                       <strong>ČE STE POVEZALI ELEMENTE VEZJA TER RED PITAYO, LAHKO NADALJUJETE Z ZAGONOM APLIKACIJE.</strong>
+                           Poženite aplikacijo <a href="#">eŽarnica</a> in sledite navodilom za izvedbo meritev. Če imate težave z
+                           zagonom Red Pitaye, vam bodo morda pomagala <a href="index.html?page=pogosta-vprasanja">dodatna navodila oz. pogosta vprašanja</a>.
                     </p>
                 </div>
 
-                <p class='lead col-md-12'>
-                    Ko ste povezali vse elemente po merilni shemi, priključite in poženite še računalniško-merilno
-                    kartico Red Pitaya,
-                    kot je opisano na spletni strani <a href="index.html?page=red-pitaja#turnon-redpitaya">Zagon_Red_Pitaye</a>.
-                    Poženite aplikacijo <a href="/eZarnica/app.html#sl/#pametno" target="_blank">eŽarnica</a> in sledite navodilom za izvedbo
-                    meritev. Če imate težave z zagonom Red Pitaye, vam bodo morda pomagala
-                    <a href="index.html?page=pogosta-vprasanja">dodatna navodila oz. pogosta vprašanja</a>.
-                    Če imate težave z vezavo elementov v električni krog po merilni shemi, lahko pogledate nadaljnja
-                    navodila v
-                    <a href="index.html?page=zarnica-srednji">srednje zahtevnem načinu</a> izvajanja, kjer je prikazan
-                    pravilen način izvedbe povezav.
-                </p>
-
-                <div style="margin-top: 15px;" class="col-md-1">
-                    <i class="fa fa-hand-o-right fa-3x" style="color: blue;"></i>
-
-                </div>
-
-                <div style="margin-bottom: 40px;" class="col-md-11" style="text-align: center;">
-                    <p class='lead'>
-                        <strong>ČE STE USPEŠNO PRIKLJUČILI RED PITAYO IN ZAGNALI APLIKACIJO 
-                            <a href="/eZarnica/app.html#sl/#pametno" target="_blank">eŽARNICA</a>.</strong>
-                    </p>
-                </div>
 
                 <h4 style="color: blue; margin-top: 60px;" class='section-heading'>Opis izvajanja meritev</h4>
 
-                <p class='lead'>
-                    <strong>Nastavite osi na grafu</strong><br/>
-                </p>
-
-
-                <p class="lead">
-                    V zahtevnem načinu morate sami ustrezno opisati osi na grafu. V zavihku Nastavitve osi boste na levi
-                    Y osi
-                    izrisovali tok skozi žarnico. Kot je opisano v Merilni shemi merimo tok posredno preko merjenja
-                    napetosti
-                    na merilnem uporu 10 Ω. Iz enačbe U=R*I sledi, da bo pri izmerjeni napetosti 1 V tok skozi žarnico 1
-                    V/ 10
-                    Ω = 0,1 A. V okno Veličina torej vpišete Tok, enota je A, faktor pretvorbe pa je 0,1 oziroma glede
-                    na
-                    uporabljeno enačbo je parameter a1 = 0,1. (Pri vpisu v okno uporabite decimalno piko namesto
-                    decimalne
-                    vejice). Namesto enote A lahko uporabite tudi mA in faktor pretvorbe 100.
-                    Ymin vrednost je lahko 0, Y max pa 0,1. Po potrebi te vrednosti ob uporabi aplikacije in ogledu
-                    izrisa
+                <p class="lead col-lg-12">
+                   <strong>V aplikaciji <a href="#">eŽarnica</a> izberite Nastavite te ustrezno opišite osi in mejne vrednosti.</strong>
+                    V zahtevnem načinu morate sami ustrezno opisati osi na grafu. Na levi Y osi boste izrisovali tok
+                    skozi žarnico. Kot je opisano v Merilni shemi merimo tok posredno preko merjenja napetosti na merilnem
+                    uporu 10 Ω. Iz enačbe U=R*I sledi, da bo pri izmerjeni napetosti 1 V tok skozi žarnico
+                    1 V / 10 Ω = 0,1 A. V okno Veličina torej vpišete Tok, enota je A, faktor pretvorbe pa je 0,1 oziroma
+                    glede na uporabljeno enačbo je parameter a1=0,1.  (Pri vpisu v okno uporabite decimalno piko namesto
+                    decimalne vejice). Namesto enote A lahko uporabite tudi mA in faktor pretvorbe 100.
+                    Ymin vrednost je lahko 0, Y max pa 0,1. Po potrebi te vrednosti ob uporabi aplikacije in ogledu izrisa
                     izmerjenih vrednosti ustrezno spremenimo, da je prehodni pojav lepše viden.<br/><br/>
 
                     Desno Y os uporabite za opis oddane svetlobe žarnice. Iz kataloga za fotodiodo SFH206K razberemo
-                    občutljivost fotodiode 80 nA/ lx, kjer je lx enota za osvetljenost (lux). Če torej izmerimo tok 80
-                    nA
-                    (80*10-9 A) pomeni, da je izmerjena osvetljenost 1 lx. (Tok fotodiode je sicer tudi odvisen od
-                    valovne
-                    dolžine svetlobe, saj npr. fotodioda pri rdeči barvi da več toka kot npr. pri modri svetlobi. Tega v
-                    našem
-                    primeru ne upoštevamo, čeprav žarnica oddaja različno svetlobo ob vklopu (bolj rdečkasto) kot
-                    kasneje,
-                    ko je že nekaj časa vklopljena (bolj rumenkasto)). Za izračun osvetljenosti moramo upoštevati še
-                    pretvorbo iz napetosti (ki jo izmeri Pitaya) v električni tok. Pri toku 1 mA je napetost na merilnem
-                    uporu 1 mA*680 Ω = 0,680 V. Torej izmerimo pri toku 80 nA napetost 80 nA/1mA *0,680 V = 54,4 µV.
-                    Faktor
-                    pretvorbe, ki ga moramo vpisati v aplikacijo da dobimo vrednost osvetljenosti iz izmerjene napetosti
-                    (ob dani vrednosti merilnega upora) je torej 1 lx/(54,5 µV) = 18,38*103 lx/V.
+                    občutljivost fotodiode 80 nA / lx, kjer je lx enota za osvetljenost (lux). Če torej izmerimo tok 80 nA
+                    (80*10-9 A) pomeni, da je izmerjena osvetljenost 1 lx. (Tok fotodiode je sicer tudi odvisen od valovne
+                    dolžine svetlobe, saj npr. fotodioda pri rdeči barvi da več toka kot npr. pri modri svetlobi. Tega
+                    v našem primeru ne upoštevamo, čeprav žarnica oddaja različno svetlobo ob vklopu (bolj rdečkasto)
+                    kot kasneje, ko je že nekaj časa vklopljena (bolj rumenkasto)). Za izračun osvetljenosti moramo
+                    upoštevati še pretvorbo iz napetosti (ki jo izmeri Pitaya) v električni tok. Pri toku 1 mA je napetost
+                    na merilnem uporu 1 mA * 680 Ω = 0,680 V. Torej izmerimo pri toku 80 nA napetost 80 nA / 1mA * 0,680
+                    V = 54,4 µV. Faktor pretvorbe, ki ga moramo vpisati v aplikacijo da dobimo vrednost osvetljenosti iz
+                    izmerjene napetosti (ob dani vrednosti merilnega upora) je torej 1 lx / (54,5 µV) = 18,38 * 103 lx / V.
                     Glede na enačbo je potrebno v okno vpisati parameter b2=18380. Ostala dva parametra sta enaka nič.
-                    Na X osi bo prikazan čas. Prehodni pojav pri vklopu je relativno hiter zato pod Xmin vpišite 0, pod
-                    X max
-                    pa 100 ms oziroma 0.1.
+                    Na X osi bo prikazan čas. Vklopite žarnico s stikalom in ocenite koliko časa traja, da žarnica zažari.
+                    Nastavite parametre osi X tako, da se bo prehodni pojav na grafu lepo izrisal.<br /><br />
+
+                    Aplikacija <a href="#">eŽarnica</a> deluje kot osciloskop. V eksperimentu, ki opisuje delo z osciloskopom
+                    ste se seznanili z načini proženja osciloskopa, kar uporabite pri tem eksperimentu. Če vam ne uspe ustrezno
+                    nastaviti proženja (signal se ne prikaže na zaslonu), si preberite pravilne nastavitve v srednje zahtevnem
+                    načinu izvajanja ali pa zaženite aplikacijo <a href="#">eŽarnica</a> v srednje zahtevnem načinu.
                 </p>
 
-                <div class="col-md-1">
-                    <i class="fa fa-plus fa-3x" style="color: #ff0000"></i>
-                </div>
 
-                <div class="col-md-11" style="text-align: center;">
-                    <p class='lead'>
-                        <strong>Ob koncu poskusov si lahko preberete še Končno razlago z nekaj dodatnimi zanimivostmi in
-                            napotki</strong>.
+                <div class='lead col-lg-12' style="margin-bottom: 40px">
+                    <p class="col-lg-1"><i align="left" class="fa fa-plus fa-2x col-md-1" style="color: red;"></i></p>
+                    <p class="lead col-lg-11">
+                        <strong>Ob koncu poskusov si lahko preberete še <u>Končno razlago</u> z nekaj dodatnimi
+                            zanimivostmi in napotki</strong>.
                     </p>
                 </div>
 
@@ -215,14 +171,12 @@
 
                 <div class="col-md-11" style="text-align: center;">
                     <p class='lead'>
-                        Nasvet 1 : Za opazovanje pojava morate ustrezno nastaviti nivo proženja v aplikaciji. Da se vam
-                        bo na zaslon
-                        izrisala slika, mora namreč ob vklopu toka skozi žarnico merjena veličina preiti nivo proženja.
-                        Le na ta
-                        način bo Redpitaya zaznala vklop žarnice in izrisala sliko signala.<br/><br/>
+                        Nasvet 1: Za opazovanje pojava morate ustrezno nastaviti nivo proženja v aplikaciji. Da se
+                        vam bo na zaslon izrisala slika, mora namreč ob vklopu toka skozi žarnico merjena veličina
+                        preiti nivo proženja. Le na ta način bo Redpitaya zaznala vklop žarnice in izrisala sliko signala.
+                        Nastavite vrednost nivoja proženja nekoliko nad enosmerni nivo pred preklopom.<br/><br/>
                         V aplikaciji opazujte signal iz senzorja svetlobe ob vklopu toka skozi žarnico. Po potrebi
-                        popravite
-                        ustrezna območja na koordinatnih oseh grafa, da boste dobro videli prehodni pojav.
+                        popravite ustrezna območja na koordinatnih oseh grafa, da boste dobro videli prehodni pojav.
                     </p>
                 </div>
 
@@ -232,8 +186,9 @@
 
                 <div class="col-md-11" style="text-align: center;">
                     <p class='lead'>
-                        Izključite stikalo in s tem prekinite tokokrog. Žarnica bo ugasnila, ker
-                        ste s preklopom prekinili tokokrog. Opazujte časovni potek izklopa v aplikaciji.
+                        Izključite stikalo in s tem prekinite tokokrog. Žarnica bo ugasnila, ker ste s preklopom
+                        prekinili tokokrog. Opazujte časovni potek izklopa v aplikaciji. Če se na grafu ne bo prikazala
+                        oblika signala ob izklopu, spremenite način proženja tako, da nastavite Negativen prehod signala za proženje.
                     </p>
                 </div>
 
@@ -247,9 +202,9 @@
 
                 <div class="col-md-11" style="text-align: center;">
                     <p class='lead'>
-                        V aplikaciji vklopite merjenje toka (vklopite levo Y os in izklopite desno Y os)
-                        in ponovno s stikalom vklopite žarnico. Tokrat opazujte tok skozi žarnico in
-                        ugotavljajte, kako se spreminja s časom po vklopu stikala.
+                        V aplikaciji vklopite merjenje toka (vklopite levo Y os in izklopite desno Y os) in ponovno s
+                        stikalom vklopite žarnico. Tokrat opazujte tok skozi žarnico in ugotavljajte, kako se spreminja
+                        s časom po vklopu stikala.
                     </p>
                 </div>
 
@@ -264,7 +219,7 @@
                 <div class="col-md-11" style="text-align: center;">
                     <p class='lead'>
                         Sedaj vklopite opazovanje tako toka skozi žarnico kot tudi osvetljenost s fotodiodo ali sončno
-                        celico. Ponovite vklop žarnice in opazujte časovni potek. Bodite še posebej pozorni na
+                        celico. Ponovite vklop žarnice in opazujte časovni potek. Bodite  še posebej pozorni na
                         primerjavo hitrosti spreminjanja toka in svetilnosti.
                     </p>
                 </div>
@@ -290,18 +245,19 @@
                             <section data-quiz-item>
                                 <div class="question">1. Na sliki so od zgoraj navzdol prikazani simboli za:</div>
                                 <div class="choices" data-choices='["Žarnico, upor, fotodiodo.",
-                                                                                                            "Upor, fotodiodo, žarnico.",
-                                                                                                            "Fotodiodo, žarnico, upor."]'>
+                                                                    "Upor, fotodiodo, žarnico.",
+                                                                    "Fotodiodo, žarnico, upor."]'>
                                 </div>
+                                <img class="col-lg-12" src='img/kviz_zarnica.png' alt="Elementi" style="margin-top: 25px; width: 100px">
                             </section>
 
                             <section data-quiz-item>
                                 <div class="question">2. Če je U napetost, I tok in R upornost, kako se pravilno zapiše
                                     Ohmov zakon?
                                 </div>
-                                <div class="choices" data-choices='["I=U*R",
-                                                                                                       "U=R*I",
-                                                                                                       "R=U*I"]'>
+                                <div class="choices" data-choices='["I = U * R",
+                                                                   "U = R * I",
+                                                                   "R = U * I"]'>
                                 </div>
                             </section>
 
@@ -324,7 +280,7 @@
                             </section>
 
                             <section data-quiz-item>
-                                <div class="question">5. Kakšne oblike je tok skozi žarnico ob priklopu.</div>
+                                <div class="question">5. Kakšne oblike je tok skozi žarnico ob priklopu?</div>
                                 <div class="choices" data-choices='["Hipoma naraste do končne vrednosti.",
                                                                    "Se povečuje do določene vrednosti.",
                                                                    "Se zmanjšuje do določene vrednosti.",
@@ -341,15 +297,7 @@
                             </section>
 
                             <section data-quiz-item>
-                                <div class="question">7. Kako žarnica sveti, ko jo priključimo na izmenični tok?</div>
-                                <div class="choices" data-choices='["Žarnica utripa tako, da med posameznimi utripi povsem ugasne.",
-                                                                   "Žarnica sveti konstantno.",
-                                                                   "Žarnica malo utripa – Nikoli povsem ne ugasne."]'>
-                                </div>
-                            </section>
-
-                            <section data-quiz-item>
-                                <div class="question">8. Zakaj je oblika toka taka, kot si jo izmeril?</div>
+                                <div class="question">7. Zakaj je oblika toka taka, kot si jo izmeril?</div>
                                 <div class="choices" data-choices='["Ker je žarnica okrogle oblike.",
                                                                    "Ker se žarilni nitki s segrevanjem povečuje električna upornost.",
                                                                    "Ker se žarilni nitki s segrevanjem zmanjšuje električna upornost."]'>

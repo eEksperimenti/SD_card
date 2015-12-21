@@ -1,0 +1,422 @@
+<div id="sound-speed-hard" class='content-section-a'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-lg-12 col-sm-6'>
+                <h3 style="margin-top: 30px;" class='section-heading'>Zahtevnejši način izvajanja</h3>
+
+                <h4 class='section-heading' style="color: blue;">Opis vezave elementov</h4>
+
+                <p class='lead col-lg-12'>
+                        V eksperimentu boste v prostor postavili oddajnik in sprejemnik zvoka. Vezavo lahko shematično
+                        predstavimo na sledeč način:
+                </p>
+
+                <p class="lead col-lg-12">
+                    <img class='img-responsive' src='img/Oddajnik_sprejemnik.png' alt='Oddajnik sprejemnik' align="center" style="height:160px;">
+                </p>
+
+                <p class='lead col-lg-12'>
+                    Ultrazvočna pretvornika namestite na prototipni ploščici, ki bosta hkrati služili kot stojali.
+                    V eksperimentu boste pretvornika obrnili drugega proti drugemu na izbrani razdalji.
+                    Prototipna ploščica (angleško protoboard ali breadboard) ima zelo enostavno strukturo. Sestavljena
+                    je iz dveh polovic, vsaka ima stolpce, ki so na skupnem kontaktu. To omogoča poljubno povezovanje elementov
+                    glede na merilno shemo.
+                </p>
+                <p class="lead col-lg-12">
+                    <img class='img-responsive' src='img/prototipna_ploscica.png' alt='Prototipna ploščica' align="center" style="margin-bottom:40px">
+                </p>
+
+                <p class='lead col-lg-12'>
+                    Vezje lahko realizirate na dva načina. Poslužite se lahko <strong>VZBUJANJA ODDAJNIKA DIREKTNO Z IZHODOM RED
+                    PITAYE.</strong> Amplituda direktnega vzbujanja je omejena na 1 V (na vršno vrednost 2 V). Zato je oddajni
+                    ultrazvočni signal šibak in temu primerno bo šibak tudi sprejemni signal. Lahko pa uporabite ojačevalno
+                    vezje, ki se nahaja na razširitveni ploščici in <strong>VZBUJATE ODDAJNIK PREKO OJAČEVALNEGA VEZJA</strong>.
+                </p>
+
+
+                <p class='lead col-lg-12'>
+
+                </p>
+
+
+                <div class='lead col-lg-12' style="margin-bottom: 40px">
+                    <p class="col-lg-1">
+                        <img class='img-responsive' src='img/krizisce.png' alt='Prototipna ploščica' align="center" style="margin-bottom:60px">
+                    </p>
+                    <p class="lead col-lg-11">
+                        Odločite se za način izvedbe merilnega vezja. Izbirate med <strong>VZBUJANJEM ODDAJNIKA DIREKTNO PREKO IZHODA
+                        RED PITAYE in VZBUJANJEM ODDAJNIKA PREKO OJAČEVALNEGA VEZJA</strong>. Prednost ojačevalnega vezja se pokaže pri
+                        večjih razdaljah oddajnik – sprejemnik. Ojačevalnik je obvezen, če želimo s pomočjo ultrazvoka meriti
+                        daljše razdalje. Več o tem v poglavju <a href="index.html?page=hitrost-zvoka-aplikacija">Dodatni ekperimenti</a>.
+                    </p>
+                </div>
+
+                <h4 class='section-heading' style="color: blue;">MERILNA SHEMA ZA VZBUJANJE ODDAJNIKA DIREKTNO PREKO IZHODA RED PITAYE</h4>
+
+
+                <p class='lead col-lg-12'>
+                    Napetostni signal, ki ga bomo potrebovali za oddajanje ultrazvoka, bomo ustvarili z Red Pitayo. Red
+                    Pitayo bomo uporabili tudi za zajem odziva drugega ultrazvočnega pretvornika, ki bo deloval kot
+                    sprejemnik (mikrofon). To shematsko prikažemo na spodnji sliki. Na izhodu 1 generiramo ultrazvočni
+                    signal. Generiran signal istočasno zajemamo na vhodu 2. Na vhodu 1 zajemamo odziv drugega ultrazvočnega
+                    pretvornika – sprejemnika. Oddajniku smo dodali upor majhne vrednosti (12 Ω). To stabilizira oddajni
+                    signal, ker deluje v resonanci in ne preneha nihati tudi po koncu vzbujalnega signala.
+                </p>
+
+                <p class="lead col-lg-12">
+                    <img class='img-responsive' src='img/Vezalna_shema_zvok.png' alt='Vezalna shema hitrost zvoka' align="center" >
+                </p>
+
+                <p class='lead col-lg-12'>Vezalna shema je prikazana na spodnji sliki:</p>
+
+                <p class="lead col-lg-12">
+                    <img class='img-responsive' src='img/Vezalna_shema_pitaja.png' alt='Vezalna shema na Red Pitayi' align="center">
+                </p>
+
+                <div class='lead col-lg-12' style="margin-top: 60px">
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11"><strong>Če ste se odločili za DIREKTNO VZBUJANJE ODDAJNIKA PREKO IZHODA
+                        RED PITAYE, sestavite merilno vezje, kot kaže zgornja merilna shema. </strong></p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">
+                        Če še niste, vzpostavite računalniško-merilno kartico Red Pitaya, kot je opisano na spletni
+                        strani <strong><a href="#">Zagon_Red_Pitaye</a></strong>. Če imate težave z zagonom Red Pitaye, vam bodo morda pomagala
+                        <a href="index.html?page=pogosta-vprasanja">dodatna navodila oz. pogosta vprašanja.</a>
+                    </p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Če ste zvezali elemente vezja ter uspešno vzpostavili povezavo z merilno
+                        kartico, lahko začnete z izvajanjem eksperimenta. Pojdite na <a href="">Navodila za izvajanje meritev</a>.
+                    </p>
+                </div>
+
+                <h4 style="clear:both; margin-left:16px; padding-top: 20px; color: blue; margin-top: 80px;" class="section-heading">MERILNA SHEMA ZA NAPAJANJE ODDAJNIKA PREKO OJAČEVALNEGA VEZJA.</h4>
+
+                <p class='lead col-lg-12'>Ultrazvočni signal lažje zaznamo, če ga oddajamo z večjo močjo. V ta namen
+                    uporabite ojačevalnik na razširitveni ploščici. Izhod iz Red Pitaye priključite na vhod ojačevalnika
+                    (priključek B na sliki), izhod iz ojačevalnika (priključek C na sliki) pa peljite na ultrazvočni
+                    pretvornik. Ojačevalnik deset-kratno ojača signal Red Pitaye.
+                </p>
+
+                <p class="lead col-lg-12">
+                    <img class='img-responsive' src='img/ultrazvok_priključek.png' alt='Ojačevalno vezje' align="center">
+                </p>
+
+                <p class="lead col-lg-12">
+                    <img class='img-responsive' src='img/ojacevalno_vezje.png' alt='Ojačevalno vezje' align="center" style="width:75%">
+                </p>
+
+
+                <p class='lead col-lg-12'>Vezalna shema je prikazana na spodnji sliki:</p>
+
+                <p class="lead col-lg-12">
+                    <img class='img-responsive' src='img/vezalna_shema2.png' alt='Vezalna shema za napajanje oddajnika preko ojačevalnega vezja' align="center" style="width:40%">
+                </p>
+
+                <div class='lead col-lg-12' style="margin-top: 60px">
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Če ste se odločili za <strong>ZA NAPAJANJE ODDAJNIKA PREKO OJAČEVALNEGA
+                        VEZJA</strong>, sestavite merilno vezje, kot kaže zgornja merilna shema.</p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">
+                        Če še niste, vzpostavite računalniško-merilno kartico Red Pitaya, kot je opisano na spletni
+                        strani <strong><a href="#">Zagon_Red_Pitaye</a></strong>. Če imate težave z zagonom Red Pitaye, vam bodo morda pomagala
+                        <a href="index.html?page=pogosta-vprasanja">dodatna navodila oz. pogosta vprašanja.</a>
+                    </p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Če ste zvezali elemente vezja ter uspešno vzpostavili povezavo z merilno
+                        kartico, lahko začnete z izvajanjem eksperimenta. Pojdite na <a href="#">Navodila za izvajanje meritev</a>.
+                    </p>
+                </div>
+
+
+                <h4 class='section-heading' style="color: blue;">Navodila za izvajanje meritev</h4>
+
+                <p class="lead col-lg-12">
+                    Določanje hitrosti zvoka je mogoče izvesti na več načinov.<br /><br />
+                    <u>V prvem načinu</u> oddamo kratek pisk in merimo čas, ki ga zvok potrebuje, da prepotuje od oddajnika
+                    do sprejemnika. Razdaljo med oddajnikom in sprejemnikom izmerimo z merilnim trakom. Iz obeh
+                    izmerjenih veličin določimo hitrost zvoka.<br /><br />
+                    <u>V drugem načinu</u> merimo dvakrat. Po prvem merjenju premaknemo sprejemnik na drugo razdaljo in
+                    spet izmerimo čas potovanja. Razdalji od oddajnika do sprejemnika izmerimo z merilnim trakom.
+                    Iz izmerjenih razdalj in izmerjenih časov določimo hitrost zvoka.<br /><br />
+                    <u>V tretjem načinu</u> oddajamo signal sinusne oblike in ugotavljamo zakasnitev signala tako, da
+                    opazujemo valovnico sprejetega in oddajanega signala in štejemo število period, za katerega
+                    je sprejeti signal zakasnjen od oddajanega.
+                </p>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Postavite oddajnik in sprejemnik drug proti drugemu na oddaljenost približno
+                        10 cm. To razdaljo lahko kasneje spreminjate tako, da boste v aplikaciji lepo videli oba signala.
+                    </p>
+                </div>
+
+                <h4 class='section-heading' style="color: blue;">Način 1: Določanje hitrosti zvoka z merjenjem časa potovanja piska od sprejemnika do oddajnika</h4>
+
+                <p class="lead col-lg-12">
+                    Z oddajnikom oddamo kratek ultrazvočni pisk. Merili bomo čas potovanja piska od oddajnika do
+                    sprejemnika. Razdaljo od oddajnika do sprejemnika bomo izmerili z merilnim trakom.
+                    Iz obeh izmerjenih veličin bomo določili hitrost zvoka.
+                </p>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11"><strong>POŽENITE APLIKACIJO <a href="#">eZVOK</a>.</strong></p>
+                </div>
+
+                <p class="lead col-lg-12">
+                    Ob zagonu aplikacije eZvok Red Pitaya generira signal, ki zaniha membrano oddajnika. Oddajnik
+                    odda kratek pisk. Če vas zanima kako se signal generira, kliknite na <a href="#">to povezavo</a>. Signal je
+                    skiciran na spodnji sliki.
+                </p>
+
+
+                <p class="lead col-lg-12">
+                    <img class='img-responsive' src='img/oddani_signal.png' alt='Oddani signal' align="center" style="width:25%">
+                </p>
+
+
+                <p class="lead col-lg-12">
+                    Na <strong>vhodu 2</strong> merimo signal, ki ga oddajamo z ultrazvočnim oddajnikom.<br /><br />
+                    Na <strong>vhodu 1</strong> merimo signal,  ki ga zaznavamo z ultrazvočnim sprejemnikom.<br /><br />
+                    Opazimo, da je signal oddajnika »lep« in pravilen, signal iz sprejemnika pa »razmazan«. To
+                    pripišemo dejstvu, da membrani v oddajniku in sprejemniku zvoka potrebujeta nekaj časa da pričneta
+                    nihati in še nekaj časa, da se iznihata.
+                </p>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Izmerite čas potovanja zvoka tako, da ocenite čas od začetka oddanega
+                        signala pa do začetka sprejetega signala. Začetek sprejetega signala je težje točno določiti,
+                        ker je na začetku amplituda sprejetega signala zelo majhna in je lahko skrita v šumu merilnega
+                        sistema. Zato začetek sprejetega signala ocenite glede na obliko sprejetega signala. </p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Izmerite razdaljo med oddajnikom in sprejemnikom z merilnim trakom.
+                        Pri tem upoštevajte, da sta za oddajanje in sprejemanje ključni membrani. Ti sta pomaknjeni
+                        v notranjost ohišja, za <span style="background-color: yellow">10 mm</span> (glej spodnjo sliko). To pomeni, da morate izmerjeni razdalji
+                        od robov obeh ohišij prišteti še <span style="background-color: yellow">20 mm</span>.
+                    </p>
+                </div>
+
+                <p class="lead col-lg-12">
+                    <img class='img-responsive' src='img/Merilni_sistem_oddajnik.png' alt='Merilni sistem' align="center" style="width:25%">
+                </p>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Iz izmerjenega časa potovanja zvoka t in izmerjene razdalje med
+                        oddajnikom in sprejemnikom L določite hitrost zvoka.  Uporabite ustrezno fizikalno enačbo.
+                    </p>
+                </div>
+
+
+                <h4 class='section-heading' style="color: blue;">Način 2: Določitev hitrosti zvoka z merjenjem časa
+                    njegovega potovanja pri dveh različnih razdaljah</h4>
+
+                <p class="lead col-lg-12">
+                    V drugem načinu merimo dvakrat. Meritev časa potovanja zvoka bomo izvedli pri dveh različnih
+                    razdaljah med oddajnikom in sprejemnikom, kot kaže slika.
+                </p>
+
+
+                <p class="lead col-lg-12">
+                    <img class='img-responsive' src='img/Merjenje_razdalje_zvoka.png' alt='Merjenje razdalje zvoka' align="center" style="width:50%">
+                </p>
+
+
+                <p class="lead col-lg-12">
+                    Najprej bomo opravili meritev časa potovanja zvoka za eno razdaljo med sprejemnikom in oddajnikom.
+                    Opazovali bomo zakasnitev sprejetega in oddanega signala. Čas potovanja zvoka bomo določili tako,
+                    da bomo odčitali zakasnitev med začetkom oddajanega signala in začetkom prejetega signala.
+                </p>
+
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Zapišite si čas od začetka oddanega signala pa do začetka sprejetega signala.</p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Označite mesto sprejemnika prve meritve. Oddajnik pustite na mestu,
+                        na katerem se nahaja, sprejemnik pa postavite v nov, bolj oddaljen položaj. Znova izvedite
+                        meritev na enak način kot ste izvedli prvo. Z merilnim trakom izmerite obe razdalji.
+                    </p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Iz razlike časov in razlike razdalj med oddajnikom in sprejemnikom prve
+                        in druge meritve določite hitrost zvoka.
+                    </p>
+                </div>
+
+                <h4 class='section-heading' style="color: blue;">Način 3: Meritev z uporabo sinusnega signala</h4>
+
+
+                <p class="lead col-lg-12">V tretjem načinu uporabimo sinusno obliko vzbujalnega signala.</p>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">V signalnem generatorju izberite sinusni signal za kanal 1. Amplituda je lahko 1 V.
+                        Opazimo, da je tudi oblika sprejetega signala sinusne oblike.
+                    </p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Premikajte oddajnik in opazili boste, da oddajni signal ostane na mestu,
+                        sprejet signal pa se zamika glede na oddajnega. Ker poznamo oddajno frekvenco signala (40000 Hz),
+                        lahko določimo razdaljo, za katero smo morali premakniti sprejemnik, da je signal spet v enaki legi,
+                        kot je bil na začetku pred premikom.
+                    </p>
+                </div>
+
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Premaknite sprejemnik tako, da je signal zopet enak kot pred premikom in izmerite razdajo premika.
+                    </p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Uporabite enačbo λ=c⋅f , kjer je λ (izmerjena) valovna dolžina, c hitrost
+                        zvoka in f frekvenca zvoka in izračunajte hitrost zvoka v zraku.
+                    </p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Ker je meritev razdalje ene valovne dolžine nenatančna, natančnost meritve
+                        izboljšajte tako, da izmerite razdaljo premika za več razdalj (n) valovne dolžine (npr. 10) –
+                        premikajte oddajnik in štejte, kolikokrat se valovnici ujameta ter potem izmerite razdaljo premika.
+                        Prejšnjo enačbo ustrezno popravite in ponovno izračunajte hitrost zvoka v zraku.
+                        n ⋅ λ = c ⋅ f
+                    </p>
+                </div>
+
+                <div class='lead col-lg-12'>
+                    <p class="col-lg-1"><i align="left" class="fa fa-hand-o-right fa-2x col-md-1" style="color: blue;"></i></p>
+                    <p class="lead col-lg-11">Izpišite vse tri izmerjene vrednosti ter jih primerjajte z natančno vrednostjo
+                        hitrosti zvoka v zraku, ki jo razberete na spletnih straneh.
+                    </p>
+                </div>
+
+                <p class='lead col-md-12'>
+                    <strong>Po opravljenih meritvah</strong> poskusite odgovoriti na spodnja vprašanja.
+                </p>
+            </div>
+        </div>
+        <!--Pojdi na kviz, zahteven način  -->
+        <div class="container">
+            <div class="panel panel-default">
+                <a data-toggle="collapse" href="#panel34">
+                    <div class="panel-heading"><h4>Pojdi na kviz</h4></div>
+                </a>
+                <div id="panel34" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class='row' id="quiz34">
+                            <div class='col-lg-12'>
+                                <div class="emc-score"></div>
+                                <section data-quiz-item>
+                                    <div class="question">1. Kolikšna je hitrost zvoka v zraku?
+                                    </div>
+                                    <div class="choices" data-choices='["Hitrost zvoka je 200 m/s",
+                                                                        "Hitrost zvoka je 400 km/h",
+                                                                        "Hitrost zvoka je 340 m/s",
+                                                                        "Hitrost zvoka je 340 km/h"]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">2. Kaj je frekvenca zvoka?</div>
+                                    <div class="choices" data-choices='["Frekvenca zvoka je glasnost zvoka.",
+                                                                       "Frekvenca zvoka je število nihajev na sekundo zvočila, ki zvok povzroča.",
+                                                                       "Frekvenca zvoka je število, ki pove, kako globoko v snov prodre zvok."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">3. Kaj je valovna dolžina zvoka?</div>
+                                    <div class="choices" data-choices='["Valovna dolžina zvoka je razdalja med dvema zgoščinama, ki ju povzroči zvočno valovanje v snovi.",
+                                                                        "Valovna dolžina zvoka je dolžina, ki jo zvočno valovanje prepotuje v eni sekundi.",
+                                                                        "Valovna dolžina zvoka je premik membrane zvočnika merjen v milimetrih."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">4. Kaj je longitudinalno valovanje?</div>
+                                    <div class="choices" data-choices='["Longitudinalno valovanje je valovanje, ki se v snovi širi v obliki zgoščin in razredčin.",
+                                                                       "Longitudinalno valovanje je valovanje, ki  se širi v smeri vzhod-zahod.",
+                                                                       "Longitudinalno valovanje se po vzmeti širi tako, da se motnja na vzmeti premika pravokotno na smer vzmeti."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">5. Kaj je ultrazvok?</div>
+                                    <div class="choices" data-choices='["Ultrazvok  je zvok vijoličaste barve.",
+                                                                        "Ultrazvok je zvok, ki ima frekvenco višjo od najvišje frekvence, ki jo zazna človeški slušni sistem.",
+                                                                        "Ultrazvok je zvok, ki ima frekvenco nižjo od najvišje frekvence, ki jo zazna človeški slušni sistem.",
+                                                                        "Ultrazvok je sopomenka za infrazvok."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">6. Kaj je fazni zamik dveh signalov?</div>
+                                    <div class="choices" data-choices='["Fazni zamik je zakasnitev med dvema signaloma.",
+                                                                       "Fazni zamik je napetost med dvema fazama v vtičnici.",
+                                                                       "Fazni zamik je razlika v hitrosti razširjanja valovanja v različnih snoveh npr. v zraku in vodi."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">7. Katero metodo merjenja je bolje uporabiti za merjenje dolgih razdalj (>> valovne dolžine uporabljenega zvoka v zraku)? Zakaj?
+                                    </div>
+                                    <div class="choices" data-choices='["Za merjenje dolgih razdalj je bolje uporabiti metodo z merjenjem zakasnitve piska. Zato, ker je za dolgo razdaljo nemogoče prešteti število valovnih dolžin, za katerega je bil sprejemnik odmaknjen od oddajnika.",
+                                                                        "Za merjenje dolgih razdalj je bolje uporabiti metodo z merjenjem zakasnitve piska. Zato, ker je za dolgo razdaljo nemogoče oddajati konstanten zvok z dovolj veliko jakostjo.",
+                                                                        "Za merjenje dolgih razdalj je bolje uporabiti metodo z merjenjem in štetjem števila valovnih dolžin. Zato, ker je pri tej metodi mogoče prešteti število valovnih dolžin, za katerega je bil sprejemnik odmaknjen od oddajnika.",
+                                                                        "Za merjenje dolgih razdalj je bolje uporabiti metodo z merjenjem in štetjem števila valovnih dolžin. Zato, ker je število valovnih dolžin preveliko za metodo z merjenjem zakasnitve piska."]'>
+                                    </div>
+                                </section>
+
+                                <section data-quiz-item>
+                                    <div class="question">8. Katero metodo merjenja je bolje uporabiti za merjenje kratkih razdalj (približno enakih nekaj valovnih dolžin uporabljenega zvoka v zraku )? Zakaj?
+                                    </div>
+                                    <div class="choices" data-choices='["Za merjenje kratkih razdalj je bolje uporabiti metodo z merjenjem zakasnitve piska. Zato, ker je za dolgo razdaljo nemogoče prešteti število valovnih dolžin, za katerega je bil sprejemnik odmaknjen od oddajnika.",
+                                                                       "Za merjenje kratkih razdalj je bolje uporabiti metodo z merjenjem in štetjem števila valovnih dolžin. Zato, ker je pri tej metodi mogoče prešteti število valovnih dolžin, za katerega je bil sprejemnik odmaknjen od oddajnika in težko izmeriti dejansko zakasnitev pri metodi z merjenjem zakasnitve piska.",
+                                                                       "Za merjenje kratkih razdalj je bolje uporabiti metodo z merjenjem in štetjem števila valovnih dolžin. Zato, ker je število valovnih dolžin preveliko za metodo z merjenjem zakasnitve piska.",
+                                                                       "Za merjenje kratkih razdalj je bolje uporabiti metodo z merjenjem zakasnitve piska. Zato, ker je za kratko razdaljo nemogoče oddajati konstanten zvok z dovolj veliko jakostjo."]'>
+                                    </div>
+                                </section>
+
+                                <div class="submit">
+                                    <button class="btn emc-submit">Preveri odgovore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="lead col-md-12">
+            <a href='#' class='btn btn-default btn-lg exp-btn'><span>Zaženi aplikacijo</span></a>
+        </p>
+    </div>
+</div>
