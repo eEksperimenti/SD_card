@@ -64,7 +64,7 @@ function zvok(kanal){
   }, 5);
 }
 
-<div id="btn_toolbar" class="col-xs-12">
+/*<div id="btn_toolbar" class="col-xs-12">
   <div class="col-xs-8">
     <div class="col-xs-4">
       <div id="selzoompan" class="btn-group" data-toggle="buttons">
@@ -97,4 +97,5 @@ function zvok(kanal){
     </div>
   </div>
   <div class="col-xs-4"></div>
-</div>
+<</div>
+    */

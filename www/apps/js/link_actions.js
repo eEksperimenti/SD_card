@@ -395,8 +395,6 @@ MenuLinks.LightBulbExplanation = function() {
 };
 
 
-
-
 MenuLinks.CircuitElRemoteHard = function() {
     page_navigator.clearAll();
     page_navigator.addLi('Domov', 'index.html');
@@ -489,6 +487,20 @@ MenuLinks.SoundSpeedEasy = function() {
 
     MenuLinks.Template("sound-speed-easy.html");
 };
+
+
+MenuLinks.SpectralAnalyzer = function() {
+    page_navigator.clearAll();
+    page_navigator.addLi('Domov', 'index.html');
+    page_navigator.addLi('Eksperimenti', 'index.html?page=eksperimenti');
+    page_navigator.addLi('Spektralni analizator');
+
+    MenuLinks.Template("spectral-analyzer.html");
+};
+
+
+
+
 
 MenuLinks.Team = function() {
     page_navigator.clearAll();
@@ -655,6 +667,9 @@ $(function() {
             case 'hitrost-zvoka-lazji':
                 MenuLinks.SoundSpeedEasy();
                 break;
+            case 'spektralni-analizator':
+                MenuLinks.SpectralAnalyzer();
+                break;
             case 'ekipa':
                 MenuLinks.Team();
                 break;
@@ -679,8 +694,6 @@ $(function() {
             case 'pogosta-vprasanja':
                 MenuLinks.Faq();
                 break;
-
-
         }
     }
 

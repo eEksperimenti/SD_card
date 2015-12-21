@@ -30,16 +30,16 @@
     <script type="text/javascript" src="js/bootstrap3-dialog/src/js/bootstrap-dialog.js"></script>
     <script type="text/javascript">
 
-        $(function() {
+    $(function() {
 
-            var protocol  = window.location.protocol;
-            var base_addr = window.location.hostname;
+        var protocol  = window.location.protocol;
+        var base_addr = window.location.hostname;
 
-            $("#apps_link").on("click", function(){
-              var win = window.open(protocol +"//" + base_addr + '/apps/', '_blank');
-              win.focus();
-            });
+        $("#apps_link").on("click", function(){
+           var win = window.open(protocol +"//" + base_addr + '/apps/', '_blank');
+           win.focus();
         });
+    });
     </script>
 </head>
 

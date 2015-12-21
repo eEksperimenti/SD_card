@@ -1,0 +1,280 @@
+<div id='sound-speed-desc' class='content-section-a'>
+    <div class='container'>
+        <div class='row'>
+            <p class='col-lg-12 col-sm-6'>
+                <div class='clearfix'></div>
+                <h2 class='section-heading'>Spektralni analizator</h2>
+                <h4 style="color: blue;" class='section-heading col-lg-12'>Kratek opis eksperimenta</h4>
+
+                <p class='lead col-lg-12'>
+                    S pomočjo računalniško-merilne kartice Red Pitaya boste opazovali električne zvočne signale v
+                    časovnem in frekvenčnem prostoru. Kot izvor električnega zvočnega signala boste uporabili računalnik,
+                    radijski prejemnik, televizijski sprejemnik, MP3 predvajalnik ali mikrofon.
+                    V drugem načinu delovanja boste med seboj povezali dve računalniško-merilni kartici Red Pitaya. Z
+                    eno boste ustvarjali signale, z drugo pa opazovali njihove frekvenčne karakteristike.
+                </p>
+
+
+                <h4 style="color: blue; margin-top: 30px;" class='section-heading col-lg-12'>Za radovedne</h4>
+
+
+                <p class='lead col-lg-12'>
+                    Slušni polž kot sestavni del človeškega ušesa deluje kot spektralni analizator. Uhelj prestreže
+                    zvočno valovanje. To nadaljuje pot po sluhovodu do bobniča, preko slušnih koščic do polža. Slušni
+                    polž je z vseh strani obdan s trdnimi stenami lobanjskih kosti. V togem oklepu sta samo dve manjši,
+                    z membrano prevlečeni odprtini: ovalno okence, na katerega pritiskajo koščice srednjega ušesa, in
+                    okroglo okence, ki izenačuje pritisk v polžu. Udarjanje stremenca po ovalnem okencu povzroča nihanje
+                    tlaka v tekočini polža in s tem deformacijo bazilarne membrane. Čim višja ko je frekvenca zvoka, tem
+                    bliže ovalnemu okencu doseže val maksimum. Tako uho zazna, katere frekvence so v prihajajočem zvoku.
+                    Porazdelitev moči po frekvencah zvoka torej uho zazna preko porazdelitve nihajočih mest vzdolž bazilarne
+                    membrane, na katerih so vibracije bazilarne membrane najbolj izrazite. S polža vodi preko slušnega živca
+                    v možgane 30.000 živčnih vlaken, povezanih v skupine glede na frekvenco zvoka, katerega signal prenašajo.
+                    Višino zvoka razberejo možgani glede na lokacijo vlakna, po katerem je prišel signal, glasnost pa iz
+                    števila sosednjih vzdraženih vlaken. Iz možganov po vzporednih vlaknih potujejo nazaj v uho povratne
+                    informacije o šumih in nepomembnih zvokih, ki jih poskušajo možgani filtrirati in se osredotočiti
+                    predvsem na pomensko bogate zvoke. Nekaj povratnih živčnih vlaken gre tudi v srednje uho, kjer ti
+                    živčni signali kontrolirajo napetost mišic in s tem prilagodijo zaznavo glasnosti zvoka.
+                </p>
+                <p>
+                    <img src='img/uho.png' alt="Uho" style="margin-top: 10px; ">
+                </p>
+
+
+                <h4 style="color: blue; margin-top: 30px;" class='section-heading col-lg-12'>1. Zvočni signali v časovnem in frekvenčnem prostoru</h4>
+
+                <p class="lead col-lg-12">
+                    Za opazovanje zvočnih signalov v časovnem in frekvenčnem prostoru povežite zvočni izhod računalnika
+                    (tudi radijskega sprejemnika, televizijskega sprejemnika, MP3 predvajalnika…) z vhodom Red Pitaye preko
+                    priloženega vodnika. Zvočni izhod na napravah je običajno označen s simbolom zvočnika, s simbolom
+                    slušalk ali s simbolom usmerjene puščice, kot kaže spodnja slika.
+                </p>
+
+                <p class="lead col-lg-12">
+                    <img class="img-responsive" alt="Spektralni analizator" src="img/spektralni_analizator.png" style="width:70%" />
+                </p>
+
+                <p class="lead col-lg-12">
+                    <ol class="lead col-lg-12">
+                        <li>Na eOsciloskopu opazujte zvočni signal, ki ga ustvarja računalnik,
+                            radijski sprejemnik, MP3 predvajalnik ali televizijski sprejemnik.
+                        </li>
+                        <li>Preklopite na aplikacijo eSpektralni_analizator in opazujte frekvenčne komponente zvočnega
+                            signala. Frekvenčni razpon spektalnega analizatorja nastavite tako, da bo ustrezal slišnim
+                            zvočnim frekvencam (nastavitev »Frekvenčni razpon«). Abcisna os prikazuje posamezne
+                            frekvenčne komponente signala, ordinatna os pa njihove relativne moči (glede na 1 mW referenčne moči).
+                        </li>
+                    </ol>
+                </p>
+            </div>
+
+            <div class='lead exercise-box'>
+                <img class="img-circle" src='img/naklon.png' alt="Enostavni način izvajanja" align="left" style="width: 80px; height: 80px; margin: 10px 10px 10px 0px;">
+
+                Izražanje signalov v decibelih (dB) pogosto uporabljamo pri analizi harmoničnih signalov v elektrotehniki.
+                Če predpostavimo sinusni vzbujalni signal z amplitudo Vp, je (povprečna) moč na bremenu R=50 ohmov
+                enaka P = V p<sup>2</sup> / (2 * R). Če je izražena v dBm, to pomeni, da jo izrazimo relativno v primerjavi
+                z močjo 1mW, torej P / 1mW, ker pa je v decibelih, jo je potrebno izraziti kot 10 * log(P / 1mW).
+                Konkretno za našo aplikacijo to pomeni, da lahko amplitudo vzbujalnega signala razberemo iz vrednosti v
+                spektru moči pri določeni frekvenci P(f) tako, da rešimo enačbo<br /><br />
+                P(f)= 10 * log(V p<sup>2</sup> / (2 * R) / 1mW) = 10 * log(V p <sup>2</sup> / (2 * 50) / 10<sup>3</sup>)) = 10 * log(10 * V p<sup>2</sup>).<br /><br />
+                Iz enačbe izrazimo Vp, ki je Vp = sqrt(0,1 * 10 <sup>(P/10)</sup>) ali tudi Vp = 10<sup>((0,1 * P-1) / 2)</sup>.<br /><br />
+                Primer 1: če je amplituda signala pri frekvenci 1000 Hz enaka 1 V, se bo to v frekvečnem spektru moči odražalo kot ozka špica pri frekvenci 1000 Hz z velikostjo P = 10 * log(10) = 10 dBm.<br /><br />
+                Primer 2: če je moč signala v dBm pri določeni frekvenci enaka 0, je to pri amplitudi napetostnega signala Vp = 10 <sup>((0,1*0-1)/2)</sup> = 316 mV.
+
+                Na spletu lahko poiščete ustrezno tabelo pretvorb z iskalnim geslom »dBm to volt«. Primer tabele je <a href="https://www.markimicrowave.com/Assets/data/power%20to%20voltage.pdf ">tukaj</a>.
+            </div>
+
+            <p class="lead col-lg-12">
+                <img class="img-responsive" alt="Prikazovalnik spektralnega analizatorja Red Pitaye." src="img/spektralni_analizator1.png" style="width:50%" />
+            </p>
+            <p class="lead col-lg-12">
+                Slika 1: Prikazovalnik spektralnega analizatorja Red Pitaye.
+            </p>
+            <p class="lead col-lg-12">
+                <ul class="lead col-lg-12">
+                    <li>Katere frekvenčne komponente so najmočnejše ob udarcu na boben v vaši najljubši skladbi?</li>
+                    <li>Katera je najvišja frekvenčna komponenta zvočnega signala, ki jo še zaznate s frekvenčnim analizatorjem?</li>
+                </ul>
+            </p>
+
+            <p class="lead col-lg-12">
+                <ol start="3" class="lead col-lg-12">
+                    <li>Preko spletnega brskalnika zaženite program za ustvarjanje tonov. Najdete ga na <a href="http://onlinetonegenerator.com/">tej povezavi</a>.</li>
+                </ol>
+            </p>
+
+            <p class="lead col-lg-12">
+                <img class="img-responsive" alt="Program za ustvarjanje tonov" src="img/program_za_ustvarjanje_tonov.png" style="width:30%" />
+            </p>
+
+            <p class="lead col-lg-12">
+                Zvočni izhod računalnika povežite z vhodom Red Pitaye (Vhod 1) in narišite frekvenčno karakteristiko
+                sinusnega, pravokotnega, žagastega in trikotnega signala. Frekvenčni razpon spektalnega analizatorja
+                nastavite tako, da bo ustrezal slišnim zvočnim frekvencam (nastavitev »Frekvenčni razpon«).
+            </p>
+
+
+            <p class="lead col-lg-12">
+                <ol start="4" class="lead col-lg-12">
+                    <li>Preko spletnega brskalnika zaženite program, ki ga najdete na <a href="http://onlinetonegenerator.com/frequency-sweep-generator.html">tej povezavi</a>.</li>
+                </ol>
+            </p>
+
+
+            <p class="lead col-lg-12">
+                <img class="img-responsive" alt="Program za ustvarjanje tonov" src="img/program_toni.png" style="width:30%" />
+            </p>
+
+            <p class="lead col-lg-12">
+                V okence končna frekvenca (ang. End frequency) vpišite 20000 Hz. Kliknite na gumb »Play« in poslušajte
+                ustvarjen signal. Frekvenca tona s časom narašča. Povežite zvočni izhod računalnika z vhodom Red Pitaye
+                (Vhod 1), zaženite aplikacijo eSpektralni_analizator in opazujte frekvenčno karakteristiko signala.
+                Frekvenčni razpon spektalnega analizatorja nastavite tako, da bo ustrezal slišnim zvočnim frekvencam
+                (nastavitev »Frekvenčni razpon«).
+            </p>
+
+
+            <p class="lead col-lg-12">
+                <ol start="5" class="lead col-lg-12">
+                    <li>Preko spletnega brskalnika zaženite program za ustvarjanje tonov, ki ga najdete na <a href="http://onlinetonegenerator.com/tuning.html">tej povezavi</a>.</li>
+                </ol>
+            </p>
+
+            <p class="lead col-lg-12">
+                <img class="img-responsive" alt="Program za ustvarjanje tonov" src="img/program_toni2.png" style="width:30%" />
+            </p>
+
+            <p class="lead col-lg-12">Kliknite na gumb »play« in poslušajte ustvarjen ton. Povežite zvočni izhod
+                računalnika z vhodom Red Pitaye (Vhod 1) in opazujte frekvenčno karakteristiko signala. Frekvenčni razpon
+                spektalnega analizatorja nastavite tako, da bo ustrezal slišnim zvočnim frekvencam (nastavitev »Frekvenčni
+                razpon«). Se izbrana frekvenca v programu res odrazi v najmočnejši frekvenčni komponenti signala?
+            </p>
+
+
+            <p class="lead col-lg-12">
+                <ol start="6" class="lead col-lg-12">
+                    <li>
+                        V spletni brskalnik vpišite <a href="http://onlinetonegenerator.com/noise.html">to povezavo</a>.
+                        Predvajajte in poslušajte šum. Povežite zvočni izhod računalnika z vhodom Red Pitaye (Vhod 1) in
+                        opazujte frekvenčno karakteristiko belega šuma.
+                    </li>
+                </ol>
+            </p>
+
+            <p class="lead col-lg-12">
+                <img class="img-responsive" alt="Program za ustvarjanje tonov" src="img/tone_generator.png" style="width:80%" />
+            </p>
+
+            <p class="lead col-lg-12">
+                Signal, v katerem so vse frekvence zastopane enako, imenujemo beli šum. Matematično beli šum določa spekter,
+                ki ima od frekvence neodvisno porazdelitev moči, torej spekter, ki ga na grafično predstavlja enaka konstantna
+                vrednost pri vseh frekvencah. Takšen signal v praksi seveda ne obstaja, saj bi moral imeti neskončno veliko moč.
+                Zato se v praksi zadovoljimo z izvori, ki proizvajajo šum v določenem frekvenčnem spektru. Na primer radijskem
+                spektru, slušnem spektru itd.
+            </p>
+
+            <h4 style="color: blue; margin-top: 30px;" class='section-heading col-lg-12'>2. Eksperimenti z mikrofonom</h4>
+
+            <h4 style="margin-top: 10px;" class='section-heading col-lg-12'>2.1 Priprava mikrofona za delo z Red Pitayo</h4>
+
+            <p class="lead col-lg-12">
+                V prenosnem računalniku je mikrofon že vgrajen, v namiznem pa navadno ne, zato ga je potrebno priklopiti, kot kaže spodnja slika.
+            </p>
+
+            <p class="lead col-lg-12">
+                <img class="img-responsive" alt="Program za ustvarjanje tonov" src="img/mikrofon.png" style="width:50%" />
+            </p>
+
+            <p class="lead col-lg-12">
+                Signal mikrofona boste analizirali z Red Pitayo, zato je potrebno na računalniku preveriti nastavitve, ki
+                bodo omogočile, da bo signal od mikrofona prišel na zvočni izhod računalnika. To storite na sodaj opisan
+                način (velja za operacijski sitem windows 7):<br /><br />
+                V Nadzorni plošči kliknite na ikono »Zvok«.
+            </p>
+
+            <p class="lead col-lg-12">
+                <img class="img-responsive" alt="Nadzorna plošča" src="img/control_panel.png" style="width:50%" />
+            </p>
+
+
+            <p class="lead col-lg-12">
+                V zavihku »Snemanje« izberite vgrajen oz. priklopljen mikrofon in kliknite na gumb »Lastnosti«.
+            </p>
+
+            <p class="lead col-lg-12">
+                <img class="img-responsive" alt="Nadzorna plošča" src="img/zavihek_snemanje.png" style="width:40%" />
+            </p>
+
+            <p class="lead col-lg-12">
+                V zavihku »Poslušaj« omogočite »Poslušaj to napravo« ter kliknite na gumb »Uporabi«.
+
+            </p>
+
+            <p class="lead col-lg-12">
+                <img class="img-responsive" alt="Nadzorna plošča" src="img/zavihek_snemanje2.png" style="width:40%" />
+            </p>
+
+            <p class="lead col-lg-12">
+                Povežite zvočni izhod računalnika z vhodom Red Pitaye (Vhod 1).
+            </p>
+
+
+            <h4 style="margin-top: 10px;" class='section-heading col-lg-12'>2.2 Priprava mikrofona za delo z Red Pitayo</h4>
+
+            <p class="lead col-lg-12">
+                <strong>1.</strong> Zvočno valovanje: Uporabite aplikacijo eOsciloskop za prikaz zvočnega valovanja, ki ga ustvarjate z
+                žvižganjem, govorjenjem ali petjem. Preklopite na aplikacijo eSpektralni_analizator in opazujte frekvenčno
+                karakteristiko zvoka.
+                <ul>
+                    <li>Kdo lahko zažvižga z najvišjo frekvenco?</li>
+                    <li>Kdo zažvižga najglasneje?</li>
+                </ul>
+            </p>
+
+            <p class="lead col-lg-12">
+                <strong>2. Pojemanje jakosti zvoka z razdaljo:</strong> Poiščite vir zvoka s konstantno zvočno jakostjo in
+                narišite,  kako jakost zvoka pada z razdaljo. Pomagajte si z aplikacijo eSpektralni_analizator.
+            </p>
+
+            <p class="lead col-lg-12">
+                <strong>3. Zvok glasbil:</strong>  Na eOsciloskopu opazujte zvočno valovanje, ki ga oddajajo različni
+                inštrumenti. Preklopite na aplikacijo eSpektralni_analizator in opazujte še frekvenčne komponente ustvarjenega
+                zvoka. Izmerite zvočno frekvenco sodniške piščalke ali celo uglasite klavir ali kitaro.
+            </p>
+
+
+            <h4 style="margin-top: 10px;" class='section-heading col-lg-12'>3. Eksperiment z uporabo dveh kartic Red Pitaya</h4>
+
+            <p class="lead col-lg-12">
+                Za ta eksperiment boste potrebovali dve merilni kartici Red Pitaya. S povezovalnim vodnikom povežite izhod 1 prve Red Pitaye z vhodom 1 druge Red Pitaye.
+            </p>
+
+            <p class="lead col-lg-12">
+                <img class="img-responsive" alt="Nadzorna plošča" src="img/2pitayi.png" style="width:60%" />
+            </p>
+
+            <p class="lead col-lg-12">
+                Zaženite aplikacijo eOsciloskop na prvi Red Pitayi ter mogočite signalni generator 1 na hitrem izhodu 1 s
+                potrditvijo polja »Kanal 1«. V vnosno polje »Vršna napetost« vpišite vrednost »1«. V vnosno polje »Frekvenca«
+                vpišite vrednost »2000«. V izbirnem polju »Način proženja« izberite možnost »Ponavljajoče«, s čimer sprožite
+                ustvarjanje periodičnega signala na hitrem vhodu 1.  V izbirnem polju »Oblika izhodnega signala« izberite sinusno
+                obliko.<br /><br/>
+
+                Zaženite aplikacijo eSpektralni_analizator na drugi Red Pitayi in opazujte frekvenčni spekter generiranega
+                signala. Frekvenčni razpon spektalnega analizatorja nastavite tako, da bo ustrezal slišnim zvočnim frekvencam
+                (nastavitev »Frekvenčni razpon«).<br /><br/>
+                V signalnem generatorju prve Red Pitaye spreminjajte obliko, frekvenco, amplitudo ali enosmerne komponento
+                generiranega signala in s pomočjo druge Red Pitaye opazujte njegovo frekvenčno karakteristiko.
+            </p>
+
+
+
+
+
+
+
+                <a href='/eZvok/' target="_blank" class='btn btn-default btn-lg exp-btn'><span>Zaženi aplikacijo</span></a>
+
+        </div>
+    </div>
+</div> <!-- /.container -->
